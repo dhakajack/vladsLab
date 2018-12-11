@@ -56,9 +56,9 @@ To build the game:
 
 	[...launch Inform, create new project in this dir called 'trfv'…]
 
-		$ cp temp.inform/Source/story.ni trfv.inform/Source/
+		$ cp temp.inform/Source/story.ni vladsLab.inform/Source/
   
-		$ cp temp.inform/uuid.txt trfv.inform/
+		$ cp temp.inform/uuid.txt vladsLab.inform/
   
 		$ rm -rf temp.inform/
 
