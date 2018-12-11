@@ -4,8 +4,9 @@ What is this?
 -------------
 
 This is a short demo by Jack Welch. It gets around the issue of not 
-being able to directly non-Latin unicode into the I7 parser by 
-transliterating the input on the fly, before the parser ever see it.
+being able to directly type non-Latin unicode into the I7 parser. 
+It does this by transliterating the input on the fly, before the parser 
+ever see it.
 
 This trick relies on Vorple, a javascript framework that extends I7.
 I took a bludgeon to the core file of Vorple to intercept the text
@@ -20,8 +21,9 @@ deterministically in one direction, from Cyrillic to Latin, but not
 the reverse, since some cyrillic letters map to a single latin letter,
 e.g., "е", "ё", and "э" all map to "e".
 
-The code is released under the MIT license, which you can find in the
-LICENSE file.
+FWIW, the code is released under the MIT license, which you can find in 
+the LICENSE file. My purpose in putting it on the repo is so others can 
+use it for their own projects, so please do.
 
 The game is written in the Inform 7 programming language, using
 version 6M62, the most recent version available at the time of
@@ -46,6 +48,8 @@ To build the game:
 		$ cd vladsLab
   
 		$ mv vladsLab.inform/ temp.inform/
+		
+		$ cp vladsLab.materials/Templates/Vorple/vorple.min.js .
 
 	[...launch Inform, create new project in this dir called 'trfv'…]
 
@@ -55,15 +59,14 @@ To build the game:
   
 		$ rm -rf temp.inform/
 
-	2. Install extensions. The extensions used in this project are all "stock" -- 
-	none have been modified, but there's always the concern about versions and 
-	compatability. For that reason, I've put copies of all used extensions in the 
-	trfv/extensions directory. If the whole project is cloned, these files will 
-	come along for the ride. Be sure to install them into your local copy of inform 
-	when you compile.
+	2. Install Vorple per instructions on the vorple website (above). Don't install
+	it system-wide. Put the Extensions and Templates under vladsLabs.materials. Move
+	the modified javascript file to overright the one that comes with Vorple:
+	
+		$ mv vorple.min.js vladsLab.materials/Templates/Vorple/vorple.min.js
 
 	3. Launch the Inform IDE and load the vladsLab.inform project.  The source code 
-	should be visible, and it should compile fine. Make	sure that Inform's 
+	should be visible, and it should compile fine. Make sure that Inform's 
 	settings are are set to "Glulx" as the target VM. 
 
 WARNING!!
