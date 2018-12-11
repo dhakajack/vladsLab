@@ -4,9 +4,9 @@ What is this?
 -------------
 
 This is a short demo by Jack Welch. It gets around the issue of not 
-being able to directly type non-Latin unicode into the I7 parser. 
-It does this by transliterating the input on the fly, before the parser 
-ever see it.
+being able to directly type non-Latin unicode (for this test case, 
+Cyrillic) into the I7 parser. It does this by transliterating the 
+input on the fly, before the parser ever see it.
 
 Give it a try online: 
 https://templaro.com/games/vladsLab/Release1/play.html
