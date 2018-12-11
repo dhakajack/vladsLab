@@ -8,6 +8,9 @@ being able to directly type non-Latin unicode into the I7 parser.
 It does this by transliterating the input on the fly, before the parser 
 ever see it.
 
+Give it a try online: 
+https://templaro.com/games/vladsLab/Release1/play.html
+
 This trick relies on Vorple, a javascript framework that extends I7.
 I took a bludgeon to the core file of Vorple to intercept the text
 submitted on the input line, an HTML text input field on a form, and
