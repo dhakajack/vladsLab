@@ -1,14 +1,66 @@
 The story title is "Лаборатия Влада". 
 
-The story author is "Джек Уэлч".
+The story author is "Джекa Уэлчa". [in genetive]
 
-Chapter 1 - Vorple Set Up
+The story headline is "Интерактивная Литература".
+
+Chapter 2 - Vorple Set Up
 
 Include Vorple  by Juhana Leinonen.
 
 Release along with the "Vorple" interpreter.
 
-Chapter 2 - Grammar Tweaks
+Chapter 3 - Lower Level Tweakage
+
+Include (-
+
+[ Banner;
+   BeginActivity(PRINTING_BANNER_TEXT_ACT);
+   if (ForActivity(PRINTING_BANNER_TEXT_ACT) == false) {
+	   	VM_Style(HEADER_VMSTY);
+		TEXT_TY_Say(Story);
+		VM_Style(NORMAL_VMSTY);
+		new_line;
+		TEXT_TY_Say(Headline);
+		#ifdef Story_Author;
+		print " ";
+		TEXT_TY_Say(Story_Author);
+		#endif; ! Story_Author
+		new_line;
+		VM_Describe_Release();
+		print " / ";
+		TEXT_TY_Say( (+ "Информ " +) );
+		print  "7 ";
+		TEXT_TY_Say( (+ "версия " +) );
+		print (PrintI6Text) NI_BUILD_COUNT, " ";
+		print "(I6/v"; inversion;
+		print " lib ", (PrintI6Text) LibRelease, ") ";
+		#Ifdef STRICT_MODE;
+		print "S";
+		#Endif; ! STRICT_MODE
+		#Ifdef DEBUG;
+		print "D";
+		#Endif; ! DEBUG
+		new_line;
+    }
+    EndActivity(PRINTING_BANNER_TEXT_ACT);
+];
+-) Instead of "Banner" in "Printing.i6t".
+
+Include (-
+
+[VM_Describe_Release i;
+	TEXT_TY_Say( (+ "Выпуск " +) );
+	@aloads ROM_GAMERELEASE 0 i;
+	print i;
+	print " / ";
+	TEXT_TY_Say( (+ "Серийный номер " +) );
+	for (i=0 : i<6 : i++) print (char) ROM_GAMESERIAL->i;
+];
+
+-) Instead of "Release Number" in "Glulx.i6t".
+
+Chapter 4 - Grammar Tweaks
 
 The indefinite article of things is usually "".
 
@@ -30,7 +82,7 @@ Rule for listing nondescript items:
 	
 Understand "ya/menya" as yourself.
 
-Chapter 3 - World
+Chapter 5 - World
 
 The Laboratory is a room.  The description of the Laboratory is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name of the laboratory is "Лаборатория". 
 
@@ -66,7 +118,7 @@ A cucumber is edible. It is on the dining table. The description of the cucumber
 
 A spoon is on the dining table. The description of the spoon is "Маленькая пластиковая ложка". The printed name of the spoon is "ложку". Understand "malen&kaya/malen&kuyu/lozhka/lozhku" as the spoon.
 
-Chapter 4 - Transliterations
+Chapter 6 - Transliterations
 
 [clear definitions]
 
@@ -406,12 +458,12 @@ Understand "yugo-zapad" as southwest.
 
 [Woud also need to tweak the yes, no, and oops words at I6 level to be able to react to, for example, quit (y/n?)]
 
-Chapter 5 - Start
+Chapter 7 - Start
 
 When play begins:
 	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. There are plenty of errors, I have not extensively implemented grammar or replaced library responses. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
-Chapter 6 - Some example customized responses
+Chapter 8 - Some example customized responses
 
 After inserting something (called the item) into the box:
 	say "Вы положите [item] в коробку. Теперь в коробке ";	
