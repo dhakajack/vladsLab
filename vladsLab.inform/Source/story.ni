@@ -1,4 +1,6 @@
-"Vlad's Lab" by Welch, Jack  [E]
+The story title is "Лаборатия Влада". 
+
+The story author is "Джек Уэлч".
 
 Chapter 1 - Vorple Set Up
 
@@ -32,6 +34,8 @@ Chapter 3 - World
 
 The Laboratory is a room.  The description of the Laboratory is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name of the laboratory is "Лаборатория". 
 
+Bob is a person. Bob is in the laboratory.
+
 The worktable is a supporter in the Laboratory. The description of the worktable is "Изношенный рабочий стол." The printed name of the worktable is "рабочий стол". Understand "rabochij/stol" as the worktable.
 
 A box is an open container in the laboratory. The description of the box is "Картонная коробка." The printed name of the box is "[if the number of things in the box is zero]пустую [end if]коробку". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box.
@@ -64,6 +68,190 @@ A spoon is on the dining table. The description of the spoon is "Маленьк�
 
 Chapter 4 - Transliterations
 
+[clear definitions]
+
+Understand nothing as waiting.
+
+Understand the command "take" as something new.
+Understand the command "carry" as something new.
+Understand the command "hold" as something new.
+Understand the command "get" as something new.
+Understand the command "pick" as something new.
+Understand the command "stand" as something new.
+Understand the command "remove" as something new.
+Understand the command "shed" as something new.
+Understand the command "doff" as something new.
+Understand the command "disrobe" as something new.
+Understand the command "don" as something new.
+Understand the command "wear" as something new.
+Understand the command "put" as something new.
+Understand the command "drop" as something new.
+Understand the command "throw" as something new.
+Understand the command "discard" as something new.
+Understand the command "give" as something new.
+Understand the command "pay" as something new.
+Understand the command "offer" as something new.
+Understand the command "feed" as something new.
+Understand the command "present" as something new.
+Understand the command "display" as something new.
+Understand the command "show" as something new.
+Understand the command "go" as something new.
+Understand the command "walk" as something new.
+Understand the command "leave" as something new.
+Understand the command "run" as something new.
+Understand the command "inventory" as something new.
+Understand the command "i" as something new.
+Understand the command "inv" as something new.
+Understand the command "look" as something new.
+Understand the command "l" as something new.
+Understand the command "consult" as something new.
+Understand the command "open" as something new.
+Understand the command "unwrap" as something new.
+Understand the command "uncover" as something new.
+Understand the command "shut" as something new.
+Understand the command "cover" as something new.
+Understand the command "close" as something new.
+Understand the command "cross" as something new.
+Understand the command "enter" as something new.
+Understand the command "sit" as something new.
+Understand the command "exit" as something new.
+Understand the command "out" as something new.
+Understand the command "x" as something new.
+Understand the command "watch" as something new.
+Understand the command "describe" as something new.
+Understand the command "check" as something new.
+Understand the command "examine" as something new.
+Understand the command "read" as something new.
+Understand the command "yes" as something new.
+Understand the command "y" as something new.
+Understand the command "yes" as something new.
+Understand the command "no" as something new.
+Understand the command "sorry" as something new.
+Understand the command "shit" as something new.
+Understand the command "fuck" as something new.
+Understand the command "damn" as something new.
+Understand the command "bother" as something new.
+Understand the command "curses" as something new.
+Understand the command "drat" as something new.
+Understand the command "darn" as something new.
+Understand the command "search" as something new.
+Understand the command "wave" as something new.
+Understand the command "adjust" as something new.
+Understand the command "set" as something new.
+Understand the command "drag" as something new.
+Understand the command "pull" as something new.
+Understand the command "push" as something new.
+Understand the command "move" as something new.
+Understand the command "shift" as something new.
+Understand the command "clear" as something new.
+Understand the command "press" as something new.
+Understand the command "rotate" as something new.
+Understand the command "twist" as something new.
+Understand the command "unscrew" as something new.
+Understand the command "screw" as something new.
+Understand the command "turn" as something new.
+Understand the command "switch" as something new.
+Understand the command "lock" as something new.
+Understand the command "unlock" as something new.
+Understand the command "attack" as something new.
+Understand the command "break" as something new.
+Understand the command "smash" as something new.
+Understand the command "hit" as something new.
+Understand the command "fight" as something new.
+Understand the command "torture" as something new.
+Understand the command "wreck" as something new.
+Understand the command "crack" as something new.
+Understand the command "destroy" as something new.
+Understand the command "murder" as something new.
+Understand the command "kill" as something new.
+Understand the command "punch" as something new.
+Understand the command "thump" as something new.
+Understand the command "wait" as something new.
+Understand the command "z" as something new.
+Understand the command "answer" as something new.
+Understand the command "say" as something new.
+Understand the command "shout" as something new.
+Understand the command "speak" as something new.
+Understand the command "tell" as something new.
+Understand the command "ask" as something new.
+Understand the command "eat" as something new.
+Understand the command "sleep" as something new.
+Understand the command "nap" as something new.
+Understand the command "sing" as something new.
+Understand the command "climb" as something new.
+Understand the command "scale" as something new.
+Understand the command "purchase" as something new.
+Understand the command "buy" as something new.
+Understand the command "squash" as something new.
+Understand the command "squeeze" as something new.
+Understand the command "dive" as something new.
+Understand the command "swing" as something new.
+Understand the command "blow" as something new.
+Understand the command "pray" as something new.
+Understand the command "wake" as something new.
+Understand the command "awake" as something new.
+Understand the command "awaken" as something new.
+Understand the command "kiss" as something new.
+Understand the command "embrace" as something new.
+Understand the command "hug" as something new.
+Understand the command "think" as something new.
+Understand the command "sniff" as something new.
+Understand the command "smell" as something new.
+Understand the command "listen" as something new.
+Understand the command "hear" as something new.
+Understand the command "taste" as something new.
+Understand the command "feel" as something new.
+Understand the command "touch" as something new.
+Understand the command "rub" as something new.
+Understand the command "shine" as something new.
+Understand the command "polish" as something new.
+Understand the command "sweep" as something new.
+Understand the command "clean" as something new.
+Understand the command "dust" as something new.
+Understand the command "wipe" as something new.
+Understand the command "scrub" as something new.
+Understand the command "attach" as something new.
+Understand the command "fix" as something new.
+Understand the command "fasten" as something new.
+Understand the command "tie" as something new.
+Understand the command "light" as something new.
+Understand the command "burn" as something new.
+Understand the command "swallow" as something new.
+Understand the command "sip" as something new.
+Understand the command "drink" as something new.
+Understand the command "fill" as something new.
+Understand the command "slice" as something new.
+Understand the command "prune" as something new.
+Understand the command "chop" as something new.
+Understand the command "cut" as something new.
+Understand the command "jump" as something new.
+Understand the command "skip" as something new.
+Understand the command "hop" as something new.
+Understand the command "score" as something new.
+Understand the command "quit" as something new.
+Understand the command "q" as something new.
+Understand the command "save" as something new.
+Understand the command "restart" as something new.
+Understand the command "restore" as something new.
+Understand the command "version" as something new.
+Understand the command "script" as something new.
+Understand the command "transcript" as something new.
+Understand the command "superbrief" as something new.
+Understand the command "short" as something new.
+Understand the command "verbose" as something new.
+Understand the command "long" as something new.
+Understand the command "brief" as something new.
+Understand the command "normal" as something new.
+Understand the command "nouns" as something new.
+Understand the command "pronouns" as something new.
+Understand the command "notify" as something new.
+Understand the command "insert" as something new.
+Understand the command "smash" as something new.
+Understand the command "purchase" as something new.
+Understand the command "squash" as something new.
+Understand the command "taste" as something new.
+Understand the command "fasten" as something new.
+
 [Действия, Группа 1]
 
 Understand the command "konets" as "quit".
@@ -76,56 +264,83 @@ Understand the command "sokhranit&" as "save".
 Understand the command "schet" as "score".
 Understand the command "otchet" as "transcript".
 Understand the command "skript" as "transcript".
+Understand "skript vkl" as switching the story transcript on.
+Understand "otchet vkl" as switching the story transcript on.
+Understand "skript vykl" as switching the story transcript off.
 Understand "otchet vykl" as switching the story transcript off.
 Understand the command "versiya" as "version".
+["otkat" --> "undo".]
 
 [Действия, Группа 1]
 
-Understand the command "osm" as "look".
-Understand the command "osmotret&sya" as "look".
-Understand the command "obyskat&" as "search".
-Understand the command "inventar&" as "inventory".
+Understand "osm" as looking.
+[also, would like "o" to be a shortcut]
+Understand "osmotret&sya" as looking.
+Understand "postmotret& vokrug" as looking.
+Understand "postmotret& na [something visible]" as examining.
+Understand "izuchit& [something]" as examining.
+Understand "obyskat& [something]" as searching.
+Understand "i" as taking inventory.
+Understand "inv" as taking inventory.
+Understand "inventar&" as taking inventory.
 Understand  "vzyat& [something]" as taking.
 Understand  "vzyat& [things inside] iz [something]" as removing it from.
-Understand "polozhit& [something]" as dropping.
+Understand "polozhit& [something preferably held]" as dropping.
+Understand "vybrocit& [something preferably held]" as dropping.
 Understand "polozhit& [other things] na [something]" as putting it on.
 Understand "polozhit& [other things] v [something]" as inserting it into.
+[бросить в]
 Understand "idti [direction]" as going.
 Understand "vojti v [something]" or "vojti" as entering.
 Understand "vyjti" as exiting.
+Understand "slezt&" as exiting.
 Understand "otperet& [something] [other things]" as unlocking it with.
 Understand "zaperet& [something] [other things]" as locking it with. [second noun should be in the instrumental]
 Understand "vklyuchit& [something]" as switching on.
 Understand "vyklyuchit& [something]" as switching off.
-Understand the command "otkryt&" as "open".
-Understand the command "zakryt&" as "close".
-Understand "cnyat& [something preferably held]" as taking off.
-Understand the command "nadet&" as "wear".
-Understand the command "s#est&" as "eat".
-Understand the command "zhdat&" as "wait".
+Understand  "otkryt& [something]" as opening.
+Understand  "zakryt& [something]" as closing.
+Understand "snyat& [something preferably held]" as taking off.
+Understand "nadet& [something preferably held]" as wearing.
+Understand "s#est&" as eating.
+Understand "zh" as waiting.
+Understand  "zhdat&" as waiting.
+
 
 [Действия, Группа 3]
 
 Understand "posmotret& pod [something]" as looking under.
-Understand the command "poslushat&" as "listen".
-Understand the command "liznut&" as "taste".
-Understand the command "dotronut&sya" as "touch".
-Understand the command "tolknut&" as "pull".
-Understand the command "potyanut&" as "push".
-Understand the command "pomakhat&" as "wave".
+Understand "poslushat&" as listening.
+Understand "slushat&" as listening.
+Understand "poslushat&" as listening.
+Understand "slushat&" as listening.
+Understand "poslushat& [something]" as listening to.
+Understand "slushat& [something]" as listening to.
+Understand "liznut& [something]" as tasting.
+Understand "dotronut&sya [something]" as touching.
+Understand "kosnut&sya [something]" as touching.
+Understand "tolknut&" as pulling.
+Understand "potyanut& [something]" as pushing.
 Understand the command "povernut&" as "turn".
 Understand "tolknut& [something] na [a direction]" as pushing it to.
 Understand "privyazat& [something] k [something]" as tying it to.
-Understand the command "vypit&" as "drink".
-Understand the command "udarit&" as "attack".
-Understand  the command "pokachat&" as "swing".
-Understand  the command "poteret&" as "rub".
+[СВЯЗАТЬ ?]
+Understand "pit& [something]" as drinking.
+Understand "vypit& [something]" as drinking.
+Understand "udarit& [something]" as attacking.
+Understand "rezat& [something]" as attacking.
+Understand "slomat& [something]" as attacking.
+Understand "pokachat& [something]" as swinging.
+Understand "kachnut& [something]" as swinging.
+Understand "poteret& [something]" as rubbing.
 Understand "utanovit& [something] na [text]" as setting it to.
-Understand the command "kupit&" as "buy".
+Understand "kupit& [something]" as buying.
+Understand "makhnut& [something]" as buying.
 Understand "zalezt& na [something]" as climbing.
-Understand the command "sdavit&" as "squeeze".
-Understand the command "szhech&" as "burn".
-Understand the command "razrezat&" as "cut".
+Understand "sdavit& [something]" as squeezing.
+Understand "szhech& [something]" as burning.
+Understand "szhat& [something]" as burning.
+Understand "zazhech& [something]" as burning.
 Understand "poiskat& pro [text] v [something]" as consulting it about (with nouns reversed).
 Understand "rasskazat& [someone] pro [text]" as telling it about.
 Understand "ckazat& [someone] chto [text]" as answering it that. [cannot say "сказать (что-то) (кому)" because second noun cannot directly follow a text token ]
@@ -133,26 +348,61 @@ Understand "sprosit& [someone] pro [text]" as asking it about.
 Understand "dat& [something preferably held] [someone]" as giving it to.
 Understand "pokazat& [something preferably held] [someone]" as showing it to.
 Understand "poprosit& u [someone] [something]" as asking it for.
-Understand the command "razbudit&" as "wake".
-Understand the command "potselovat&" as "kiss".
-Understand the command "spat&" as "sleep".
-Understand  "pomakhat&" as waving hands.
-Understand the command "izvinit&sya" as "sorry".
-Understand the command "podprygnut&" as "jump".
-Understand the command "podumat&" as "think".
-Understand the command "ponyukhat&" as "smell".
+Understand "razbudit& [someone]" as waking.
+Understand "prosnut&sya" as waking up.
+Understand "potselovat& [someone]" as kissing.
+Understand "spat&" as sleeping.
+Understand "pomakhat&" as waving hands.
+Understand "izvinit&sya" as saying sorry.
+Understand "podprygnut&" as jumping.
+Understand "prygnut&" as jumping.
+Understand "podumat&" as thinking.
+Understand "dumat&" as thinking.
+Understand "ponyukhat& [something]" as smelling.
+Understand "nyukhat& [something]" as smelling.
+Understand "ponyukhat&" as smelling.
+Understand "nyukhat&" as smelling.
 Understand "idti" as going.
-Understand the command "da" as "yes".
-Understand the command "net" as "no".
+Understand "d" as saying yes.
+Understand "n" as saying no.
+Understand "da" as saying yes.
+Understand "net" as saying no.
+
+[some verbs no longer defined as of this version
+dig 
+sing
+pray
+talk to 
+info - about
+spravka - hint]
 
 [Направления]
 
 Understand "sever" as north.
-Understand "yug" as south.
+Understand "yug" or "yu" as south.
 Understand "vostok" as east.
+Understand "v" as east.
 Understand "zapad" as west.
+Understand "z" as west.
+Understand "vniz" as down.
+Understand "vn" as down.
+Understand "vverkh" as up.
+Understand "vv" as up.
+Understand "sv" as northeast.
+Understand "severo-vostok" as northeast.
+Understand "sz" as northwest.
+Understand "severo-zapad" as northwest.
+Understand "yuv" as southeast.
+Understand "yugo-vostok" as southeast.
+Understand "yuz" as southwest.
+Understand "yugo-zapad" as southwest.
 
-[for the sake of the demo, I did not implement single letter commands like "o" for look, "ю" for south, but it would make sensein a more complete implementation according to whatever conventions players are used to.]
+
+
+
+
+
+
 
 [Woud also need to tweak the yes, no, and oops words at I6 level to be able to react to, for example, quit (y/n?)]
 
@@ -184,3 +434,6 @@ After inserting something (called the item) into the box:
 			
 After eating something:
 	say "[one of]Ммммм[or]Не плохо[or]Отлично[or]Как вкусно[in random order]."
+	
+
+
