@@ -1,6 +1,6 @@
 The story title is "Лаборатия Влада". 
 
-The story author is "Джекa Уэлчa". [in genetive]
+The story author is "Джекa Уэлчa". [in genitive]
 
 The story headline is "Интерактивная Литература".
 
@@ -11,6 +11,61 @@ Include Vorple  by Juhana Leinonen.
 Release along with the "Vorple" interpreter.
 
 Chapter 3 - Lower Level Tweakage
+
+Include (-
+
+Constant AGAIN1__WD     = 'snova';
+Constant AGAIN2__WD     = 'e//';
+Constant AGAIN3__WD     = 'opyat&';
+Constant OOPS1__WD      = 'oj';
+Constant OOPS2__WD      = '!//';
+Constant OOPS3__WD      = 'oj';
+Constant UNDO1__WD      = 'otmena';
+Constant UNDO2__WD      = 'otmena';
+Constant UNDO3__WD      = 'otmena';
+
+Constant ALL1__WD       = 'all';
+Constant ALL2__WD       = 'each';
+Constant ALL3__WD       = 'every';
+Constant ALL4__WD       = 'everything';
+Constant ALL5__WD       = 'both';
+Constant AND1__WD       = 'and';
+Constant AND2__WD       = 'and';
+Constant AND3__WD       = 'and';
+Constant BUT1__WD       = 'but';
+Constant BUT2__WD       = 'except';
+Constant BUT3__WD       = 'but';
+Constant ME1__WD        = 'me';
+Constant ME2__WD        = 'myself';
+Constant ME3__WD        = 'self';
+Constant OF1__WD        = 'of';
+Constant OF2__WD        = 'of';
+Constant OF3__WD        = 'of';
+Constant OF4__WD        = 'of';
+Constant OTHER1__WD     = 'another';
+Constant OTHER2__WD     = 'other';
+Constant OTHER3__WD     = 'other';
+Constant THEN1__WD      = 'then';
+Constant THEN2__WD      = 'then';
+Constant THEN3__WD      = 'then';
+
+Constant NO1__WD        = 'n//';
+Constant NO2__WD        = 'net';
+Constant NO3__WD        = 'danet';
+Constant YES1__WD       = 'd//';
+Constant YES2__WD       = 'da';
+Constant YES3__WD       = 'da';
+
+Constant AMUSING__WD    = 'amusing';
+Constant FULLSCORE1__WD = 'fullscore';
+Constant FULLSCORE2__WD = 'full';
+Constant QUIT1__WD      = 'k//';
+Constant QUIT2__WD      = 'konets';
+Constant RESTART__WD    = 'nachalo';
+Constant RESTORE__WD    = 'vosst';
+
+
+-) instead of "Vocabulary" in "Language.i6t".
 
 Include (-
 
@@ -59,6 +114,8 @@ Include (-
 ];
 
 -) Instead of "Release Number" in "Glulx.i6t".
+
+
 
 Chapter 4 - Grammar Tweaks
 
@@ -306,28 +363,31 @@ Understand the command "fasten" as something new.
 
 [Действия, Группа 1]
 
-Understand the command "konets" as "quit".
-Understand the command "nachalo" as "restart".
-Understand the command "perezapusk" as "restart".
-Understand the command "vosst" as "restore".
-Understand the command "zagruzit&" as "restore".
-Understand the command "sokh" as "save".
-Understand the command "sokhranit&" as "save".
-Understand the command "schet" as "score".
-Understand the command "otchet" as "transcript".
-Understand the command "skript" as "transcript".
+Understand "konets" as quitting the game.
+Understand "k" as quitting the game.
+Understand "nachalo" as restarting the game.
+Understand "perezapusk" as restarting the game.
+Understand "zagruzit&" as restoring the game.
+Understand "vosst" as restoring the game.
+Understand "sokh" as saving the game.
+Understand "sokhranit&" as saving the game.
+Understand "schet" as requesting the score.
+Understand "otchet" as switching the story transcript on.
+Understand "skript" as switching the story transcript on.
 Understand "skript vkl" as switching the story transcript on.
 Understand "otchet vkl" as switching the story transcript on.
 Understand "skript vykl" as switching the story transcript off.
 Understand "otchet vykl" as switching the story transcript off.
-Understand the command "versiya" as "version".
+Understand "versiya" as requesting the story file version.
 ["otkat" --> "undo".]
 
 [Действия, Группа 1]
 
 Understand "osm" as looking.
-[also, would like "o" to be a shortcut]
 Understand "osmotret&sya" as looking.
+Understand "osm [something]" as examining.
+[also, would like "o" to be a shortcut]
+Understand "osmotret&sya [something]" as examining.
 Understand "postmotret& vokrug" as looking.
 Understand "postmotret& na [something visible]" as examining.
 Understand "izuchit& [something]" as examining.
@@ -450,13 +510,22 @@ Understand "yuz" as southwest.
 Understand "yugo-zapad" as southwest.
 
 
+[might need to implement additional properties for directions, like dativePrintName for go к направлению (or maybe just get away with sticking a "у" on the end programmatically?]
 
+The printed name of north is "север".
+The printed name of south is "юг".
+The printed name of east is "восток".
+The printed name of west is "запад".
+The printed name of northeast is "северо-восток".
+The printed name of northwest is "северо-запад".
+The printed name of southeast is "юго-восток".
+The printed name of southwest is "юго-запад".
+The printed name of up is "вверх".
+The printed name of down is "вниз".
 
+[The printed name of inside is "";
+The printed name of outside is "";]
 
-
-
-
-[Woud also need to tweak the yes, no, and oops words at I6 level to be able to react to, for example, quit (y/n?)]
 
 Chapter 7 - Start
 
