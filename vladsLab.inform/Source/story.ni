@@ -17,52 +17,69 @@ Include (-
 Constant AGAIN1__WD     = 'snova';
 Constant AGAIN2__WD     = 'e//';
 Constant AGAIN3__WD     = 'opyat&';
+
 Constant OOPS1__WD      = 'oj';
-Constant OOPS2__WD      = '!//';
+Constant OOPS2__WD      = 'okh';
 Constant OOPS3__WD      = 'oj';
 Constant UNDO1__WD      = 'otmena';
 Constant UNDO2__WD      = 'otmena';
-Constant UNDO3__WD      = 'otmena';
+Constant UNDO3__WD      = 'otkat';
 
-Constant ALL1__WD       = 'all';
-Constant ALL2__WD       = 'each';
-Constant ALL3__WD       = 'every';
-Constant ALL4__WD       = 'everything';
-Constant ALL5__WD       = 'both';
-Constant AND1__WD       = 'and';
-Constant AND2__WD       = 'and';
-Constant AND3__WD       = 'and';
-Constant BUT1__WD       = 'but';
-Constant BUT2__WD       = 'except';
-Constant BUT3__WD       = 'but';
-Constant ME1__WD        = 'me';
-Constant ME2__WD        = 'myself';
-Constant ME3__WD        = 'self';
-Constant OF1__WD        = 'of';
-Constant OF2__WD        = 'of';
-Constant OF3__WD        = 'of';
-Constant OF4__WD        = 'of';
+Constant ALL1__WD       = 'vse';
+Constant ALL2__WD       = 'vsyu';
+Constant ALL3__WD       = 'vsekh';
+Constant ALL4__WD       = 'ves&';
+Constant ALL5__WD       = 'oba';
+
+Constant AND1__WD       = 'i//';
+Constant AND2__WD       = 'i//';
+Constant AND3__WD       = 'plyus';
+
+Constant BUT1__WD       = 'krome';
+Constant BUT2__WD       = 'bez';
+Constant BUT3__WD       = 'minus';
+
+Constant ME1__WD        = 'ya';
+Constant ME2__WD        = 'menya';
+Constant ME3__WD        = 'mne';
+Constant ME4__WD        = 'mnoj';
+Constant ME5__WD        = 'sebya';
+Constant ME6__WD        = 'sebe';
+Constant ME7__WD        = 'soboj';
+
+Constant OF1__WD        = './/';
+Constant OF2__WD        = './/';
+Constant OF3__WD        = './/';
+Constant OF4__WD        = './/';
+
 Constant OTHER1__WD     = 'another';
 Constant OTHER2__WD     = 'other';
 Constant OTHER3__WD     = 'other';
-Constant THEN1__WD      = 'then';
-Constant THEN2__WD      = 'then';
-Constant THEN3__WD      = 'then';
+
+Constant THEN1__WD      = 'zatem';
+Constant THEN2__WD      = 'potom';
+Constant THEN3__WD      = 'posle';
 
 Constant NO1__WD        = 'n//';
 Constant NO2__WD        = 'net';
 Constant NO3__WD        = 'danet';
+
 Constant YES1__WD       = 'd//';
 Constant YES2__WD       = 'da';
 Constant YES3__WD       = 'da';
 
-Constant AMUSING__WD    = 'amusing';
-Constant FULLSCORE1__WD = 'fullscore';
-Constant FULLSCORE2__WD = 'full';
+Constant AMUSING__WD    = 'interes';
+Constant FULLSCORE1__WD = 'poln';
+Constant FULLSCORE2__WD = 'polnschet';
+
 Constant QUIT1__WD      = 'k//';
 Constant QUIT2__WD      = 'konets';
+
 Constant RESTART__WD    = 'nachalo';
-Constant RESTORE__WD    = 'vosst';
+Constant RESTART2__WD =  'perezapusk';
+
+Constant RESTORE__WD    = 'zagr';
+Constant RESTORE__WD2  = 'zagruzit&';
 
 
 -) instead of "Vocabulary" in "Language.i6t".
