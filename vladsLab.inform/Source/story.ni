@@ -12,6 +12,8 @@ Release along with the "Vorple" interpreter.
 
 Chapter 3 - Lower Level Tweakage
 
+The language of play is the Xrussian language.
+
 Include (-
 
 Constant AGAIN1__WD     = 'snova';
@@ -131,6 +133,10 @@ Include (-
 ];
 
 -) Instead of "Release Number" in "Glulx.i6t".
+
+
+
+
 
 
 
@@ -396,14 +402,11 @@ Understand "otchet vkl" as switching the story transcript on.
 Understand "skript vykl" as switching the story transcript off.
 Understand "otchet vykl" as switching the story transcript off.
 Understand "versiya" as requesting the story file version.
-["otkat" --> "undo".]
 
 [Действия, Группа 1]
 
-Understand "osm" as looking.
 Understand "osmotret&sya" as looking.
-Understand "osm [something]" as examining.
-[also, would like "o" to be a shortcut]
+Understand the command "osm" or "o" as "osmotret&sya".
 Understand "osmotret&sya [something]" as examining.
 Understand "postmotret& vokrug" as looking.
 Understand "postmotret& na [something visible]" as examining.
@@ -497,17 +500,15 @@ Understand "n" as saying no.
 Understand "da" as saying yes.
 Understand "net" as saying no.
 
-[some verbs no longer defined as of this version
-dig 
-sing
-pray
-talk to 
-info - about
-spravka - hint]
-
 [Направления]
-
 Understand "sever" as north.
+Understand "s" as north. 
+
+Does the player mean going north:
+	it is very likely.
+	
+[need to disambiguate from "s" for south which is hardcoded into the standard rules.]
+
 Understand "yug" or "yu" as south.
 Understand "vostok" as east.
 Understand "v" as east.
