@@ -135,14 +135,68 @@ Include (-
 -) Instead of "Release Number" in "Glulx.i6t".
 
 
+Chapter 4 - A little grammar
 
+[Yeah, this is definitely not the way that Inform usually approaches grammar, with very concise, low level definitions, but I think it might be practical for me. I don't think this general approach with transliteration, etc., is likely to be used by native Russian speakers or for big projects. In any event, I like the idea of having the grammar all transparently present at the I7 level (although it may make sense to shuffle this off eventually into an extension for re-use). I'm developing this bit by bit, so some early crude attempts will be refined over time, but I have to start somewhere.
 
+An obvious shortcoming of this approach is that input and output are entirely divorced.]
 
+A thing can be female. A thing is usually male.
 
+Case is a kind of value. The cases are nom, gen, dat, acc, ins and pre.
 
-Chapter 4 - Grammar Tweaks
+Multiplicity is a kind of value. The multiplicities are singular and plural.
+
+A thing has a text called base. The base of a thing is usually "".
+A thing has a list of text called inflections.  The inflections of a thing is usually {"","","","","","","","","","","",""}.
+[In the order: nominative singular, genitive singular, dative singular, accusative singular, prepositional singular, instrumental singular, nominative plural, genitive plural, dative plural, accusative plural, prepositional plural, instrumental plural]
+
+The list of text called like stol is always {"","а","у","","ом","е","ы","ов","ам","ы","ами","ах"}.
+
+The list of text called like rastenie is always
+{"е","я","ю","е","ем","и","я","й","ям","я","ями","ях"}. 
 
 The indefinite article of things is usually "".
+
+To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplicity):
+	let the termination be "";
+	if the itemmult is singular:
+		if the itemcase is:
+			-- nom:
+				now the termination is "[entry 1 of the inflections of the item]";
+			-- gen:
+				now the termination is "[entry 2 of the inflections of the item]";
+			-- dat:
+				now the termination is "[entry 3 of the inflections of the item]";
+			-- acc:
+				now the termination is "[entry 4 of the inflections of the item]";
+			-- ins:
+				now the termination is "[entry 5 of the inflections of the item]";
+			-- pre:
+				now the termination is "[entry 6 of the inflections of the item]";		
+	otherwise:[item is plural]
+		if the itemcase is:
+			-- nom:
+				now the termination is "[entry 7 of the inflections of the item]";
+			-- gen:
+				now the termination is "[entry 8 of the inflections of the item]";
+			-- dat:
+				now the termination is "[entry 9 of the inflections of the item]";
+			-- acc:
+				now the termination is "[entry 10 of the inflections of the item]";
+			-- ins:
+				now the termination is "[entry 11 of the inflections of the item]";
+			-- pre:
+				now the termination is "[entry 12 of the inflections of the item]";
+	if the termination matches the regular expression "-.*":
+		replace the regular expression "-(.*)" in the termination with "\1";
+		replace the regular expression "(\w*)\w" in base of the item with "\1";
+	say base of the item;
+	say the termination.			
+
+Chapter 5 - Grammar Tweaks
+
+
 
 Rule for listing nondescript items:
 	let L be a list of things;
@@ -155,26 +209,26 @@ Rule for listing nondescript items:
 		if N is greater than 1 and N is the number of entries in L:
 			say " и ";
 		let E be entry N of L;
-		say "[E]";
+		say "[E in the acc case singular]";
 		if the number of entries in L is greater than 2 and N is less than (the number of entries in L minus 1):
 			say ", ";
 	say "."
 	
 Understand "ya/menya" as yourself.
 
-Chapter 5 - World
+Chapter 6 - World
 
 The Laboratory is a room.  The description of the Laboratory is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name of the laboratory is "Лаборатория". 
 
 Bob is a person. Bob is in the laboratory.
 
-The worktable is a supporter in the Laboratory. The description of the worktable is "Изношенный рабочий стол." The printed name of the worktable is "рабочий стол". Understand "rabochij/stol" as the worktable.
+The worktable is a supporter in the Laboratory. The description of the worktable is "Изношенный рабочий стол." Understand "rabochij/stol" as the worktable. The base of the worktable is "стол". The inflections of the worktable are like stol.
 
-A box is an open container in the laboratory. The description of the box is "Картонная коробка." The printed name of the box is "[if the number of things in the box is zero]пустую [end if]коробку". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box.
+A box is an open container in the laboratory. The description of the box is "Картонная коробка." The printed name of the box is "[if the number of things in the box is zero]пустую [end if]коробку". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. The base of box is "коробк". The inflections of box are {"а","ы","е","у","ой","е","ы","-ок","ам","ы","ами","ах"}. 
 
 The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name of the hall is "Коридор". 
 
-The plant is in the hall. The description of the plant is "Растение без цветов." The printed name of the plant is "растение".  Understand "rastenie" as the plant.
+The plant is in the hall. The description of the plant is "Растение без цветов." The printed name of the plant is "растение".  Understand "rastenie" as the plant. The base of plant is "растени". The inflections of plant are like rastenie.
 
 The portrait is in the hall. The description of the portrait is "Портрет старика." The printed name of the portrait is "портрет". Understand "portret/starika" as portrait.
 
@@ -198,7 +252,7 @@ A cucumber is edible. It is on the dining table. The description of the cucumber
 
 A spoon is on the dining table. The description of the spoon is "Маленькая пластиковая ложка". The printed name of the spoon is "ложку". Understand "malen&kaya/malen&kuyu/lozhka/lozhku" as the spoon.
 
-Chapter 6 - Transliterations
+Chapter 7 - Transliterations
 
 [clear definitions]
 
@@ -545,12 +599,12 @@ The printed name of down is "вниз".
 The printed name of outside is "";]
 
 
-Chapter 7 - Start
+Chapter 8 - Start
 
 When play begins:
 	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. There are plenty of errors, I have not extensively implemented grammar or replaced library responses. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
-Chapter 8 - Some example customized responses
+Chapter 9 - Some example customized responses
 
 After inserting something (called the item) into the box:
 	say "Вы положите [item] в коробку. Теперь в коробке ";	
@@ -574,5 +628,12 @@ After inserting something (called the item) into the box:
 After eating something:
 	say "[one of]Ммммм[or]Не плохо[or]Отлично[or]Как вкусно[in random order]."
 	
+Chapter 10 - Tests
 
+Declining is an action applying to one visible thing. Understand "decline [any things]" as declining.
+
+Carry out declining:
+	repeat with itemmult running through multiplicities:
+		repeat with itemcase running through cases:
+			say "[noun in the itemcase case itemmult]."
 
