@@ -141,7 +141,7 @@ Chapter 4 - A little grammar
 
 An obvious shortcoming of this approach is that input and output are entirely divorced.]
 
-A thing can be female. A thing is usually male.
+
 
 Case is a kind of value. The cases are nom, gen, dat, acc, ins and pre.
 
@@ -151,14 +151,48 @@ A thing has a text called base. The base of a thing is usually "".
 A thing has a list of text called inflections.  The inflections of a thing is usually {"","","","","","","","","","","",""}.
 [In the order: nominative singular, genitive singular, dative singular, accusative singular, prepositional singular, instrumental singular, nominative plural, genitive plural, dative plural, accusative plural, prepositional plural, instrumental plural]
 
+[first declension]
+
+The list of text called like kniga is always
+ {"а","ы","е","у","ой","е","ы","","ам","ы","ами","ах"}. 
+
+The list of text called like korobka is always
+ {"а","ы","е","у","ой","е","ы","~о","ам","ы","ами","ах"}. 
+
+The list of text called like armiya is always 
+{"я","и","и","ю","ей","и","и","й","ям","и","ями","ях"}. 
+
+The list of text called like zemlya is always
+{"я","и","е","ю","ей","е","и","-ель","ям","и","ями","ях"}.
+
+The list of text called like kasha is always
+ {"а","и","е","у","ей","е","и","","ам","и","ами","ах"}. 
+
+[second declension]
+
 The list of text called like stol is always {"","а","у","","ом","е","ы","ов","ам","ы","ами","ах"}.
+
+The list of text called like ogurets is always 
+{"~e","а","у","~e","ом","е","ы","ов","ам","ы","ами","ах"}.
+
+The list of text called like yabloko is always 
+{"о","а","у","о","ом","е","и","","ам","и","ами","ах"}.
 
 The list of text called like rastenie is always
 {"е","я","ю","е","ем","и","я","й","ям","я","ями","ях"}. 
 
-The indefinite article of things is usually "".
+[third declension]
+
+The list of text called like tetrad& is always
+{"","-и","-и","","ю","-и","-и","-ей","-ям","-и","-ями","-ях"}.
+
+The list of text called like doch& is always
+ {"","-ери","-ери","","ерю","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}.
+
+The indefinite article of a thing is "".
 
 To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplicity):
+	let B be the base of the item;
 	let the termination be "";
 	if the itemmult is singular:
 		if the itemcase is:
@@ -189,16 +223,20 @@ To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplici
 			-- pre:
 				now the termination is "[entry 12 of the inflections of the item]";
 	if the termination matches the regular expression "-.*":
+		[chop off the final letter and add the ending after the minus sign]
 		replace the regular expression "-(.*)" in the termination with "\1";
-		replace the regular expression "(\w*)\w" in base of the item with "\1";
-	say base of the item;
+		replace the regular expression "(\w*)\w" in B with "\1";
+	if the termination matches the regular expression "~.*":
+		[insert the ending after the tilde before the last letter of the stem]
+		replace the regular expression "~(.*)" in the termination with "\1";
+		replace the regular expression "(\w*)(\w)" in B with "\1[termination]\2";
+		now the termination is "";
+	say B;
 	say the termination.			
 
 Chapter 5 - Grammar Tweaks
 
-
-
-Rule for listing nondescript items:
+[Rule for listing nondescript items:
 	let L be a list of things;
 	say "Ты видишь здесь ";
 	repeat with item running through things enclosed by the location:
@@ -212,7 +250,7 @@ Rule for listing nondescript items:
 		say "[E in the acc case singular]";
 		if the number of entries in L is greater than 2 and N is less than (the number of entries in L minus 1):
 			say ", ";
-	say "."
+	say "."]
 	
 Understand "ya/menya" as yourself.
 
@@ -220,23 +258,31 @@ Chapter 6 - World
 
 The Laboratory is a room.  The description of the Laboratory is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name of the laboratory is "Лаборатория". 
 
-Bob is a person. Bob is in the laboratory.
+The daughter is in the laboratory. The description of your daughter is "Ваша дочь." Understand "doch&" as daughter. The base of daughter is "дочь". The inflections of daughter are like doch&.
 
 The worktable is a supporter in the Laboratory. The description of the worktable is "Изношенный рабочий стол." Understand "rabochij/stol" as the worktable. The base of the worktable is "стол". The inflections of the worktable are like stol.
 
-A box is an open container in the laboratory. The description of the box is "Картонная коробка." The printed name of the box is "[if the number of things in the box is zero]пустую [end if]коробку". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. The base of box is "коробк". The inflections of box are {"а","ы","е","у","ой","е","ы","-ок","ам","ы","ами","ах"}. 
+The workbook is in the Laboratory. The description of the workbook is "Тетрадь с миллиметровкой." Understand "tetrad&" as the workbook. The base of the workbook is "тетрадь". The inflections of the workbook are like tetrad&.
+
+A box is an open container in the laboratory. The description of the box is "Картонная коробка." Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. The base of box is "коробк". The inflections of box are like korobka.
 
 The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name of the hall is "Коридор". 
 
+The sabre is in the hall. The description of the sabre is "Ржавая сабля." Understand "sablya" as the sabre. The base of sabre is "сабл". The inflections of sabre are like zemlya.
+
 The plant is in the hall. The description of the plant is "Растение без цветов." The printed name of the plant is "растение".  Understand "rastenie" as the plant. The base of plant is "растени". The inflections of plant are like rastenie.
 
-The portrait is in the hall. The description of the portrait is "Портрет старика." The printed name of the portrait is "портрет". Understand "portret/starika" as portrait.
+The portrait is in the hall. The description of the portrait is "Портрет старика." The printed name of the portrait is "портрет". Understand "portret/starika" as portrait. The base of portrait is "портрет". The inflections of portrait are like stol.
+
+The book is in the hall. The description of the book is "Толстая книга." Understand "kniga/knigu" as the book. The base of book is "книг". The inflections of the book are like kniga.
+
+The mummy is in the hall. The description of the mummy is "Египетские мумии." Understand "mumiya/mumiyu" as the mummy. The base of mummy is "муми". The inflections of mummy are like armiya.
 
 The bathroom is west from the hall. The description of the bathroom is "Ничем не примечательная ванная комната. Центральный коридор находится к востоку." The printed name of the bathroom is "Санузел".
 
-The toilet is a supporter in the bathroom. The description of the toilet is "Белый туалет." The printed name of the toilet is "туалет". Understand "belyj/tualet/tualete" as the toilet. 
+The toilet is a supporter in the bathroom. The description of the toilet is "Белый унитаз." Understand "belyj/unitaz" as the toilet. The base of toilet is "унитаз". The inflections of the toilet are like stol.
 
-The sink is in the bathroom. It is fixed in place. The description of the sink is "Маленькая раковина. На данный момент, похоже, сломан." The printed name of the sink is "раковину". Understand "rakovina/rakovinu/rakovine" as the sink.
+The sink is in the bathroom. It is fixed in place. The description of the sink is "Маленькая раковина. На данный момент, похоже, сломан." Understand "rakovina/rakovinu/rakovine" as the sink. The base of sink is "раковин". The inflections of sink are like kniga.
 
 The bathtub is an open container in the bathroom. It is fixed in place. The description of the bathtub is "Чугунная ванна.". The printed name of the bathtub is "ванна". Understand "vanna/vannu/vanne" as the bathtub.
 
@@ -246,11 +292,11 @@ The cafeteria is east from the hall. "Место, где все обедают. 
 
 The dining table is in the cafeteria. It is a supporter. The description of the table is "Длинный деревянный стол." The printed name of the dining table is "обеденный стол". Understand "dlinnyj/derevyannyj/stol" as the dining table.
 
-A slice of bread is edible. It is on the dining table. The description of the slice of bread is "Густой ломтик вкусного хлеба." The printed name of the slice of bread is "хлеб". Understand "gustoj/lomtik/vkusnogo/khleba/vkusnyj/khleb" as the slice of bread.
+A cucumber is edible. It is on the dining table. The description of the cucumber is "Спелый огурец." Understand "spelyj/ogurets" as the cucumber. The base of cucumber is "огурц". The inflections of cucumber are like ogurets.
 
-A cucumber is edible. It is on the dining table. The description of the cucumber is "Спелый огурец." The printed name of the cucumber is "огурец". Understand "spelyj/ogurets" as the cucumber.
+The kasha is edible. It is on the dining table. The description of the kasha is "Каша без молока." Understand "kasha/kashu" as kasha. The base of kasha is "каш". The inflections of kasha are like kasha.
 
-A spoon is on the dining table. The description of the spoon is "Маленькая пластиковая ложка". The printed name of the spoon is "ложку". Understand "malen&kaya/malen&kuyu/lozhka/lozhku" as the spoon.
+The apple is edible. It is on the dining table. The description of the apple is "Красное яблоко." Understand "yabloko" as the apple. The base of apple is "yablok". The inflections of apple are like yabloko.
 
 Chapter 7 - Transliterations
 
