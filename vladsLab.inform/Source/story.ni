@@ -152,7 +152,7 @@ A thing has a list of text called inflections.  The inflections of a thing is us
 A thing has a text called modifier. The modifier of a thing is usually "". 
 [The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
 
-
+Section 1 - Decline Nouns
 
 [Noun endings -- at some point, consider doing these algorithmically, although I think there will always be a need for overrides where orthography is irregular.
 
@@ -243,6 +243,8 @@ To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplici
 	say B;
 	say the termination.			
 	
+Section 2 - Decline Long From Adjectives
+	
 [Algorithmic declension of regular long form adjectives]
 To say (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
 	if item is empty:
@@ -254,9 +256,7 @@ To say (item - text) in the (itemcase - a case) case (itemgender - gender) gende
 	let termination be stem;
 	let newterm be "";
 	replace the regular expression "(\w*)(\w{3})" in stem with "\1"; [extract stem]
-	say "stem: [stem] ";
 	replace the regular expression "(\w*)(\w{3})" in termination with "\2"; [extract terminal three characters, a consonant, a vowel and an й from the male nominative singular exemplar.]
-	say "termination [termination] ";
 	let category be 1; [default to hard consonant stem];
 	[	
 		#		category
@@ -281,7 +281,6 @@ To say (item - text) in the (itemcase - a case) case (itemgender - gender) gende
 	if category is 1 and penultimate is not "ы":
 		say "ERROR: hard consonant adjective, but termination is not ы";
 		the rule fails;
-	say "Category: [category] ";
 	if the itemmult is:
 		-- plural:
 			if itemcase is:[collapse redundancies]
@@ -404,10 +403,24 @@ To say (item - text) in the (itemcase - a case) case (itemgender - gender) gende
 						otherwise:
 							let newterm be "ом";
 	say "[stem][antepenultimate][newterm]".
+	
+
+Section 3 - Printed Name Generation
+
+To say printed name of (item - a thing) in the (itemcase - a case) case:
+	let IG be the gender of the item;
+	let IM be singular;
+	if the item is plural-named:
+		let the IM be plural;
+	if modifier of the item is not empty:
+		say modifier of the item in the itemcase case IG gender IM;
+		say " ";
+	say item in the itemcase case IM.
+
 
 Chapter 5 - Grammar Tweaks
 
-[Rule for listing nondescript items:
+Rule for listing nondescript items:
 	let L be a list of things;
 	say "Ты видишь здесь ";
 	repeat with item running through things enclosed by the location:
@@ -418,10 +431,10 @@ Chapter 5 - Grammar Tweaks
 		if N is greater than 1 and N is the number of entries in L:
 			say " и ";
 		let E be entry N of L;
-		say "[E in the acc case singular]";
+		say "[printed name of E in the acc case]";
 		if the number of entries in L is greater than 2 and N is less than (the number of entries in L minus 1):
 			say ", ";
-	say "."]
+	say "."
 	
 Understand "ya/menya" as yourself.
 
