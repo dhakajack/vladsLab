@@ -12,8 +12,6 @@ Release along with the "Vorple" interpreter.
 
 Chapter 3 - Lower Level Tweakage
 
-The language of play is the Xrussian language.
-
 Include (-
 
 Constant AGAIN1__WD     = 'snova';
@@ -141,15 +139,24 @@ Chapter 4 - A little grammar
 
 An obvious shortcoming of this approach is that input and output are entirely divorced.]
 
-
-
 Case is a kind of value. The cases are nom, gen, dat, acc, ins and pre.
 
 Multiplicity is a kind of value. The multiplicities are singular and plural.
 
+Gender is a kind of value. The genders are m, f, and n.
+
+A thing has a gender. The gender of a thing is usually m.
 A thing has a text called base. The base of a thing is usually "".
 A thing has a list of text called inflections.  The inflections of a thing is usually {"","","","","","","","","","","",""}.
-[In the order: nominative singular, genitive singular, dative singular, accusative singular, prepositional singular, instrumental singular, nominative plural, genitive plural, dative plural, accusative plural, prepositional plural, instrumental plural]
+
+A thing has a text called modifier. The modifier of a thing is usually "". 
+[The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
+
+
+
+[Noun endings -- at some point, consider doing these algorithmically, although I think there will always be a need for overrides where orthography is irregular.
+
+In the order: nominative singular, genitive singular, dative singular, accusative singular, prepositional singular, instrumental singular, nominative plural, genitive plural, dative plural, accusative plural, prepositional plural, instrumental plural]
 
 [first declension]
 
@@ -163,7 +170,7 @@ The list of text called like armiya is always
 {"я","и","и","ю","ей","и","и","й","ям","и","ями","ях"}. 
 
 The list of text called like zemlya is always
-{"я","и","е","ю","ей","е","и","-ель","ям","и","ями","ях"}.
+{"я","и","е","ю","ей","е","и","~еь","ям","и","ями","ях"}.
 
 The list of text called like kasha is always
  {"а","и","е","у","ей","е","и","","ам","и","ами","ах"}. 
@@ -227,12 +234,176 @@ To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplici
 		replace the regular expression "-(.*)" in the termination with "\1";
 		replace the regular expression "(\w*)\w" in B with "\1";
 	if the termination matches the regular expression "~.*":
-		[insert the ending after the tilde before the last letter of the stem]
-		replace the regular expression "~(.*)" in the termination with "\1";
-		replace the regular expression "(\w*)(\w)" in B with "\1[termination]\2";
-		now the termination is "";
+		[insert the letter after the tilde before the last letter of the stem, then add the rest of the termination]
+		let T2 be the termination;
+		replace the regular expression "~(\w)(.*)" in T2 with "\2";
+		replace the regular expression "~(\w)(.*)" in the termination with "\1";
+		replace the regular expression "(\w*)(\w)" in B with "\1[termination]\2[T2]";
+		let termination be "";
 	say B;
 	say the termination.			
+	
+[Algorithmic declension of regular long form adjectives]
+To say (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
+	if item is empty:
+		 the rule succeeds; [if there is no adjective, end processing here.]
+	if (itemcase is nom and itemgender is m and itemmult is singular) or (itemcase is acc and itemgender is m and itemmult is singular):
+		say item;
+		the rule succeeds; [if it's nom masc singular just use the exemplar.]
+	let stem be the item; 
+	let termination be stem;
+	let newterm be "";
+	replace the regular expression "(\w*)(\w{3})" in stem with "\1"; [extract stem]
+	say "stem: [stem] ";
+	replace the regular expression "(\w*)(\w{3})" in termination with "\2"; [extract terminal three characters, a consonant, a vowel and an й from the male nominative singular exemplar.]
+	say "termination [termination] ";
+	let category be 1; [default to hard consonant stem];
+	[	
+		#		category
+				________________________________
+		1		hard consonant stem
+		2		нь
+		3		stressed stem (like большой)
+		4		к, г, х
+		5		sibilants (ж, ш, щ, ч)
+       ]
+	let antepenultimate be character number 1 in termination;
+	let penultimate be character number 2 in termination;
+	if antepenultimate is "н":
+		if penultimate is "и":
+			let category be 2; [otherwise it is assumed the is н hard]
+	otherwise if penultimate is "о":
+		let category be 3;
+	otherwise if antepenultimate matches the regular expression "<кгх>":
+		let category be 4;
+	otherwise if antepenultimate matches the regular expression "<жшщч>":
+		let category be 5;
+	if category is 1 and penultimate is not "ы":
+		say "ERROR: hard consonant adjective, but termination is not ы";
+		the rule fails;
+	say "Category: [category] ";
+	if the itemmult is:
+		-- plural:
+			if itemcase is:[collapse redundancies]
+				-- acc:
+					let itemcase be nom;
+				-- pre:
+					let itemcase be gen;				
+			if itemcase is:
+				-- nom:
+					if the category is 1:
+						let newterm be "ые";
+					otherwise:
+						let newterm be "ие";
+				-- gen:
+					if the category is 1:
+						let newterm be "ых";
+					otherwise:
+						let newterm be "их";
+				-- dat:
+					if the category is 1:
+						let newterm be "ым";
+					otherwise:
+						let newterm be "им";
+				-- ins:
+				if the category is 1:
+						let newterm be "ыми";
+					otherwise:
+						let newterm be "ими";
+				-- otherwise:
+					say "ERROR: ITEM CASE NOT DEFINED";
+					the rule fails;
+		-- singular: [nom masc sing is the exemplar itself and returned above.]
+			if (itemcase is acc and itemgender is n):[recode acc neu sing to nominative]
+				let itemcase be nom;
+			if itemcase is:
+				-- nom:
+					if the category is:
+						-- 1:
+							if the itemgender is: [m is addressed at start of routine as default]
+								-- f:
+									let newterm be "ая";
+								-- n:
+									let newterm be "ое";
+						-- 2:
+							if itemgender is:
+								-- f:
+									let newterm be "яя";
+								-- n:
+									let newterm be "ее";
+						-- 3:		
+							if itemgender is:
+								-- f:
+									let newterm be "ая";
+								-- n:
+									let newterm be "ое";								
+						-- 4:
+							if itemgender is:
+								-- f:
+									let newterm be "ая";
+								-- n:
+									let newterm be "ое";
+						-- 5:	
+							if itemgender is:
+								-- f:
+									let newterm be "ая";
+								-- n:
+									let newterm be "ее";		
+				-- gen:
+					if category is 2 or category is 5: [нь or sibilant]
+						if itemgender is f:
+							let newterm be "ей";
+						otherwise:
+							let newterm be "его";
+					otherwise:
+						if itemgender is f:
+							let newterm be "ой";
+						otherwise:
+							let newterm be "ого";
+				-- dat:
+					if category is 2 or category is 5: [нь or sibilant]
+						if itemgender is f:
+							let newterm be "ей";
+						otherwise:
+							let newterm be "ему";
+					otherwise:
+						if itemgender is f:
+							let newterm be "ой";
+						otherwise:
+							let newterm be "ому";
+				-- acc: [only dealing with feminine since masculine and neuter are recoded above as nominative]
+					if category is 2: [нь]
+						let newterm be "юю";
+					otherwise:
+						let newterm be "ую";
+				-- ins:
+					if category is 2 or category is 5: [нь or sibilant]
+						if itemgender is f:
+							let newterm be "ей";
+						otherwise:
+							let newterm be "им";
+					otherwise if category is 3 or category is 4: [stressed]
+						if itemgender is f:
+							let newterm be "ой";
+						otherwise:
+							let newterm be "им";
+					otherwise:
+						if itemgender is f:
+							let newterm be "ой";
+						otherwise:
+							let newterm be "ым";
+				-- pre:
+					if category is 2 or category is 5: [нь or sibilant]
+						if itemgender is f:
+							let newterm be "ей";
+						otherwise:
+							let newterm be "ем";
+					otherwise:
+						if itemgender is f:
+							let newterm be "ой";
+						otherwise:
+							let newterm be "ом";
+	say "[stem][antepenultimate][newterm]".
 
 Chapter 5 - Grammar Tweaks
 
@@ -258,21 +429,21 @@ Chapter 6 - World
 
 The Laboratory is a room.  The description of the Laboratory is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name of the laboratory is "Лаборатория". 
 
-The daughter is in the laboratory. The description of your daughter is "Ваша дочь." Understand "doch&" as daughter. The base of daughter is "дочь". The inflections of daughter are like doch&.
+The daughter is in the laboratory. The description of your daughter is "Ваша дочь." Understand "doch&" as daughter. The base of daughter is "дочь". 
 
-The worktable is a supporter in the Laboratory. The description of the worktable is "Изношенный рабочий стол." Understand "rabochij/stol" as the worktable. The base of the worktable is "стол". The inflections of the worktable are like stol.
+The worktable is a supporter in the Laboratory. The description of the worktable is "Изношенный рабочий стол." Understand "rabochij/stol" as the worktable. The base of the worktable is "стол". The inflections of the worktable are like stol. The modifier of the worktable is "большой".
 
-The workbook is in the Laboratory. The description of the workbook is "Тетрадь с миллиметровкой." Understand "tetrad&" as the workbook. The base of the workbook is "тетрадь". The inflections of the workbook are like tetrad&.
+The workbook is in the Laboratory. The description of the workbook is "Тетрадь с миллиметровкой." Understand "tetrad&" as the workbook. The base of the workbook is "тетрадь". The inflections of the workbook are like tetrad&. The modifier of workbook is "маленький".
 
-A box is an open container in the laboratory. The description of the box is "Картонная коробка." Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. The base of box is "коробк". The inflections of box are like korobka.
+A box is an open container in the laboratory. The gender of the box is f. The description of the box is "Картонная коробка." Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. The base of box is "коробк". The inflections of box are like korobka. The modifier of the box is "новый".
 
 The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name of the hall is "Коридор". 
 
-The sabre is in the hall. The description of the sabre is "Ржавая сабля." Understand "sablya" as the sabre. The base of sabre is "сабл". The inflections of sabre are like zemlya.
+The sabre is in the hall. The description of the sabre is "Ржавая сабля." Understand "sablya" as the sabre. The base of sabre is "сабл". The inflections of sabre are like zemlya. The modifier of sabre is "старший".
 
-The plant is in the hall. The description of the plant is "Растение без цветов." The printed name of the plant is "растение".  Understand "rastenie" as the plant. The base of plant is "растени". The inflections of plant are like rastenie.
+The plant is in the hall. The description of the plant is "Растение без цветов." The printed name of the plant is "растение".  Understand "rastenie" as the plant. The base of plant is "растени". The inflections of plant are like rastenie. 
 
-The portrait is in the hall. The description of the portrait is "Портрет старика." The printed name of the portrait is "портрет". Understand "portret/starika" as portrait. The base of portrait is "портрет". The inflections of portrait are like stol.
+The portrait is in the hall. The description of the portrait is "Портрет старика." The printed name of the portrait is "портрет". Understand "portret/starika" as portrait. The base of portrait is "портрет". The inflections of portrait are like stol. The modifier of portrait is "синий".
 
 The book is in the hall. The description of the book is "Толстая книга." Understand "kniga/knigu" as the book. The base of book is "книг". The inflections of the book are like kniga.
 
@@ -682,4 +853,13 @@ Carry out declining:
 	repeat with itemmult running through multiplicities:
 		repeat with itemcase running through cases:
 			say "[noun in the itemcase case itemmult]."
+			
+Adclining is an action applying to one visible thing. Understand "adcline [any things]" as adclining.
 
+Carry out adclining:
+	repeat with itemmult running through multiplicities:
+		repeat with itemcase running through cases:
+			repeat with itemgender running through genders:
+				say "[modifier of the noun in the itemcase case itemgender gender itemmult]."
+
+Test adclination with "adcline korobka/adcline portret/adcline stol/adcline tetrad&/adcline sablya".
