@@ -244,23 +244,24 @@ Table of Noun Inflections
 exemplar 	pattern
 [first declension]
 "voda"	{"","-ы","-е","-у","-ой","-е","-ы","-","м","-ы","ми","х"}
-"korobka"	{"","-ы","-е","-у","-ой","-е","-ы","-о~","м","-ы","ми","х"}
+"korobka"	{"","-и","-е","-у","-ой","-е","-и","-о~","м","-и","ми","х"}
 "kasha"	{"","-и","-е","-у","-ей","-е","-и","-","м","-и","ми","х"}
-"zemlya"	{"","-и","-е","-ю","-ей","-е","-и","-e~ь","м","-и","ми","х"}
+"zemlya"	{"","-и","-е","-ю","-ёй","-е","-и","-e~ь","м","-и","ми","х"}
 "lektsiya"	{"","-и","-и","-ю","-ей","-и","-и","-й","м","-и","ми","х"}
 [second declension]
-"dom"	{"","а","у","","ом","е","ы","ов","ам","ы","ами","ах"}
+"dom"	{"","а","у","","ом","е","а","ов","ам","а","ами","ах"}
 "ogurets"	{"","~-а","~-у","","~-ом","~-е","~-ы","~-ов","~-ам","~-ы","~-ами","~-ах"}
 "medved&"	{"","-я","-ю","-я","-ем","-е","-и","-ей","-ям","-ей","-ями","-ях"}
 "znoj"	{"","-я","-ю","","-ем","-е","-и","-ев","-ям","-и","-ями","-ях"}
 "litij"	{"","-я","-ю","","-ем","-и","-и","-ев","-ям","-и","-ями","-ях"}
-"oblako"	{"","-а","-у","","м","-е","-и","-","-ам","-и","-ами","-ах"}
+"oblako"	{"","-а","-у","","м","-е","-а","ов","-ам","-а","-ами","-ах"}
 "pole"	{"","-я","-ю","","м","","-я","й","-ям","-я","-ями","-ях"}
 "izvestie"	{"","-я","-ю","","м","-и","-я","-й","-ям","-я","-ями","-ях"}
 "vremya"	{"","-ени","-ени","","-енем","-ени","-ена","-ён","-енам","-ена","-енами","-енах"}
 [third declension]
 "tetrad&"	{"","-и","-и","","ю","-и","-и","-ей","-ям","-и","-ями","-ях"}
-"noch&"	{"","-ери","-ери","","ерью","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}
+"noch&"	{"","-и","-и","","ю","-и","-и","-ей","-aм","-и","-ами","-ах"}
+"doch&"	{"","-ери","-ери","","ерью","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}
 
 
 To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplicity):
@@ -538,8 +539,8 @@ To say printed name of (item - a thing) in the (itemcase - a case) case:
 		let the IM be plural;
 	if modifier of the item is not empty:
 		say long form modifier of the item in the itemcase case IG gender IM;
-		say " "[;
-	say name of the item in the itemcase case IM].
+		say " ";
+	say item in the itemcase case IM.
 
 Chapter 6 - Grammar Tweaks
 
@@ -968,12 +969,44 @@ After eating something:
 	
 Chapter 11 - Tests
 
-Declining is an action applying to one visible thing. Understand "decline [any things]" as declining.
+ItemDeclining is an action applying to one visible thing. Understand "itemdecline [any things]" as itemDeclining.
 
-Carry out declining:
+Carry out itemDeclining:
 	repeat with itemmult running through multiplicities:
 		repeat with itemcase running through cases:
 			say "[noun in the itemcase case itemmult]."	
+			
+textDeclining is an action applying to nothing. Understand "textDecline" as textDeclining.
+
+The list of lists of text called testTexts is always
+	{
+		{"вода", "voda"},
+		{"коробка", "korobka"},
+		{"каша", "kasha"},
+		{"земля", "zemlya"},
+		{"лекция", "lektsiya"},
+		{"дом", "dom"},
+		{"огурец", "ogurets"},
+		{"медведь", "medved&"},
+		{"зной", "znoj"},
+		{"литий", "litij"},
+		{"облако", "oblako"},
+		{"поле", "pole"},
+		{"известие", "izvestie"},
+		{"время", "vremya"},
+		{"тетрадь", "tetrad&"},
+		{"ночь", "noch&"},
+		{"дочь", "doch&"}
+	}
+
+Carry out textDeclining:
+	repeat with L running through testTexts:
+		let L1 be entry 1 in L;
+		let L2 be entry 2 in L;
+		repeat with itemmult running through multiplicities:
+			repeat with itemcase running through cases:
+				say "[L1 in the itemcase case itemmult multiplicity with L2 pattern].";
+		say paragraph break.	
 
 Adclining is an action applying to one visible thing. Understand "adcline [any things]" as adclining.
 
@@ -984,3 +1017,5 @@ Carry out adclining:
 				say "[long form modifier of the noun in the itemcase case itemgender gender itemmult]."
 
 Test adclination with "adcline korobka/adcline portret/adcline stol/adcline tetrad&/adcline sablya".
+
+
