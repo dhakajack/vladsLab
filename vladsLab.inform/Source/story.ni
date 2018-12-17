@@ -229,74 +229,95 @@ Section 1 - Noun Dictionary
 
 [In the order: nominative singular, genitive singular, dative singular, accusative singular, prepositional singular, instrumental singular, nominative plural, genitive plural, dative plural, accusative plural, prepositional plural, instrumental plural]
 
-Table of Noun Inflections
-exemplar	pattern
-[first declension]
-"вода"	{"а","ы","е","у","ой","е","ы","","ам","ы","ами","ах"}
-"коробка"	{"а","ы","е","у","ой","е","ы","~о","ам","ы","ами","ах"}
-"каша"	{"а","и","е","у","ей","е","и","","ам","и","ами","ах"}
-"земля"	{"я","и","е","ю","ей","е","и","~еь","ям","и","ями","ях"}
-"лекция"	{"я","и","и","ю","ей","и","и","й","ям","и","ями","ях"}
-[second declension]
-"дом"	{"","а","у","","ом","е","ы","ов","ам","ы","ами","ах"}
-"огурец"	{"~e","а","у","~e","ом","е","ы","ов","ам","ы","ами","ах"}
-"медведь"	{}
-"идей"	{}
-"литий"	{}
-"облако"	{"о","а","у","о","ом","е","и","","ам","и","ами","ах"}
-"поле"	{}
-"известие"	{"е","я","ю","е","ем","и","я","й","ям","я","ями","ях"}
-"время"	{}
-[third declension]
-"тетрадь"	{"","-и","-и","","ю","-и","-и","-ей","-ям","-и","-ями","-ях"}
-"ночь"	{"","-ери","-ери","","ерю","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}
-
 [
 
-To say (itembase - a text) in the (itemcase - a case) case (itemmult - a multiplicity):
-	let B be the itembase;
-	let the termination be "";
+""		do nothing, use the supplied form: nominative singular
+- 		delete last letter
+~		swap position of last two letters
+letter		add a letter
+
+Note that unicode characters can't appear as a topic and unicode text won't match up with unicode text in table, hence use of transliterated exemplars.
+
+]
+
+Table of Noun Inflections
+exemplar 	pattern
+[first declension]
+"voda"	{"","-ы","-е","-у","-ой","-е","-ы","-","м","-ы","ми","х"}
+"korobka"	{"","-ы","-е","-у","-ой","-е","-ы","-о~","м","-ы","ми","х"}
+"kasha"	{"","-и","-е","-у","-ей","-е","-и","-","м","-и","ми","х"}
+"zemlya"	{"","-и","-е","-ю","-ей","-е","-и","-e~ь","м","-и","ми","х"}
+"lektsiya"	{"","-и","-и","-ю","-ей","-и","-и","-й","м","-и","ми","х"}
+[second declension]
+"dom"	{"","а","у","","ом","е","ы","ов","ам","ы","ами","ах"}
+"ogurets"	{"","~-а","~-у","","~-ом","~-е","~-ы","~-ов","~-ам","~-ы","~-ами","~-ах"}
+"medved&"	{"","-я","-ю","-я","-ем","-е","-и","-ей","-ям","-ей","-ями","-ях"}
+"znoj"	{"","-я","-ю","","-ем","-е","-и","-ев","-ям","-и","-ями","-ях"}
+"litij"	{"","-я","-ю","","-ем","-и","-и","-ев","-ям","-и","-ями","-ях"}
+"oblako"	{"","-а","-у","","м","-е","-и","-","-ам","-и","-ами","-ах"}
+"pole"	{"","-я","-ю","","м","","-я","й","-ям","-я","-ями","-ях"}
+"izvestie"	{"","-я","-ю","","м","-и","-я","-й","-ям","-я","-ями","-ях"}
+"vremya"	{"","-ени","-ени","","-енем","-ени","-ена","-ён","-енам","-ена","-енами","-енах"}
+[third declension]
+"tetrad&"	{"","-и","-и","","ю","-и","-и","-ей","-ям","-и","-ями","-ях"}
+"noch&"	{"","-ери","-ери","","ерью","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}
+
+
+To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplicity):
+	let N be the name of the item;
+	let itempattern be the inflection pattern of the item;
+	[say "Calling text routine with text [N] based on a pattern of [itempattern].";]
+	say N in the itemcase case itemmult multiplicity with itempattern pattern.
+
+To say (itemtext - a text) in the (itemcase - a case) case (itemmult - a multiplicity) multiplicity with (itempattern - a text) pattern:
+	[say "Text routine called with itemtext [itemtext] in the [itemcase] case and [itemmult] multiplicity with [itempattern] pattern.";]
+	if itempattern is not an exemplar listed in the Table of Noun Inflections:
+		say "ERROR: declination pattern not found in lookup table";
+		the rule fails;
+	let termination be "";
+	let T be itemtext;
+	let terminationList be the pattern corresponding to an exemplar of itempattern in the Table of Noun Inflections;
 	if the itemmult is singular:
 		if the itemcase is:
 			-- nom:
-				now the termination is "[entry 1 of the inflections of the item]";
+				now the termination is "[entry 1 of terminationList]";
 			-- gen:
-				now the termination is "[entry 2 of the inflections of the item]";
+				now the termination is "[entry 2 of terminationList]";
 			-- dat:
-				now the termination is "[entry 3 of the inflections of the item]";
+				now the termination is "[entry 3 of terminationList]";
 			-- acc:
-				now the termination is "[entry 4 of the inflections of the item]";
+				now the termination is "[entry 4 of terminationList]";
 			-- ins:
-				now the termination is "[entry 5 of the inflections of the item]";
+				now the termination is "[entry 5 of terminationList]";
 			-- pre:
-				now the termination is "[entry 6 of the inflections of the item]";		
+				now the termination is "[entry 6 of terminationList]";	
 	otherwise:[item is plural]
 		if the itemcase is:
 			-- nom:
-				now the termination is "[entry 7 of the inflections of the item]";
+				now the termination is "[entry 7 of terminationList]";
 			-- gen:
-				now the termination is "[entry 8 of the inflections of the item]";
+				now the termination is "[entry 8 of terminationList]";
 			-- dat:
-				now the termination is "[entry 9 of the inflections of the item]";
+				now the termination is "[entry 9 of terminationList]";
 			-- acc:
-				now the termination is "[entry 10 of the inflections of the item]";
+				now the termination is "[entry 10 of terminationList]";
 			-- ins:
-				now the termination is "[entry 11 of the inflections of the item]";
+				now the termination is "[entry 11 of terminationList]";
 			-- pre:
-				now the termination is "[entry 12 of the inflections of the item]";
-	if the termination matches the regular expression "-.*":
-		[chop off the final letter and add the ending after the minus sign]
-		replace the regular expression "-(.*)" in the termination with "\1";
-		replace the regular expression "(\w*)\w" in B with "\1";
-	if the termination matches the regular expression "~.*":
-		[insert the letter after the tilde before the last letter of the stem, then add the rest of the termination]
-		let T2 be the termination;
-		replace the regular expression "~(\w)(.*)" in T2 with "\2";
-		replace the regular expression "~(\w)(.*)" in the termination with "\1";
-		replace the regular expression "(\w*)(\w)" in B with "\1[termination]\2[T2]";
-		let termination be "";
-	say B;
-	say the termination.			]
+				now the termination is "[entry 12 of terminationList]";
+	[say "The current termination is: [termination].";]
+	while termination is not empty:
+		let C be character number 1 in termination;
+		if C is:
+			-- "-":
+				replace the regular expression "(\w*)\w" in T with "\1"; [chop 1 letter off the end]
+			-- "~":
+				replace the regular expression "(\w*)(\w)(\w)" in T with "\1\3\2"; [invert last 2 letters]
+			-- otherwise:
+				let T be "[T][C]"; [append one character]
+		replace character number 1 in termination with "";
+	say T.
+
 	
 Section 3 - Decline Long From Adjectives
 	
@@ -544,46 +565,45 @@ Chapter 7 - World
 
 The Laboratory is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
-The daughter is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "ночь".  Understand "doch&" as daughter. 
+The daughter is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. 
 
-The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "дом". The modifier is "большой". Understand "rabochij/stol" as the worktable. 
+The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. 
 
-The workbook is in the Laboratory. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "тетрадь". The modifier is "маленький". Understand "tetrad&" as the workbook. 
+The workbook is in the Laboratory. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. 
 
-A box is an open container in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "коробка". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
+A box is an open container in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
 
 The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
 
-The sabre is in the hall. The description is "Ржавая сабля."  The name is "сабля". The inflection pattern is "земля". The modifier of sabre is "старший". Understand "sablya" as the sabre.
+The sabre is in the hall. The description is "Ржавая сабля."  The name is "сабля". The inflection pattern is "zemlya". The modifier of sabre is "старший". Understand "sablya" as the sabre.
 
-The plant is in the hall. The description is "Растение без цветов." The name is "растение". The inflection pattern is "известие". Understand "rastenie" as the plant. 
+The plant is in the hall. The description is "Растение без цветов." The name is "растение". The inflection pattern is "izvestie". Understand "rastenie" as the plant. 
 
-The portrait is in the hall. The description is "Портрет старика." The name of portrait is "портрет". 
-The inflection pattern is "дом". The modifier of portrait is "синий". Understand "portret/starika" as portrait. 
+The portrait is in the hall. The description is "Портрет старика." The name of portrait is "портрет".  The inflection pattern is "dom". The modifier of portrait is "синий". Understand "portret/starika" as portrait. 
 
-The book is in the hall. The description is "Толстая книга." The name of book is "книга". The inflection pattern is "вода". Understand "kniga/knigu" as the book. 
+The book is in the hall. The description is "Толстая книга." The name of book is "книга". The inflection pattern is "voda". Understand "kniga/knigu" as the book. 
 
-The mummy is in the hall. The description is "Египетские мумии." The name is "мумия". The inflection pattern is "лекция". Understand "mumiya/mumiyu" as the mummy. 
+The mummy is in the hall. The description is "Египетские мумии." The name is "мумия". The inflection pattern is "lektsiya". Understand "mumiya/mumiyu" as the mummy. 
 
 The bathroom is west from the hall. The description is "Ничем не примечательная ванная комната. Центральный коридор находится к востоку." The printed name is "Санузел".
 
-The toilet is a supporter in the bathroom. The description is "Белый унитаз."  The name of toilet is "унитаз". The inflection pattern is "дом".  Understand "belyj/unitaz" as the toilet.
+The toilet is a supporter in the bathroom. The description is "Белый унитаз."  The name of toilet is "унитаз". The inflection pattern is "dom".  Understand "belyj/unitaz" as the toilet.
 
-The sink is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "вода". Understand "rakovina/rakovinu/rakovine" as the sink. 
+The sink is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "voda". Understand "rakovina/rakovinu/rakovine" as the sink. 
 
-The bathtub is an open container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "вода". Understand "vanna/vannu/vanne" as the bathtub.
+The bathtub is an open container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "voda". Understand "vanna/vannu/vanne" as the bathtub.
 
 The rubber duck is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The name of the rubber duck is "утка". The inflection pattern is "korobka". The modifier is "резиновый". Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
 
 The cafeteria is east from the hall. "Место, где все обедают. Центральный коридор находится к западу." The printed name of the cafeteria is "Столовая".
 
-The dining table is in the cafeteria. It is a supporter. The description is "Деревянный стол." The name is "стол". The inflection pattern is "". The modifier is "деревянный". Understand "derevyannyj/stol" as the dining table.
+The dining table is in the cafeteria. It is a supporter. The description is "Деревянный стол." The name is "стол". The inflection pattern is "dom". The modifier is "деревянный". Understand "derevyannyj/stol" as the dining table.
 
-A cucumber is edible. It is on the dining table. The description is "Спелый огурец." The name of cucumber is "огурц". The inflection pattern is "огурец". The modifier is "спелый". Understand "spelyj/ogurets" as the cucumber. 
+A cucumber is edible. It is on the dining table. The description is "Спелый огурец." The name of cucumber is "огурец". The inflection pattern is "ogurets". The modifier is "спелый". Understand "spelyj/ogurets" as the cucumber. 
 
-The kasha is edible. It is on the dining table. The description is "Каша без молока." The name of kasha is "каша". The inflection pattern is "каша". Understand "kasha/kashu" as kasha. 
+The kasha is edible. It is on the dining table. The description is "Каша без молока." The name of kasha is "каша". The inflection pattern is "kasha". Understand "kasha/kashu" as kasha. 
 
-The apple is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "yablokо". The  The inflection pattern is "облако". Understand "yabloko" as the apple. 
+The apple is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "yablokо". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
 
 Chapter 8 - Transliterations
 
@@ -950,13 +970,10 @@ Chapter 11 - Tests
 
 Declining is an action applying to one visible thing. Understand "decline [any things]" as declining.
 
-
-[
 Carry out declining:
 	repeat with itemmult running through multiplicities:
 		repeat with itemcase running through cases:
-			say "[name of the noun in the itemcase case itemmult]."
-]		
+			say "[noun in the itemcase case itemmult]."	
 
 Adclining is an action applying to one visible thing. Understand "adcline [any things]" as adclining.
 
