@@ -132,8 +132,78 @@ Include (-
 
 -) Instead of "Release Number" in "Glulx.i6t".
 
+Chapter 4 - Standard Rules Overrides
 
-Chapter 4 - A little grammar
+Section 1 - Napravlenie (in place of Section SR1/4 - Directions in Standard Rules by Graham Nelson)
+
+[replace this section to get rid of the assignment of "n" as north, "s" as south, etc.]
+
+The specification of direction is "Represents a direction of movement, such
+as northeast or down. They always occur in opposite, matched pairs: northeast
+and southwest, for instance; down and up."
+
+A direction can be privately-named or publicly-named. A direction is usually
+publicly-named.
+A direction can be marked for listing or unmarked for listing. A direction is
+usually unmarked for listing.
+
+A direction has a direction called an opposite.
+
+Include (-
+	has scenery, ! class CompassDirection,
+-) when defining a direction.
+
+The north is a direction.
+The northeast is a direction.
+The northwest is a direction.
+The south is a direction.
+The southeast is a direction.
+The southwest is a direction.
+The east is a direction.
+The west is a direction.
+The up is a direction.
+The down is a direction.
+The inside is a direction.
+The outside is a direction.
+
+The north has opposite south.
+The northeast has opposite southwest.
+The northwest has opposite southeast.
+The south has opposite north.
+The southeast has opposite northwest.
+The southwest has opposite northeast.
+The east has opposite west.
+The west has opposite east.
+Up has opposite down.
+Down has opposite up.
+Inside has opposite outside.
+Outside has opposite inside.
+
+The inside object translates into I6 as "in_obj".
+The outside object translates into I6 as "out_obj".
+
+The verb to be above means the reversed mapping up relation.
+The verb to be mapped above means the reversed mapping up relation.
+The verb to be below means the reversed mapping down relation.
+The verb to be mapped below means the reversed mapping down relation.
+
+Section 2 - The Player
+
+The description of the player is "Ты выглядишь как обычно."
+
+Section 3 - Response Overrides
+
+The generate action rule response (A) is "(ограничиваясь первыми 16 объектами)[command clarification break]".
+
+The generate action rule response (B) is "Но делать ничего не надо!"
+
+The adjust light rule response (A) is "Теперь здесь непроглядная тьма!"
+
+The basic accessibility rule response (A) is "You must name something more substantial."
+
+
+
+Chapter 5 - A little grammar
 
 [Yeah, this is definitely not the way that Inform usually approaches grammar, with very concise, low level definitions, but I think it might be practical for me. I don't think this general approach with transliteration, etc., is likely to be used by native Russian speakers or for big projects. In any event, I like the idea of having the grammar all transparently present at the I7 level (although it may make sense to shuffle this off eventually into an extension for re-use). I'm developing this bit by bit, so some early crude attempts will be refined over time, but I have to start somewhere.
 
@@ -146,60 +216,45 @@ Multiplicity is a kind of value. The multiplicities are singular and plural.
 Gender is a kind of value. The genders are m, f, and n.
 
 A thing has a gender. The gender of a thing is usually m.
-A thing has a text called base. The base of a thing is usually "".
-A thing has a list of text called inflections.  The inflections of a thing is usually {"","","","","","","","","","","",""}.
+A thing has a text called name. The name of a thing is usually "".
+A thing has a text called inflection pattern. The inflection pattern of a thing is usually "дом".
+
+The indefinite article of a thing is "".
 
 A thing has a text called modifier. The modifier of a thing is usually "". 
 [The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
 
-Section 1 - Decline Nouns
 
-[Noun endings -- at some point, consider doing these algorithmically, although I think there will always be a need for overrides where orthography is irregular.
+Section 1 - Noun Dictionary
 
-In the order: nominative singular, genitive singular, dative singular, accusative singular, prepositional singular, instrumental singular, nominative plural, genitive plural, dative plural, accusative plural, prepositional plural, instrumental plural]
+[In the order: nominative singular, genitive singular, dative singular, accusative singular, prepositional singular, instrumental singular, nominative plural, genitive plural, dative plural, accusative plural, prepositional plural, instrumental plural]
 
+Table of Noun Inflections
+exemplar	pattern
 [first declension]
-
-The list of text called like kniga is always
- {"а","ы","е","у","ой","е","ы","","ам","ы","ами","ах"}. 
-
-The list of text called like korobka is always
- {"а","ы","е","у","ой","е","ы","~о","ам","ы","ами","ах"}. 
-
-The list of text called like armiya is always 
-{"я","и","и","ю","ей","и","и","й","ям","и","ями","ях"}. 
-
-The list of text called like zemlya is always
-{"я","и","е","ю","ей","е","и","~еь","ям","и","ями","ях"}.
-
-The list of text called like kasha is always
- {"а","и","е","у","ей","е","и","","ам","и","ами","ах"}. 
-
+"вода"	{"а","ы","е","у","ой","е","ы","","ам","ы","ами","ах"}
+"коробка"	{"а","ы","е","у","ой","е","ы","~о","ам","ы","ами","ах"}
+"каша"	{"а","и","е","у","ей","е","и","","ам","и","ами","ах"}
+"земля"	{"я","и","е","ю","ей","е","и","~еь","ям","и","ями","ях"}
+"лекция"	{"я","и","и","ю","ей","и","и","й","ям","и","ями","ях"}
 [second declension]
-
-The list of text called like stol is always {"","а","у","","ом","е","ы","ов","ам","ы","ами","ах"}.
-
-The list of text called like ogurets is always 
-{"~e","а","у","~e","ом","е","ы","ов","ам","ы","ами","ах"}.
-
-The list of text called like yabloko is always 
-{"о","а","у","о","ом","е","и","","ам","и","ами","ах"}.
-
-The list of text called like rastenie is always
-{"е","я","ю","е","ем","и","я","й","ям","я","ями","ях"}. 
-
+"дом"	{"","а","у","","ом","е","ы","ов","ам","ы","ами","ах"}
+"огурец"	{"~e","а","у","~e","ом","е","ы","ов","ам","ы","ами","ах"}
+"медведь"	{}
+"идей"	{}
+"литий"	{}
+"облако"	{"о","а","у","о","ом","е","и","","ам","и","ами","ах"}
+"поле"	{}
+"известие"	{"е","я","ю","е","ем","и","я","й","ям","я","ями","ях"}
+"время"	{}
 [third declension]
+"тетрадь"	{"","-и","-и","","ю","-и","-и","-ей","-ям","-и","-ями","-ях"}
+"ночь"	{"","-ери","-ери","","ерю","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}
 
-The list of text called like tetrad& is always
-{"","-и","-и","","ю","-и","-и","-ей","-ям","-и","-ями","-ях"}.
+[
 
-The list of text called like doch& is always
- {"","-ери","-ери","","ерю","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}.
-
-The indefinite article of a thing is "".
-
-To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplicity):
-	let B be the base of the item;
+To say (itembase - a text) in the (itemcase - a case) case (itemmult - a multiplicity):
+	let B be the itembase;
 	let the termination be "";
 	if the itemmult is singular:
 		if the itemcase is:
@@ -241,12 +296,12 @@ To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplici
 		replace the regular expression "(\w*)(\w)" in B with "\1[termination]\2[T2]";
 		let termination be "";
 	say B;
-	say the termination.			
+	say the termination.			]
 	
-Section 2 - Decline Long From Adjectives
+Section 3 - Decline Long From Adjectives
 	
 [Algorithmic declension of regular long form adjectives]
-To say (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
+To say long form (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
 	if item is empty:
 		 the rule succeeds; [if there is no adjective, end processing here.]
 	if (itemcase is nom and itemgender is m and itemmult is singular) or (itemcase is acc and itemgender is m and itemmult is singular):
@@ -403,9 +458,57 @@ To say (item - text) in the (itemcase - a case) case (itemgender - gender) gende
 						otherwise:
 							let newterm be "ом";
 	say "[stem][antepenultimate][newterm]".
-	
+		
+Section 4 - Short Form Adjectives
 
-Section 3 - Printed Name Generation
+To say short form (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
+	if item is "большой":
+		if itemmult is plural:
+			say "велики";
+		otherwise:
+			if itemgender is:
+				-- m:
+					say "велик";
+				-- f:
+					say "велика";
+				-- n:
+					say "велико";
+		the rule succeeds;
+	if item is "маленький":
+		if itemmult is plural:
+			say "малы";
+		otherwise:
+			if itemgender is:
+				-- m:
+					say "мал";
+				-- f:
+					say "мала";
+				-- n:
+					say "мало";
+		the rule succeeds;
+	[if it'snot one of those special cases:]	
+	let stem be item;
+	let intercolater be item;
+	replace the regular expression "(\w*)(\w)\w" in intercolater with "\2"; [next to last letter, a vowel]
+	replace the regular expression "(\w*)(\w{2})" in stem with "\1"; [extract stem, all but last two letters]
+	if itemmult is plural:
+		say "[stem]ы";
+	otherwise:
+		if itemgender is:
+			-- f:
+				say "[stem]а";
+			-- n:
+				say "[stem]о";
+			-- m:
+				if stem exactly matches the regular expression "<^аеиоуыэ><^аеиоуыэ>":
+					replace the regular expression "(\w)(\w)" in stem with "\1[intercolater]\2";
+				otherwise if stem exactly matches the regular expression "<^аеиоуыэ>k":
+					replace the regular expression "(\w*)(к)" in stem with "\1[intercolater]к";
+				otherwise if stem exactly matches the regular expression "<^аеиоуыэ>н":
+					replace the regular expression "(\w*)(н)" in stem with "\1[intercolater]н";
+				say stem.	
+				
+Section 5 - Printed Name Generation
 
 To say printed name of (item - a thing) in the (itemcase - a case) case:
 	let IG be the gender of the item;
@@ -413,12 +516,11 @@ To say printed name of (item - a thing) in the (itemcase - a case) case:
 	if the item is plural-named:
 		let the IM be plural;
 	if modifier of the item is not empty:
-		say modifier of the item in the itemcase case IG gender IM;
-		say " ";
-	say item in the itemcase case IM.
+		say long form modifier of the item in the itemcase case IG gender IM;
+		say " "[;
+	say name of the item in the itemcase case IM].
 
-
-Chapter 5 - Grammar Tweaks
+Chapter 6 - Grammar Tweaks
 
 Rule for listing nondescript items:
 	let L be a list of things;
@@ -438,51 +540,52 @@ Rule for listing nondescript items:
 	
 Understand "ya/menya" as yourself.
 
-Chapter 6 - World
+Chapter 7 - World
 
-The Laboratory is a room.  The description of the Laboratory is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name of the laboratory is "Лаборатория". 
+The Laboratory is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
-The daughter is in the laboratory. The description of your daughter is "Ваша дочь." Understand "doch&" as daughter. The base of daughter is "дочь". 
+The daughter is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "ночь".  Understand "doch&" as daughter. 
 
-The worktable is a supporter in the Laboratory. The description of the worktable is "Изношенный рабочий стол." Understand "rabochij/stol" as the worktable. The base of the worktable is "стол". The inflections of the worktable are like stol. The modifier of the worktable is "большой".
+The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "дом". The modifier is "большой". Understand "rabochij/stol" as the worktable. 
 
-The workbook is in the Laboratory. The description of the workbook is "Тетрадь с миллиметровкой." Understand "tetrad&" as the workbook. The base of the workbook is "тетрадь". The inflections of the workbook are like tetrad&. The modifier of workbook is "маленький".
+The workbook is in the Laboratory. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "тетрадь". The modifier is "маленький". Understand "tetrad&" as the workbook. 
 
-A box is an open container in the laboratory. The gender of the box is f. The description of the box is "Картонная коробка." Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. The base of box is "коробк". The inflections of box are like korobka. The modifier of the box is "новый".
+A box is an open container in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "коробка". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
 
-The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name of the hall is "Коридор". 
+The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
 
-The sabre is in the hall. The description of the sabre is "Ржавая сабля." Understand "sablya" as the sabre. The base of sabre is "сабл". The inflections of sabre are like zemlya. The modifier of sabre is "старший".
+The sabre is in the hall. The description is "Ржавая сабля."  The name is "сабля". The inflection pattern is "земля". The modifier of sabre is "старший". Understand "sablya" as the sabre.
 
-The plant is in the hall. The description of the plant is "Растение без цветов." The printed name of the plant is "растение".  Understand "rastenie" as the plant. The base of plant is "растени". The inflections of plant are like rastenie. 
+The plant is in the hall. The description is "Растение без цветов." The name is "растение". The inflection pattern is "известие". Understand "rastenie" as the plant. 
 
-The portrait is in the hall. The description of the portrait is "Портрет старика." The printed name of the portrait is "портрет". Understand "portret/starika" as portrait. The base of portrait is "портрет". The inflections of portrait are like stol. The modifier of portrait is "синий".
+The portrait is in the hall. The description is "Портрет старика." The name of portrait is "портрет". 
+The inflection pattern is "дом". The modifier of portrait is "синий". Understand "portret/starika" as portrait. 
 
-The book is in the hall. The description of the book is "Толстая книга." Understand "kniga/knigu" as the book. The base of book is "книг". The inflections of the book are like kniga.
+The book is in the hall. The description is "Толстая книга." The name of book is "книга". The inflection pattern is "вода". Understand "kniga/knigu" as the book. 
 
-The mummy is in the hall. The description of the mummy is "Египетские мумии." Understand "mumiya/mumiyu" as the mummy. The base of mummy is "муми". The inflections of mummy are like armiya.
+The mummy is in the hall. The description is "Египетские мумии." The name is "мумия". The inflection pattern is "лекция". Understand "mumiya/mumiyu" as the mummy. 
 
-The bathroom is west from the hall. The description of the bathroom is "Ничем не примечательная ванная комната. Центральный коридор находится к востоку." The printed name of the bathroom is "Санузел".
+The bathroom is west from the hall. The description is "Ничем не примечательная ванная комната. Центральный коридор находится к востоку." The printed name is "Санузел".
 
-The toilet is a supporter in the bathroom. The description of the toilet is "Белый унитаз." Understand "belyj/unitaz" as the toilet. The base of toilet is "унитаз". The inflections of the toilet are like stol.
+The toilet is a supporter in the bathroom. The description is "Белый унитаз."  The name of toilet is "унитаз". The inflection pattern is "дом".  Understand "belyj/unitaz" as the toilet.
 
-The sink is in the bathroom. It is fixed in place. The description of the sink is "Маленькая раковина. На данный момент, похоже, сломан." Understand "rakovina/rakovinu/rakovine" as the sink. The base of sink is "раковин". The inflections of sink are like kniga.
+The sink is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "вода". Understand "rakovina/rakovinu/rakovine" as the sink. 
 
-The bathtub is an open container in the bathroom. It is fixed in place. The description of the bathtub is "Чугунная ванна.". The printed name of the bathtub is "ванна". Understand "vanna/vannu/vanne" as the bathtub.
+The bathtub is an open container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "вода". Understand "vanna/vannu/vanne" as the bathtub.
 
-The rubber duck is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The printed name of the rubber duck is "резиновая уточка". Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
+The rubber duck is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The name of the rubber duck is "утка". The inflection pattern is "korobka". The modifier is "резиновый". Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
 
 The cafeteria is east from the hall. "Место, где все обедают. Центральный коридор находится к западу." The printed name of the cafeteria is "Столовая".
 
-The dining table is in the cafeteria. It is a supporter. The description of the table is "Длинный деревянный стол." The printed name of the dining table is "обеденный стол". Understand "dlinnyj/derevyannyj/stol" as the dining table.
+The dining table is in the cafeteria. It is a supporter. The description is "Деревянный стол." The name is "стол". The inflection pattern is "". The modifier is "деревянный". Understand "derevyannyj/stol" as the dining table.
 
-A cucumber is edible. It is on the dining table. The description of the cucumber is "Спелый огурец." Understand "spelyj/ogurets" as the cucumber. The base of cucumber is "огурц". The inflections of cucumber are like ogurets.
+A cucumber is edible. It is on the dining table. The description is "Спелый огурец." The name of cucumber is "огурц". The inflection pattern is "огурец". The modifier is "спелый". Understand "spelyj/ogurets" as the cucumber. 
 
-The kasha is edible. It is on the dining table. The description of the kasha is "Каша без молока." Understand "kasha/kashu" as kasha. The base of kasha is "каш". The inflections of kasha are like kasha.
+The kasha is edible. It is on the dining table. The description is "Каша без молока." The name of kasha is "каша". The inflection pattern is "каша". Understand "kasha/kashu" as kasha. 
 
-The apple is edible. It is on the dining table. The description of the apple is "Красное яблоко." Understand "yabloko" as the apple. The base of apple is "yablok". The inflections of apple are like yabloko.
+The apple is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "yablokо". The  The inflection pattern is "облако". Understand "yabloko" as the apple. 
 
-Chapter 7 - Transliterations
+Chapter 8 - Transliterations
 
 [clear definitions]
 
@@ -785,31 +888,16 @@ Understand "da" as saying yes.
 Understand "net" as saying no.
 
 [Направления]
-Understand "sever" as north.
-Understand "s" as north. 
-
-Does the player mean going north:
-	it is very likely.
-	
-[need to disambiguate from "s" for south which is hardcoded into the standard rules.]
-
-Understand "yug" or "yu" as south.
-Understand "vostok" as east.
-Understand "v" as east.
-Understand "zapad" as west.
-Understand "z" as west.
-Understand "vniz" as down.
-Understand "vn" as down.
-Understand "vverkh" as up.
-Understand "vv" as up.
-Understand "sv" as northeast.
-Understand "severo-vostok" as northeast.
-Understand "sz" as northwest.
-Understand "severo-zapad" as northwest.
-Understand "yuv" as southeast.
-Understand "yugo-vostok" as southeast.
-Understand "yuz" as southwest.
-Understand "yugo-zapad" as southwest.
+Understand "s" or "sever" as north.
+Understand "yu" or "yug" as south.
+Understand "v" or "vostok" as east.
+Understand "z" or "zapad" as west.
+Understand "vn" or "vniz" as down.
+Understand "vv" or "vverkh" as up.
+Understand "sv" or "severo-vostok" as northeast.
+Understand "sz" or "severo-zapad" as northwest.
+Understand "yuv" or "yugo-vostok" as southeast.
+Understand "yuz" or "yugo-zapad" as southwest.
 
 
 [might need to implement additional properties for directions, like dativePrintName for go к направлению (or maybe just get away with sticking a "у" on the end programmatically?]
@@ -829,12 +917,12 @@ The printed name of down is "вниз".
 The printed name of outside is "";]
 
 
-Chapter 8 - Start
+Chapter 9 - Start
 
 When play begins:
 	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. There are plenty of errors, I have not extensively implemented grammar or replaced library responses. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
-Chapter 9 - Some example customized responses
+Chapter 10 - Some example customized responses
 
 After inserting something (called the item) into the box:
 	say "Вы положите [item] в коробку. Теперь в коробке ";	
@@ -858,21 +946,24 @@ After inserting something (called the item) into the box:
 After eating something:
 	say "[one of]Ммммм[or]Не плохо[or]Отлично[or]Как вкусно[in random order]."
 	
-Chapter 10 - Tests
+Chapter 11 - Tests
 
 Declining is an action applying to one visible thing. Understand "decline [any things]" as declining.
 
+
+[
 Carry out declining:
 	repeat with itemmult running through multiplicities:
 		repeat with itemcase running through cases:
-			say "[noun in the itemcase case itemmult]."
-			
+			say "[name of the noun in the itemcase case itemmult]."
+]		
+
 Adclining is an action applying to one visible thing. Understand "adcline [any things]" as adclining.
 
 Carry out adclining:
 	repeat with itemmult running through multiplicities:
 		repeat with itemcase running through cases:
 			repeat with itemgender running through genders:
-				say "[modifier of the noun in the itemcase case itemgender gender itemmult]."
+				say "[long form modifier of the noun in the itemcase case itemgender gender itemmult]."
 
 Test adclination with "adcline korobka/adcline portret/adcline stol/adcline tetrad&/adcline sablya".
