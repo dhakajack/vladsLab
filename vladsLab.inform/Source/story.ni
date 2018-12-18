@@ -217,7 +217,7 @@ Gender is a kind of value. The genders are m, f, and n.
 
 A thing has a gender. The gender of a thing is usually m.
 A thing has a text called name. The name of a thing is usually "".
-A thing has a text called inflection pattern. The inflection pattern of a thing is usually "дом".
+A thing has a text called inflection pattern. The inflection pattern of a thing is usually "dom".
 
 The indefinite article of a thing is "".
 
@@ -483,8 +483,8 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gen
 		
 Section 4 - Short Form Adjectives
 
-To say short form (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
-	if item is "большой":
+To say short form (item - text) with (itemgender - gender) gender (itemmult - a multiplicity) :
+	if item exactly matches the text "большой":
 		if itemmult is plural:
 			say "велики";
 		otherwise:
@@ -496,7 +496,7 @@ To say short form (item - text) in the (itemcase - a case) case (itemgender - ge
 				-- n:
 					say "велико";
 		the rule succeeds;
-	if item is "маленький":
+	if item exactly matches the text "маленький":
 		if itemmult is plural:
 			say "малы";
 		otherwise:
@@ -510,11 +510,15 @@ To say short form (item - text) in the (itemcase - a case) case (itemgender - ge
 		the rule succeeds;
 	[if it'snot one of those special cases:]	
 	let stem be item;
-	let intercolater be item;
-	replace the regular expression "(\w*)(\w)\w" in intercolater with "\2"; [next to last letter, a vowel]
+	let intercalator be item;
+	replace the regular expression "(\w*)(\w)\w" in intercalator with "\2"; [next to last letter, a vowel]
 	replace the regular expression "(\w*)(\w{2})" in stem with "\1"; [extract stem, all but last two letters]
 	if itemmult is plural:
-		say "[stem]ы";
+		say stem;
+		if stem exactly matches the regular expression "\w*<гкхжшщч>":
+			say "и";
+		otherwise:
+			say "ы";
 	otherwise:
 		if itemgender is:
 			-- f:
@@ -523,11 +527,16 @@ To say short form (item - text) in the (itemcase - a case) case (itemgender - ge
 				say "[stem]о";
 			-- m:
 				if stem exactly matches the regular expression "<^аеиоуыэ><^аеиоуыэ>":
-					replace the regular expression "(\w)(\w)" in stem with "\1[intercolater]\2";
-				otherwise if stem exactly matches the regular expression "<^аеиоуыэ>k":
-					replace the regular expression "(\w*)(к)" in stem with "\1[intercolater]к";
-				otherwise if stem exactly matches the regular expression "<^аеиоуыэ>н":
-					replace the regular expression "(\w*)(н)" in stem with "\1[intercolater]н";
+					replace the regular expression "(\w)(\w)" in stem with "\1[intercalator]\2";
+				otherwise if stem exactly matches the regular expression "\w*<^аеиоуыэ>к":
+					replace the regular expression "(\w*)(к)" in stem with "\1ок";
+				otherwise if stem exactly matches the regular expression "\w*<^аеиоуыэ>н":
+					if the stem exactly matches the regular expression "полн|смешн":
+						replace the regular expression "(\w*)(н)" in stem with "\1он";
+					otherwise if the stem exactly matches the regular expression "\w*<йь>н":
+						replace the regular expression "(\w*)(<йь>)н" in stem with "\1ен";
+					otherwise:
+						replace the regular expression "(\w*)(н)" in stem with "\1ен";
 				say stem.	
 				
 Section 5 - Printed Name Generation
@@ -969,12 +978,16 @@ After eating something:
 	
 Chapter 11 - Tests
 
+Section 1 - Decline an object
+
 ItemDeclining is an action applying to one visible thing. Understand "itemdecline [any things]" as itemDeclining.
 
 Carry out itemDeclining:
 	repeat with itemmult running through multiplicities:
 		repeat with itemcase running through cases:
 			say "[noun in the itemcase case itemmult]."	
+			
+Section 2 - Decline noun text
 			
 textDeclining is an action applying to nothing. Understand "textDecline" as textDeclining.
 
@@ -1007,6 +1020,8 @@ Carry out textDeclining:
 			repeat with itemcase running through cases:
 				say "[L1 in the itemcase case itemmult multiplicity with L2 pattern].";
 		say paragraph break.	
+		
+Section 3 - Decline a long form adjective
 
 Adclining is an action applying to one visible thing. Understand "adcline [any things]" as adclining.
 
@@ -1017,5 +1032,19 @@ Carry out adclining:
 				say "[long form modifier of the noun in the itemcase case itemgender gender itemmult]."
 
 Test adclination with "adcline korobka/adcline portret/adcline stol/adcline tetrad&/adcline sablya".
+
+Section 4 - Decline short adjectives
+
+shortAdjing is an action applying to nothing. Understand "shortAdj" as shortAdjing.
+
+The list of text called shortAdjTest is always 
+	{ "большой", "маленький", "хороший", "готовый", "короткий", "редкий", "важный", "больной", "полный", "смешной","злой", "спокойный", "близкий" }
+
+Carry out shortAdjing:
+	repeat with L running through shortAdjTest:
+		repeat with itemmult running through multiplicities:
+			repeat with itemgender running through genders:
+				say "[short form L with itemgender gender itemmult].";
+		say paragraph break.	
 
 
