@@ -132,7 +132,35 @@ Include (-
 
 -) Instead of "Release Number" in "Glulx.i6t".
 
-Chapter 4 - Standard Rules Overrides
+Chapter 4 - Kinds
+
+
+[Yeah, this is definitely not the way that Inform usually approaches grammar, with very concise, low level definitions, but I think it might be practical for me. I don't think this general approach with transliteration, etc., is likely to be used by native Russian speakers or for big projects. In any event, I like the idea of having the grammar all transparently present at the I7 level (although it may make sense to shuffle this off eventually into an extension for re-use). I'm developing this bit by bit, so some early crude attempts will be refined over time, but I have to start somewhere.
+
+An obvious shortcoming of this approach is that input and output are entirely divorced.]
+
+Case is a kind of value. The cases are nom, gen, dat, acc, ins and pre.
+Verb class is a kind of value. The verb classes are v1a, v1b, v2a, v2b.
+
+Multiplicity is a kind of value. The multiplicities are singular and plural.
+
+To decide which multiplicity is the multiplicity of (item - a thing): 
+	let D be singular; 
+	if item is plural-named, let D be plural;
+	decide on D.
+
+Gender is a kind of value. The genders are m, f, and n.
+A thing has a gender. The gender of a thing is usually m.
+
+A thing has a text called name. The name of a thing is usually "".
+A thing has a text called inflection pattern. The inflection pattern of a thing is usually "dom".
+
+The indefinite article of a thing is "".
+
+A thing has a text called modifier. The modifier of a thing is usually "". 
+[The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
+
+Chapter 5 - Standard Rules Overrides
 
 Section 1 - Napravlenie (in place of Section SR1/4 - Directions in Standard Rules by Graham Nelson)
 
@@ -187,42 +215,171 @@ The verb to be mapped above means the reversed mapping up relation.
 The verb to be below means the reversed mapping down relation.
 The verb to be mapped below means the reversed mapping down relation.
 
-Section 2 - The Player
+Section 3 - The Player
 
 The description of the player is "Ты выглядишь как обычно."
 
-Section 3 - Response Overrides
+Section 4 - Response Overrides
 
+To say capitalized (item - a thing) in the (itemcase - a case) case:
+	let PN be "[printed name of item in the itemcase case]";
+	say PN with initial capital.
+
+To say list-writer-internal-rule-worn:
+	say say short form of "надетый" regarding noun.
+	
+To say list-writer-internal-rule-available:
+	say short form of "недосягаемый" regarding noun.
+	
+To say list-writer-internal-rule-empty:
+	say short form of "пустый" regarding noun.
+	
+To say list-writer-internal-rule-open:
+	say short form of "открытый" regarding noun.
+	
+To say list-writer-internal-rule-closed:
+	say short form of "закрытый" regarding noun.
+	
+To say list-writer-internal-rule-locked:
+	say short form of "запертый" regarding noun.
+
+[generate action rule response (A): "(considering the first sixteen objects only)"]
 The generate action rule response (A) is "(ограничиваясь первыми 16 объектами)[command clarification break]".
 
+[generate action rule response (B): "Nothing to do!"]
 The generate action rule response (B) is "Но делать ничего не надо!"
 
+[adjust light rule response (A): "[It] [are] [if story tense is present tense]now [end if]pitch dark in [if story tense is present tense]here[else]there[end if]!"]
 The adjust light rule response (A) is "Теперь здесь непроглядная тьма!"
 
+[basic accessibility rule response (A) is "You must name something more substantial."]
 The basic accessibility rule response (A) is "You must name something more substantial."
 
+[basic visibility rule response (A): "[It] [are] pitch dark, and [we] [can't see] a thing."]
+The basic visibility rule response (A) is "Кромешная тьма — не видно ни зги!"
+
+[requested actions require persuasion rule response (A): "[The noun] [have] better things to do."]
+The requested actions require persuasion rule response (A) is "[capitalized noun in the nom case] явно не собира[noun does a verb of class v1b]ся тебя слушать."
+
+[carry out requested actions rule response (A): "[The noun] [are] unable to do that."]
+[*review]The carry out requested actions rule response (A) is "[capitalized noun in the nom case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a] этого сделать."
+	
+[access through barriers rule response (A): "[regarding the noun][Those] [aren't] available."]
+The access through barriers rule response (A) is "[capitalized noun in the nom case] не [list-writer-internal-rule-available]."
+
+[can't reach inside closed containers rule response (A): "[The noun] [aren't] open."]
+The can't reach inside closed containers rule response (A) is "[capitalized noun in the nom case] не [list-writer-internal-rule-open]."
+
+[can't reach inside rooms rule response (A): "[We] [can't] reach into [the noun]."]
+[*translate]The can't reach inside rooms rule response (A) is "[We] [can't] reach into [the noun]."
+
+[can't reach outside closed containers rule response (A): "[The noun] [aren't] open."]
+The can't reach outside closed containers rule response (A) is "[capitalized noun in the nom case] не [list-writer-internal-rule-open]."
+
+[
+list writer internal rule response (A): " ("
+list writer internal rule response (B): ")"
+list writer internal rule response (C): " and "
+]
+
+The list writer internal rule response (C) is " и ".
+
+[list writer internal rule response (D): "providing light"]
+The list writer internal rule response (D) is "свет[noun does a verb of class v2b]".
+
+[list writer internal rule response (E): "closed"]
+The list writer internal rule response (E) is "[list-writer-internal-rule-closed]".
+	
+[list writer internal rule response (F): "empty"]
+The list writer internal rule response (F) is "[list-writer-internal-rule-empty]".
+
+[list writer internal rule response (G): "closed and empty"]
+The list writer internal rule response (G) is "[list-writer-internal-rule-closed] и [list-writer-internal-rule-empty]".
+
+[list writer internal rule response (H): "closed and providing light"]
+The list writer internal rule response (H) is "свет[noun does a verb of class v2b] и [list-writer-internal-rule-closed]".
+
+[list writer internal rule response (I): "empty and providing light"]
+The list writer internal rule response (I) is "свет[noun does a verb of class v2b] и [list-writer-internal-rule-empty]".
+
+[list writer internal rule response (J): "closed, empty[if serial comma option is active],[end if] and providing light"]
+The list writer internal rule response (J) is "свет[noun does a verb of class v2b], [list-writer-internal-rule-closed] и [list-writer-internal-rule-empty]".
+
+[list writer internal rule response (K): "providing light and being worn"]
+The list writer internal rule response (K) is "свет[noun does a verb of class v2b] и [list-writer-internal-rule-worn]".
+
+[list writer internal rule response (L): "being worn"]
+The list writer internal rule response (L) is "[list-writer-internal-rule-worn]".
+
+[list writer internal rule response (M): "open"]
+The list writer internal rule response (M) is "[list-writer-internal-rule-open]".
+
+[list writer internal rule response (N): "open but empty"]
+The list writer internal rule response (N) is "[list-writer-internal-rule-open] и [list-writer-internal-rule-empty]".
+
+[list writer internal rule response (O): "closed"]
+The list writer internal rule response (O) is "[list-writer-internal-rule-closed]".
+
+[list writer internal rule response (P): "closed and locked"]
+The list writer internal rule response (P) is "[list-writer-internal-rule-closed] и [list-writer-internal-rule-locked]".
+
+[list writer internal rule response (Q): "containing"]
+The list writer internal rule response (Q) is "содерж[noun does a verb of class v2a]".
+
+[*translate]The list writer internal rule response (R) is  "on [if the noun is a person]whom[otherwise]which[end if] ".
+[*translate]The list writer internal rule response (S) is ", on top of [if the noun is a person]whom[otherwise]which[end if] ".
+[*translate]The list writer internal rule response (T) is "in [if the noun is a person]whom[otherwise]which[end if] ".
+[*translate]The list writer internal rule response (U) is ", inside [if the noun is a person]whom[otherwise]which[end if] ".
+
+[list writer internal rule response (V): "[regarding list writer internals][are]"]
+The list writer internal rule response (V) is "". [presume this will work for the verb to be]
+
+[list writer internal rule response (V): "[regarding list writer internals][are]"]
+The list writer internal rule response (W) is " ничего". [presume this will work for the verb to be]
+
+[list writer internal rule response (X): "Nothing"]
+The list writer internal rule response (X) is "Ничего".
+
+[list writer internal rule response (Y): "nothing"]
+The list writer internal rule response (Y) is "ничего".
+
+[*translate]The action processing internal rule response (A) is "[bracket]That command asks to do something outside of play, so it can only make sense from you to me. [The noun] cannot be asked to do this.[close bracket]".
+
+[*translate]The action processing internal rule response (B) is "You must name an object."
+[*translate]The action processing internal rule response (C) is "You may not name an object."
+[*translate]The action processing internal rule response (D) is "You must supply a noun."
+[*translate]The action processing internal rule response (E) is "You may not supply a noun."
+[*translate]The action processing internal rule response (F) is "You must name a second object."
+[*translate]The action processing internal rule response (G) is "You may not name a second object."
+[*translate]The action processing internal rule response (H) is "You must supply a second noun."
+[*translate]The action processing internal rule response (I) is "You may not supply a second noun."
+
+[action processing internal rule response (J): "(Since something dramatic has happened, your list of commands has been cut short.)"]
+The action processing internal rule response (J) is "(Произошло что-то, что укоротило ваш список команд.)"
+
+[action processing internal rule response (K): "I didn't understand that instruction."]
+[*review]The action processing internal rule response (K) is "Я не понял эту инструкцию."
+
+[parser error internal rule response (A): "I didn't understand that sentence."]
+The parser error internal rule response (A) is "Эта команда непонятна."
+
+[translate]parser error internal rule response (B) is "I only understood you as far as wanting to ".
+[translate] parser error internal rule response (C) is "I only understood you as far as wanting to (go) "
+
+[parser error internal rule response (D): "I didn't understand that number."]
+The parser error internal rule response (D) is "Это число непонятно."
+
+[parser error internal rule response (E): "[We] [can't] see any such thing."]
+The parser error internal rule response (E) is  "Этого предмета здесь нет."
+
+[parser error internal rule response (F): "You seem to have said too little!"]
+The parser error internal rule response (F) is "Похоже, надо сказать что-то ещё!"
+
+[parser error internal rule response (G): "[We] [aren't] holding that!"]
+The parser error internal rule response (G) is "Этого предмета у тебя нет."
 
 
-Chapter 5 - A little grammar
-
-[Yeah, this is definitely not the way that Inform usually approaches grammar, with very concise, low level definitions, but I think it might be practical for me. I don't think this general approach with transliteration, etc., is likely to be used by native Russian speakers or for big projects. In any event, I like the idea of having the grammar all transparently present at the I7 level (although it may make sense to shuffle this off eventually into an extension for re-use). I'm developing this bit by bit, so some early crude attempts will be refined over time, but I have to start somewhere.
-
-An obvious shortcoming of this approach is that input and output are entirely divorced.]
-
-Case is a kind of value. The cases are nom, gen, dat, acc, ins and pre.
-
-Multiplicity is a kind of value. The multiplicities are singular and plural.
-
-Gender is a kind of value. The genders are m, f, and n.
-
-A thing has a gender. The gender of a thing is usually m.
-A thing has a text called name. The name of a thing is usually "".
-A thing has a text called inflection pattern. The inflection pattern of a thing is usually "dom".
-
-The indefinite article of a thing is "".
-
-A thing has a text called modifier. The modifier of a thing is usually "". 
-[The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
+Chapter 6 - Some  grammar
 
 
 Section 1 - Noun Dictionary
@@ -321,6 +478,12 @@ To say (itemtext - a text) in the (itemcase - a case) case (itemmult - a multipl
 
 	
 Section 3 - Decline Long From Adjectives
+
+To say long form of (adj - text) regarding (item - a thing) in the (case - a case):
+	let G be the gender of the item;
+	let C be the case;
+	let M be the multiplicity of the item;
+	say long form adj in the C case G gender M.
 	
 [Algorithmic declension of regular long form adjectives]
 To say long form (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
@@ -483,6 +646,11 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gen
 		
 Section 4 - Short Form Adjectives
 
+To say short form of (adj - text) regarding (item - a thing):
+	let G be the gender of the item;
+	let M be the multiplicity of the item;
+	say short form adj with G gender M.
+
 To say short form (item - text) with (itemgender - gender) gender (itemmult - a multiplicity) :
 	if item exactly matches the text "большой":
 		if itemmult is plural:
@@ -539,7 +707,31 @@ To say short form (item - text) with (itemgender - gender) gender (itemmult - a 
 						replace the regular expression "(\w*)(н)" in stem with "\1ен";
 				say stem.	
 				
-Section 5 - Printed Name Generation
+Section 5 - Third Person Verb Formation
+
+To say (item - thing) does a verb of class (class - verb class):
+	if the item is plural-named:
+		if the class is:
+			-- v1a: 
+				say "ут";
+			-- v1b:
+				say "ют";
+			-- v2a:
+				say "ат";
+			-- v2b:
+				say "ят";
+	otherwise:
+		if the class is:
+			-- v1a: 
+				say "ет";
+			-- v1b:
+				say "ет";
+			-- v2a:
+				say "ит";
+			-- v2b:
+				say "ит";
+				
+Section 6 - Printed Name Generation
 
 To say printed name of (item - a thing) in the (itemcase - a case) case:
 	let IG be the gender of the item;
@@ -550,10 +742,56 @@ To say printed name of (item - a thing) in the (itemcase - a case) case:
 		say long form modifier of the item in the itemcase case IG gender IM;
 		say " ";
 	say item in the itemcase case IM.
+	
+Section 7 - Das Kapital
 
-Chapter 6 - Grammar Tweaks
+To say (phrase - text) with initial capital:
+	let LC be character number 1 in phrase;
+	let UC be "";
+	if there is an upper corresponding to a lower of LC in the Table of UpperCase:
+		let UC be the upper corresponding to the lower of LC in the Table of UpperCase;
+		replace character number 1 in phrase with UC;
+	say phrase.
 
-Rule for listing nondescript items:
+Table of UpperCase
+lower	upper
+"а"	"А"
+"б"	"Б"
+"в"	"В"
+"г"	"Г"
+"д"	"Д"
+"е"	"Е"
+"ё"	"Ё"
+"ж"	"Ж"
+"з"	"З"
+"и"	"И"
+"й"	"Й"
+"к"	"К"
+"л"	"Л"
+"м"	"М"
+"н"	"Н"
+"о"	"О"
+"п"	"П"
+"р"	"Р"
+"с"	"С"
+"т"	"Т"
+"у"	"У"
+"ф"	"Ф"
+"х"	"Х"
+"ц"	"Ц"
+"ч"	"Ч"
+"ш"	"Ш"
+"щ"	"Щ"
+"ъ"	"Ъ"
+"ь"	"Ь"
+"э"	"Э"
+"ю"	"Ю"
+"я"	"Я"
+
+
+Chapter 7 - Grammar Tweaks
+
+[Rule for listing nondescript items:
 	let L be a list of things;
 	say "Ты видишь здесь ";
 	repeat with item running through things enclosed by the location:
@@ -567,21 +805,21 @@ Rule for listing nondescript items:
 		say "[printed name of E in the acc case]";
 		if the number of entries in L is greater than 2 and N is less than (the number of entries in L minus 1):
 			say ", ";
-	say "."
+	say "."]
 	
 Understand "ya/menya" as yourself.
 
-Chapter 7 - World
+Chapter 8 - World
 
 The Laboratory is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
-The daughter is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. 
+The daughter is a woman in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. 
 
 The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. 
 
-The workbook is in the Laboratory. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. 
+The workbook is in box. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. The workbook is lit.
 
-A box is an open container in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
+A box is in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
 
 The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
 
@@ -615,7 +853,7 @@ The kasha is edible. It is on the dining table. The description is "Каша б�
 
 The apple is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "yablokо". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
 
-Chapter 8 - Transliterations
+Chapter 9 - Transliterations
 
 [clear definitions]
 
@@ -947,12 +1185,12 @@ The printed name of down is "вниз".
 The printed name of outside is "";]
 
 
-Chapter 9 - Start
+Chapter 10 - Start
 
 When play begins:
 	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. There are plenty of errors, I have not extensively implemented grammar or replaced library responses. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
-Chapter 10 - Some example customized responses
+Chapter 11 - Some example customized responses
 
 After inserting something (called the item) into the box:
 	say "Вы положите [item] в коробку. Теперь в коробке ";	
@@ -976,7 +1214,7 @@ After inserting something (called the item) into the box:
 After eating something:
 	say "[one of]Ммммм[or]Не плохо[or]Отлично[or]Как вкусно[in random order]."
 	
-Chapter 11 - Tests
+Chapter 12 - Tests
 
 Section 1 - Decline an object
 
