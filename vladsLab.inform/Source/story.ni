@@ -345,7 +345,7 @@ The list writer internal rule response (Y) is "ничего".
 
 [*translate]The action processing internal rule response (A) is "[bracket]That command asks to do something outside of play, so it can only make sense from you to me. [The noun] cannot be asked to do this.[close bracket]".
 
-[*translate]The action processing internal rule response (B) is "You must name an object."
+ The action processing internal rule response (B) is "You must name an object."
 [*translate]The action processing internal rule response (C) is "You may not name an object."
 [*translate]The action processing internal rule response (D) is "You must supply a noun."
 [*translate]The action processing internal rule response (E) is "You may not supply a noun."
@@ -377,6 +377,245 @@ The parser error internal rule response (F) is "Похоже, надо сказ�
 
 [parser error internal rule response (G): "[We] [aren't] holding that!"]
 The parser error internal rule response (G) is "Этого предмета у тебя нет."
+
+[parser error internal rule response (H): "You can't use multiple objects with that verb."]
+The parser error internal rule response (H) is "С этим действием не допускается много объектов."
+
+[parser error internal rule response (I): "You can only use multiple objects once on a line."]
+The parser error internal rule response (I) is "Множественные объекты допустимы только один раз."
+
+[parser error internal rule response (J): "I'm not sure what ['][pronoun i6 dictionary word]['] refers to."]
+The parser error internal rule response (J) is "Непонятно, к чему относится ['][pronoun i6 dictionary word]['] ."
+
+[parser error internal rule response (K): [We] [can't] see ['][pronoun i6 dictionary word]['] ([the noun]) at the moment."]
+The parser error internal rule response (K) is "В данный момент отсутствует ['][pronoun i6 dictionary word][']."
+
+[parser error internal rule response (L): "You excepted something not included anyway!"]
+The parser error internal rule response (L) is "Вы исключили нечто не включённое!"
+
+[parser error internal rule response (M): "You can only do that to something animate."]
+The parser error internal rule response (M) is "Действие применимо только к одушевлённым объектам."
+
+[parser error internal rule response (N): "That's not a verb I [if American dialect option is active]recognize[otherwise]recognise[end if]."]
+The parser error internal rule response (N) is "Этот глагол непонятен."
+
+[parser error internal rule response (O): "That's not something you need to refer to in the course of this game."]
+The parser error internal rule response (O) is "Упоминать это в игре нет необходимости."
+
+[parser error internal rule response (P): "I didn't understand the way that finished."]
+The parser error internal rule response (P) is "Конец команды непонятен."
+
+[parser error internal rule response (Q): "[if number understood is 0]None[otherwise]Only [number understood in words][end if] of those [regarding the number understood][are] available."]
+The parser error internal rule response (Q) is "[if number understood is 0]Ни одного из них нет[otherwise]Только [number understood in words] из них есть[end if] в наличии."
+
+[*translate][parser error internal rule response (R): "That noun did not make sense in this context."]
+
+[parser error internal rule response (S): "To repeat a command like 'frog, jump', just say 'again', not 'frog, again'."]
+The parser error internal rule response (S) is "Чтобы повторить команду [bold type]жаба, прыг[roman type], введите [bold type]опять[roman type] (но не [bold type]жаба, опять[roman type])."
+
+[parser error internal rule response (T): "You can't begin with a comma."]
+The parser error internal rule response (T) is "Команда не может начинаться с запятой."
+
+[parser error internal rule response (U): "You seem to want to talk to someone, but I can't see whom."]
+The parser error internal rule response (U) is "Непонятно, к кому ты обращаешься."
+
+[parser error internal rule response (V): "You can't talk to [the noun]."]
+The parser error internal rule response (V) is "Бессмысленно говорить с [printed name of the noun in the ins case]."
+
+[parser error internal rule response (W): "To talk to someone, try 'someone, hello' or some such."]
+The parser error internal rule response (W) is "Чтобы обратиться к собеседнику, введите [bold type]собеседник, привет[roman type].";
+
+[parser error internal rule response (X): "I beg your pardon?"]
+The parser error internal rule response (X) is "Простите?"
+
+[parser nothing error internal rule response (A): "Nothing to do!"]
+The parser nothing error internal rule response (A) is "Действий нет!"
+
+[parser nothing error internal rule response (B): "[There] [adapt the verb are from the third person plural] none at all available!"]
+The parser nothing error internal rule response (B) is "Нет совсем ничего подходящего."
+
+[parser nothing error internal rule response (C): "[regarding the noun][Those] [seem] to belong to [the noun]."]
+The parser nothing error internal rule response (C) is "[capitalized noun in the nom case] явно принадлеж[noun does a verb of class v2a] [printed name of the second noun in the dat case]."
+
+[parser nothing error internal rule response (D): "[regarding the noun][Those] [can't] contain things."]
+The parser nothing error internal rule response (D) is "[capitalized noun in the nom case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a]  что-либо содержать."
+
+[parser nothing error internal rule response (E): "[The noun] [aren't] open."]
+The parser nothing error internal rule response (E) is "[capitalized noun in the nom case] [list-writer-internal-rule-closed]."
+
+[parser nothing error internal rule response (F): "[The noun] [are] empty."]
+The parser nothing error internal rule response (F) is "В [printed name of the noun in the pre case] ничего нет."
+
+[darkness name internal rule response (A): "Darkness"]
+The darkness name internal rule response (A) is "Темнота".
+
+[parser command internal rule response (A): "Sorry, that can't be corrected."]
+The parser command internal rule response (A) is "Это невозможно исправить."
+
+[parser command internal rule response (B): "Think nothing of it."]
+The parser command internal rule response (B) is "Исправить это нельзя."
+
+[parser command internal rule response (C): "'Oops' can only correct a single word."]
+The parser command internal rule response (C) is "'Команда [bold type]ой@[roman type] исправляет только одно слово."
+
+[parser command internal rule response (D): "You can hardly repeat that."]
+The parser command internal rule response (D) is "Это вряд ли можно повторить."
+
+[parser clarification internal rule response (A): "Who do you mean, "]
+The parser clarification internal rule response (A) is "Что имеется в виду: ".
+
+[parser clarification internal rule response (B): "Which do you mean, "]
+The parser clarification internal rule response (B) is "Что имеется в виду: ".
+
+[parser clarification internal rule response (C): "Sorry, you can only have one item here. Which exactly?"]
+The parser clarification internal rule response (C) is "Но здесь доступен только один предмет. Какой именно?"
+
+[*translate][parser clarification internal rule response (D): "Whom do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
+
+[*translate][parser clarification internal rule response (E): "What do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
+
+[parser clarification internal rule response (F): "those things"]
+The parser clarification internal rule response (F) is "эти объекты".
+
+[*translate][parser clarification internal rule response (G): "that"]
+
+[parser clarification internal rule response (H): " or "]
+The parser clarification internal rule response (H) is "или".
+
+[yes or no question internal rule response (A): "Please answer yes or no."]
+The yes or no question internal rule response (A) is "Ответьте [bold type]да[roman type] или [bold type]нет[roman type].."
+
+[Consider for future revision allowing parser be на ты/вы as a use option.]
+[print protagonist internal rule response (A): "[We]"]
+The print protagonist internal rule response (A) is "ты".
+
+[print protagonist internal rule response (B): "[ourselves]"]
+The print protagonist internal rule response (B) is "себя".
+
+[print protagonist internal rule response (C): "[our] former self"]
+The print protagonist internal rule response (C) is "ты (ранее)".
+
+[standard implicit taking rule response (A): "(first taking [the noun])[command clarification break]"]
+The standard implicit taking rule response (A) is "(сначала взяв [the printed name of the noun])[command clarification break]".
+
+[standard implicit taking rule response (B): "([the second noun] first taking [the noun])[command clarification break]"]
+The standard implicit taking rule response (B) is "([the second noun] сначала взяв [the noun])[command clarification break]".
+
+[print obituary headline rule response (A): " You have died "]
+[not quite == dead, but lost is probably close enough and what was used in RI6.  The formal you is probably used here because it avoids the issue of requiring gender-specific past-participle of "lost" for the informal you; [TOCONSIDER] rephrase to get around this. Maybe "VICTORY! or DEFEAT!  ??]
+The print obituary headline rule response (A) is "  Вы проиграли  "
+
+[print obituary headline rule response (B): " You have won "]
+The print obituary headline rule response (B) is " Вы выиграли "
+
+[print obituary headline rule response (C): " The End "]
+The print obituary headline rule response (C) is " Конец "
+
+[immediately undo rule response (A): "The use of 'undo' is forbidden in this story."]
+[translate]The immediately undo rule response (A) is "The use of 'undo' is forbidden in this story."
+
+[immediately undo rule response (B): "You can't 'undo' what hasn't been done!"]
+The immediately undo rule response (B) is "Нельзя отменить то, что не сделано!"
+
+[immediately undo rule response (C): "Your interpreter does not provide 'undo'. Sorry!"]
+The immediately undo rule response (C) is "Интерпретатор не поддерживает отмену хода."
+
+[immediately undo rule response (D): "'Undo' failed. Sorry!"]
+The immediately undo rule response (D) is "Отменить ход не удалось."
+
+[immediately undo rule response (E): "[bracket]Previous turn undone.[close bracket]"]
+The immediately undo rule response (E) is "[bracket]Предыдущий ход отменён.[close bracket]"
+
+[immediately undo rule response (F): "'Undo' capacity exhausted. Sorry!"]
+[translate][immediately undo rule response (F): "'Undo' capacity exhausted. Sorry!"]
+
+[quit the game rule response (A): "Are you sure you want to quit? "]
+[review]The quit the game rule response (A) is "Tы хочешь покинуть игру? "
+
+[save the game rule response (A): "Save failed."]
+The save the game rule response (A) is "Сохранить игру не удалось."
+
+[save the game rule response (B): "Ok."]
+The save the game rule response (B) is "Игра сохранена."
+
+[restore the game rule response (A): "Restore failed."]
+The restore the game rule response (A) is "Restore failed."
+
+[restore the game rule response (B): "Ok."]
+The restore the game rule response (B) is "Игра восстановлена."
+
+[restart the game rule response (A): "Are you sure you want to restart? "]
+The restart the game rule response (A) is "Ты хочешь перезапустить игру? "
+
+[restart the game rule response (B): "Failed."]
+The restart the game rule response (B) is "Перезапустить игру не удалось."
+
+[verify the story file rule response (A): "The game file has verified as intact."]
+The verify the story file rule response (A) is "Файл игры проверен успешно."
+
+[verify the story file rule response (B): "The game file did not verify as intact, and may be corrupt."]
+The verify the story file rule response (B) is "Файл игры не прошёл проверку и может быть повреждён."
+
+[switch the story transcript on rule response (A): "Transcripting is already on."]
+The switch the story transcript on rule response (A) is "Режим транскрипта уже включён."
+
+[switch the story transcript on rule response (B): "Start of a transcript of"]
+The switch the story transcript on rule response (B) is "Включение транскрипта: "
+
+[switch the story transcript on rule response (C): "Attempt to begin transcript failed."]
+The switch the story transcript on rule response (C) is "Включить транскрипт не удалось."
+
+[switch the story transcript off rule response (A): "Transcripting is already off."]
+The switch the story transcript off rule response (A) is "Режим транскрипта уже выключен."
+
+[switch the story transcript off rule response (B): "[line break]End of transcript."]
+The switch the story transcript off rule response (B) is "[line break]Выключение транскрипта."
+
+[switch the story transcript off rule response (C): "Attempt to end transcript failed."]
+The switch the story transcript off rule response (C) is "Выключить транскрипт не удалось."
+
+[announce the score rule response (A): "[if the story has ended]In that game you scored[otherwise]You have so far scored[end if] [score] out of a possible [maximum score], in [turn count] turn[s]"]
+The announce the score rule response (A) is "[if the story has ended]В эту попытку[otherwise]К этому моменту[end if] вы набрали [score] (из [maximum score] возможных) за [turn count] turn[s]"
+
+[announce the score rule response (B): ", earning you the rank of "]
+[translate]The announce the score rule response (B) is ", earning you the rank of "
+
+[announce the score rule response (C): "[There] [are] no score in this story."]
+The announce the score rule response (C) is "В этой игре счёт не предусмотрен."
+
+[announce the score rule response (D): "[bracket]Your score has just gone up by [number understood in words] point[s].[close bracket]"]
+The announce the score rule response (D) is "[bracket]Ваш счёт увеличился на [number understood in words].[close bracket]"
+
+[announce the score rule response (E): "[bracket]Your score has just gone down by [number understood in words] point[s].[close bracket]"]
+The announce the score rule response (E) is "[bracket]Ваш счёт уменьшился на [number understood in words].[close bracket]"
+
+[standard report preferring abbreviated room descriptions rule response (A): " is now in its 'superbrief' mode, which always gives short descriptions of locations (even if you haven't been there before)."]
+The standard report preferring abbreviated room descriptions rule response (A) is " сейчас в [bold type]кратком[roman type] режиме (всегда краткие описания мест)."
+
+[standard report preferring unabbreviated room descriptions rule response (A): " is now in its 'verbose' mode, which always gives long descriptions of locations (even if you've been there before)."]
+The standard report preferring unabbreviated room descriptions rule response (A) is " сейчас в [bold type]длинном[roman type] режиме (всегда длинные описания мест)."
+
+[standard report preferring sometimes abbreviated room descriptions rule response (A): " is now in its 'brief' printing mode, which gives long descriptions of places never before visited and short descriptions otherwise."]
+The standard report preferring sometimes abbreviated room descriptions rule response (A) is " сейчас в [bold type]нормальном[bold type] режиме (длинные описания для новых мест, краткие для старых)."
+
+[standard report switching score notification on rule response (A): "Score notification on."]
+The standard report switching score notification on rule response (A) is "Извещения о счёте включены."
+
+[standard report switching score notification off rule response (A): "Score notification off."]
+The standard report switching score notification off rule response (A) is "Извещения о счёте выключены."
+
+[announce the pronoun meanings rule response (A): "At the moment, "]
+The announce the pronoun meanings rule response (A) is "В данный момент: "
+
+[announce the pronoun meanings rule response (B): "means "]
+The announce the pronoun meanings rule response (B) is "означает "
+
+[announce the pronoun meanings rule response (C): "is unset"]
+The announce the pronoun meanings rule response (C) is "отсутствует"
+
+[And from the Vorple Module]
+
+The display Vorple credits rule response (A) is "Ворпeл версия [version number][line break]".
 
 
 Chapter 6 - Some  grammar
