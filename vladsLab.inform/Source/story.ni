@@ -243,537 +243,781 @@ To say list-writer-internal-rule-closed:
 To say list-writer-internal-rule-locked:
 	say short form of "запертый" regarding noun.
 	
-[****************
 
+[announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
 [announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
 
 [The block vaguely going rule response (A): "You'll have to say which compass direction to go in."]
+[The block vaguely going rule response (A): "You'll have to say which compass direction to go in."]
 
+[The print the final prompt rule response (A): "> [run paragraph on]"]
 [The print the final prompt rule response (A): "> [run paragraph on]"]
 
 [The print the final question rule response (A): "Would you like to "]
+[The print the final question rule response (A): "Would you like to "]
 
+[The print the final question rule response (B): " or "]
 [The print the final question rule response (B): " or "]
 
 [The standard respond to final question rule response (A): "Please give one of the answers above."]
+[The standard respond to final question rule response (A): "Please give one of the answers above."]
 
+[The you-can-also-see rule response (A): "[We] "]
 [The you-can-also-see rule response (A): "[We] "]
 
 [The you-can-also-see rule response (B): "On [the domain] [we] "]
+[The you-can-also-see rule response (B): "On [the domain] [we] "]
 
+[The you-can-also-see rule response (C): "In [the domain] [we] "]
 [The you-can-also-see rule response (C): "In [the domain] [we] "]
 
 [The you-can-also-see rule response (D): "[regarding the player][can] also see "]
+[The you-can-also-see rule response (D): "[regarding the player][can] also see "]
 
+[The you-can-also-see rule response (E): "[regarding the player][can] see "]
 [The you-can-also-see rule response (E): "[regarding the player][can] see "]
 
 [The you-can-also-see rule response (F): " here"]
+[The you-can-also-see rule response (F): " here"]
 
-
+[The use initial appearance in room descriptions rule response (A): "On [the item] "]
 [The use initial appearance in room descriptions rule response (A): "On [the item] "]
 
 [The describe what's on scenery supporters in room descriptions rule response (A): "On [the item] "]
+[The describe what's on scenery supporters in room descriptions rule response (A): "On [the item] "]
 
+[The describe what's on mentioned supporters in room descriptions rule response (A): "On [the item] "]
 [The describe what's on mentioned supporters in room descriptions rule response (A): "On [the item] "]
 
 [The print empty inventory rule response (A): "[We] [are] carrying nothing."]
+[The print empty inventory rule response (A): "[We] [are] carrying nothing."]
 
+[The print standard inventory rule response (A): "[We] [are] carrying:[line break]"]
 [The print standard inventory rule response (A): "[We] [are] carrying:[line break]"]
 
 [The report other people taking inventory rule response (A): "[The actor] [look] through [their] possessions."]
+[The report other people taking inventory rule response (A): "[The actor] [look] through [their] possessions."]
 
+[The can't take yourself rule response (A): "[We] [are] always self-possessed."]
 [The can't take yourself rule response (A): "[We] [are] always self-possessed."]
 
 [The can't take other people rule response (A): "I don't suppose [the noun] [would care] for that."]
+[The can't take other people rule response (A): "I don't suppose [the noun] [would care] for that."]
 
+[The can't take component parts rule response (A): "[regarding the noun][Those] [seem] to be a part of [the whole]."]
 [The can't take component parts rule response (A): "[regarding the noun][Those] [seem] to be a part of [the whole]."]
 
 [The can't take people's possessions rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
+[The can't take people's possessions rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
 
+[The can't take items out of play rule response (A): "[regarding the noun][Those] [aren't] available."]
 [The can't take items out of play rule response (A): "[regarding the noun][Those] [aren't] available."]
 
 [The can't take what you're inside rule response (A): "[We] [would have] to get [if noun is a supporter]off[otherwise]out of[end if] [the noun] first."]
+[The can't take what you're inside rule response (A): "[We] [would have] to get [if noun is a supporter]off[otherwise]out of[end if] [the noun] first."]
 
+[The can't take what's already taken rule response (A): "[We] already [have] [regarding the noun][those]."]
 [The can't take what's already taken rule response (A): "[We] already [have] [regarding the noun][those]."]
 
 [The can't take scenery rule response (A): "[regarding the noun][They're] hardly portable."]
+[The can't take scenery rule response (A): "[regarding the noun][They're] hardly portable."]
 
+[The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
 [The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
 
 [The can't take what's fixed in place rule response (A): "[regarding the noun][They're] fixed in place."]
+[The can't take what's fixed in place rule response (A): "[regarding the noun][They're] fixed in place."]
 
+[The use player's holdall to avoid exceeding carrying capacity rule response (A): "(putting [the transferred item] into [the current working sack] to make room)[command clarification break]"]
 [The use player's holdall to avoid exceeding carrying capacity rule response (A): "(putting [the transferred item] into [the current working sack] to make room)[command clarification break]"]
 
 [The can't exceed carrying capacity rule response (A): "[We]['re] carrying too many things already."]
+[The can't exceed carrying capacity rule response (A): "[We]['re] carrying too many things already."]
 
+[The standard report taking rule response (A): "Taken."]
 [The standard report taking rule response (A): "Taken."]
 
 [The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
+[The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
 
+[The can't remove what's not inside rule response (A): "But [regarding the noun][they] [aren't] there now."]
 [The can't remove what's not inside rule response (A): "But [regarding the noun][they] [aren't] there now."]
 
 [The can't remove from people rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
+[The can't remove from people rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
 
+[The can't drop yourself rule response (A): "[We] [lack] the dexterity."]
 [The can't drop yourself rule response (A): "[We] [lack] the dexterity."]
 
 [The can't drop body parts rule response (A): "[We] [can't drop] part of [ourselves]."]
+[The can't drop body parts rule response (A): "[We] [can't drop] part of [ourselves]."]
 
+[The can't drop what's already dropped rule response (A): "[The noun] [are] already here."]
 [The can't drop what's already dropped rule response (A): "[The noun] [are] already here."]
 
 [The can't drop what's not held rule response (A): "[We] [haven't] got [regarding the noun][those]."]
+[The can't drop what's not held rule response (A): "[We] [haven't] got [regarding the noun][those]."]
 
+[The can't drop clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
 [The can't drop clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
 
 [The can't drop if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the receptacle]."]
+[The can't drop if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the receptacle]."]
 
+[The can't drop if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the receptacle]."]
 [The can't drop if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the receptacle]."]
 
 [The standard report dropping rule response (A): "Dropped."]
+[The standard report dropping rule response (A): "Dropped."]
 
+[The standard report dropping rule response (B): "[The actor] [put] down [the noun]."]
 [The standard report dropping rule response (B): "[The actor] [put] down [the noun]."]
 
 [The can't put something on itself rule response (A): "[We] [can't put] something on top of itself."]
+[The can't put something on itself rule response (A): "[We] [can't put] something on top of itself."]
 
+[The can't put onto what's not a supporter rule response (A): "Putting things on [the second noun] [would achieve] nothing."]
 [The can't put onto what's not a supporter rule response (A): "Putting things on [the second noun] [would achieve] nothing."]
 
 [The can't put clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
+[The can't put clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
 
+[The can't put if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the second noun]."]
 [The can't put if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the second noun]."]
 
 [The concise report putting rule response (A): "Done."]
+[The concise report putting rule response (A): "Done."]
 
+[The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
 [The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
 
 [The can't insert something into itself rule response (A): "[We] [can't put] something inside itself."]
+[The can't insert something into itself rule response (A): "[We] [can't put] something inside itself."]
 
+[The can't insert into closed containers rule response (A): "[The second noun] [are] closed."]
 [The can't insert into closed containers rule response (A): "[The second noun] [are] closed."]
 
 
 [The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
+[The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
 
+[The can't insert clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
 [The can't insert clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
 
 [The can't insert if this exceeds carrying capacity rule response (A): "[There] [are] no more room in [the second noun]."]
+[The can't insert if this exceeds carrying capacity rule response (A): "[There] [are] no more room in [the second noun]."]
 
+[The concise report inserting rule response (A): "Done."]
 [The concise report inserting rule response (A): "Done."]
 
 [The standard report inserting rule response (A): "[The actor] [put] [the noun] into [the second noun]."]
+[The standard report inserting rule response (A): "[The actor] [put] [the noun] into [the second noun]."]
 
+[The can't eat unless edible rule response (A): "[regarding the noun][They're] plainly inedible."]
 [The can't eat unless edible rule response (A): "[regarding the noun][They're] plainly inedible."]
 
 [The can't eat clothing without removing it first rule response (A): "(first taking [the noun] off)[command clarification break]"]
+[The can't eat clothing without removing it first rule response (A): "(first taking [the noun] off)[command clarification break]"]
 
+[The can't eat other people's food rule response (A): "[The owner] [might not appreciate] that."]
 [The can't eat other people's food rule response (A): "[The owner] [might not appreciate] that."]
 
 [The standard report eating rule response (A): "[We] [eat] [the noun]. Not bad."]
+[The standard report eating rule response (A): "[We] [eat] [the noun]. Not bad."]
 
+[The standard report eating rule response (B): "[The actor] [eat] [the noun]."]
 [The standard report eating rule response (B): "[The actor] [eat] [the noun]."]
 
 [The stand up before going rule response (A): "(first getting off [the chaise])[command clarification break]"]
+[The stand up before going rule response (A): "(first getting off [the chaise])[command clarification break]"]
 
+[The can't travel in what's not a vehicle rule response (A): "[We] [would have] to get off [the nonvehicle] first."]
 [The can't travel in what's not a vehicle rule response (A): "[We] [would have] to get off [the nonvehicle] first."]
 
 [The can't travel in what's not a vehicle rule response (B): "[We] [would have] to get out of [the nonvehicle] first."]
+[The can't travel in what's not a vehicle rule response (B): "[We] [would have] to get out of [the nonvehicle] first."]
 
-
+[The can't go through undescribed doors rule response (A): "[We] [can't go] that way."]
 [The can't go through undescribed doors rule response (A): "[We] [can't go] that way."]
 
 [The can't go through closed doors rule response (A): "(first opening [the door gone through])[command clarification break]"]
+[The can't go through closed doors rule response (A): "(first opening [the door gone through])[command clarification break]"]
 
+[The can't go that way rule response (A): "[We] [can't go] that way."]
 [The can't go that way rule response (A): "[We] [can't go] that way."]
 
 [The can't go that way rule response (B): "[We] [can't], since [the door gone through] [lead] nowhere."]
+[The can't go that way rule response (B): "[We] [can't], since [the door gone through] [lead] nowhere."]
 
+[The describe room gone into rule response (A): "[The actor] [go] up"]
 [The describe room gone into rule response (A): "[The actor] [go] up"]
 
 [The describe room gone into rule response (B): "[The actor] [go] down"]
+[The describe room gone into rule response (B): "[The actor] [go] down"]
 
+[The describe room gone into rule response (C): "[The actor] [go] [noun]"]
 [The describe room gone into rule response (C): "[The actor] [go] [noun]"]
 
 [The describe room gone into rule response (D): "[The actor] [arrive] from above"]
+[The describe room gone into rule response (D): "[The actor] [arrive] from above"]
 
+[The describe room gone into rule response (E): "[The actor] [arrive] from below"]
 [The describe room gone into rule response (E): "[The actor] [arrive] from below"]
 
 [The describe room gone into rule response (F): "[The actor] [arrive] from [the back way]"]
+[The describe room gone into rule response (F): "[The actor] [arrive] from [the back way]"]
 
+[The describe room gone into rule response (G): "[The actor] [arrive]"]
 [The describe room gone into rule response (G): "[The actor] [arrive]"]
 
 [The describe room gone into rule response (H): "[The actor] [arrive] at [the room gone to] from above"]
+[The describe room gone into rule response (H): "[The actor] [arrive] at [the room gone to] from above"]
 
+[The describe room gone into rule response (I): "[The actor] [arrive] at [the room gone to] from below"]
 [The describe room gone into rule response (I): "[The actor] [arrive] at [the room gone to] from below"]
 
 [The describe room gone into rule response (J): "[The actor] [arrive] at [the room gone to] from [the back way]"]
+[The describe room gone into rule response (J): "[The actor] [arrive] at [the room gone to] from [the back way]"]
 
+[The describe room gone into rule response (K): "[The actor] [go] through [the noun]"]
 [The describe room gone into rule response (K): "[The actor] [go] through [the noun]"]
 
 [The describe room gone into rule response (L): "[The actor] [arrive] from [the noun]"]
+[The describe room gone into rule response (L): "[The actor] [arrive] from [the noun]"]
 
+[The describe room gone into rule response (M): "on [the vehicle gone by]"]
 [The describe room gone into rule response (M): "on [the vehicle gone by]"]
 
 [The describe room gone into rule response (N): "in [the vehicle gone by]"]
+[The describe room gone into rule response (N): "in [the vehicle gone by]"]
 
-
-
+[The describe room gone into rule response (O): ", pushing [the thing gone with] in front, and [us] along too"]
 [The describe room gone into rule response (O): ", pushing [the thing gone with] in front, and [us] along too"]
 
 [The describe room gone into rule response (P): ", pushing [the thing gone with] in front"]
+[The describe room gone into rule response (P): ", pushing [the thing gone with] in front"]
 
+[The describe room gone into rule response (Q): ", pushing [the thing gone with] away"]
 [The describe room gone into rule response (Q): ", pushing [the thing gone with] away"]
 
 [The describe room gone into rule response (R): ", pushing [the thing gone with] in"]
+[The describe room gone into rule response (R): ", pushing [the thing gone with] in"]
 
+[The describe room gone into rule response (S): ", taking [us] along"]
 [The describe room gone into rule response (S): ", taking [us] along"]
 
 [The can't enter what's already entered rule response (A): "But [we]['re] already on [the noun]."]
+[The can't enter what's already entered rule response (A): "But [we]['re] already on [the noun]."]
 
+[The can't enter what's already entered rule response (B): "But [we]['re] already in [the noun]."]
 [The can't enter what's already entered rule response (B): "But [we]['re] already in [the noun]."]
 
 [The can't enter what's not enterable rule response (A): "[regarding the noun][They're] not something [we] [can] stand on."]
+[The can't enter what's not enterable rule response (A): "[regarding the noun][They're] not something [we] [can] stand on."]
 
+[The can't enter what's not enterable rule response (B): "[regarding the noun][They're] not something [we] [can] sit down on."]
 [The can't enter what's not enterable rule response (B): "[regarding the noun][They're] not something [we] [can] sit down on."]
 
 [The can't enter what's not enterable rule response (C): "[regarding the noun][They're] not something [we] [can] lie down on."]
+[The can't enter what's not enterable rule response (C): "[regarding the noun][They're] not something [we] [can] lie down on."]
 
+[The can't enter what's not enterable rule response (D): "[regarding the noun][They're] not something [we] [can] enter."]
 [The can't enter what's not enterable rule response (D): "[regarding the noun][They're] not something [we] [can] enter."]
 
 [The can't enter closed containers rule response (A): "[We] [can't get] into the closed [noun]."]
+[The can't enter closed containers rule response (A): "[We] [can't get] into the closed [noun]."]
 
 [The can't enter if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the noun]."]
+[The can't enter if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the noun]."]
 
-
+[The can't enter if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the noun]."]
 [The can't enter if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the noun]."]
 
 [The can't enter something carried rule response (A): "[We] [can] only get into something free-standing."]
+[The can't enter something carried rule response (A): "[We] [can] only get into something free-standing."]
 
+[The implicitly pass through other barriers rule response (A): "(getting off [the current home])[command clarification break]"]
 [The implicitly pass through other barriers rule response (A): "(getting off [the current home])[command clarification break]"]
 
 [The implicitly pass through other barriers rule response (B): "(getting out of [the current home])[command clarification break]"]
+[The implicitly pass through other barriers rule response (B): "(getting out of [the current home])[command clarification break]"]
 
+[The implicitly pass through other barriers rule response (C): "(getting onto [the target])[command clarification break]"]
 [The implicitly pass through other barriers rule response (C): "(getting onto [the target])[command clarification break]"]
 
 [The implicitly pass through other barriers rule response (D): "(getting into [the target])[command clarification break]"]
+[The implicitly pass through other barriers rule response (D): "(getting into [the target])[command clarification break]"]
 
+[The implicitly pass through other barriers rule response (E): "(entering [the target])[command clarification break]"]
 [The implicitly pass through other barriers rule response (E): "(entering [the target])[command clarification break]"]
 
 [The standard report entering rule response (A): "[We] [get] onto [the noun]."]
+[The standard report entering rule response (A): "[We] [get] onto [the noun]."]
 
+[The standard report entering rule response (B): "[We] [get] into [the noun]."]
 [The standard report entering rule response (B): "[We] [get] into [the noun]."]
 
 [The standard report entering rule response (C): "[The actor] [get] into [the noun]."]
+[The standard report entering rule response (C): "[The actor] [get] into [the noun]."]
 
+[The standard report entering rule response (D): "[The actor] [get] onto [the noun]."]
 [The standard report entering rule response (D): "[The actor] [get] onto [the noun]."]
 
 [The can't exit when not inside anything rule response (A): "But [we] [aren't] in anything at the [if story tense is present tense]moment[otherwise]time[end if]."]
+[The can't exit when not inside anything rule response (A): "But [we] [aren't] in anything at the [if story tense is present tense]moment[otherwise]time[end if]."]
 
+[The can't exit closed containers rule response (A): "You can't get out of the closed [cage]."]
 [The can't exit closed containers rule response (A): "You can't get out of the closed [cage]."]
 
 [The standard report exiting rule response (A): "[We] [get] off [the container exited from]."]
+[The standard report exiting rule response (A): "[We] [get] off [the container exited from]."]
 
+[The standard report exiting rule response (B): "[We] [get] out of [the container exited from]."]
 [The standard report exiting rule response (B): "[We] [get] out of [the container exited from]."]
 
 [The standard report exiting rule response (C): "[The actor] [get] out of [the container exited from]."]
+[The standard report exiting rule response (C): "[The actor] [get] out of [the container exited from]."]
 
-
+[The can't get off things rule response (A): "But [we] [aren't] on [the noun] at the [if story tense is present tense]moment[otherwise]time[end if]."]
 [The can't get off things rule response (A): "But [we] [aren't] on [the noun] at the [if story tense is present tense]moment[otherwise]time[end if]."]
 
 [The standard report getting off rule response (A): "[The actor] [get] off [the noun]."]
+[The standard report getting off rule response (A): "[The actor] [get] off [the noun]."]
 
+[The room description heading rule response (A): "Darkness"]
 [The room description heading rule response (A): "Darkness"]
 
 [The room description heading rule response (B): " (on [the intermediate level])"]
+[The room description heading rule response (B): " (on [the intermediate level])"]
 
+[The room description heading rule response (C): " (in [the intermediate level])"]
 [The room description heading rule response (C): " (in [the intermediate level])"]
 
 [The room description body text rule response (A): "[It] [are] pitch dark, and [we] [can't see] a thing."]
+[The room description body text rule response (A): "[It] [are] pitch dark, and [we] [can't see] a thing."]
 
+[The other people looking rule response (A): "[The actor] [look] around."]
 [The other people looking rule response (A): "[The actor] [look] around."]
 
 [The examine directions rule response (A): "[We] [see] nothing unexpected in that direction."]
+[The examine directions rule response (A): "[We] [see] nothing unexpected in that direction."]
 
+[The examine containers rule response (A): "In [the noun] "]
 [The examine containers rule response (A): "In [the noun] "]
 
 [The examine containers rule response (B): "[The noun] [are] empty."]
+[The examine containers rule response (B): "[The noun] [are] empty."]
 
+[The examine supporters rule response (A): "On [the noun] "]
 [The examine supporters rule response (A): "On [the noun] "]
 
 [The examine devices rule response (A): "[The noun] [are] [if story tense is present tense]currently [end if]switched [if the noun is switched on]on[otherwise]off[end if]."]
+[The examine devices rule response (A): "[The noun] [are] [if story tense is present tense]currently [end if]switched [if the noun is switched on]on[otherwise]off[end if]."]
 
+[The examine undescribed things rule response (A): "[We] [see] nothing special about [the noun]."]
 [The examine undescribed things rule response (A): "[We] [see] nothing special about [the noun]."]
 
 [The report other people examining rule response (A): "[The actor] [look] closely at [the noun]."]
+[The report other people examining rule response (A): "[The actor] [look] closely at [the noun]."]
 
+[The standard looking under rule response (A): "[We] [find] nothing of interest."]
 [The standard looking under rule response (A): "[We] [find] nothing of interest."]
 
 [The report other people looking under rule response (A): "[The actor] [look] under [the noun]."]
+[The report other people looking under rule response (A): "[The actor] [look] under [the noun]."]
 
 [The can't search unless container or supporter rule response (A): "[We] [find] nothing of interest."]
+[The can't search unless container or supporter rule response (A): "[We] [find] nothing of interest."]
 
-
+[The can't search closed opaque containers rule response (A): "[We] [can't see] inside, since [the noun] [are] closed."]
 [The can't search closed opaque containers rule response (A): "[We] [can't see] inside, since [the noun] [are] closed."]
 
 [The standard search containers rule response (A): "In [the noun] "]
+[The standard search containers rule response (A): "In [the noun] "]
 
+[The standard search containers rule response (B): "[The noun] [are] empty."]
 [The standard search containers rule response (B): "[The noun] [are] empty."]
 
 [The standard search supporters rule response (A): "On [the noun] "]
+[The standard search supporters rule response (A): "On [the noun] "]
 
+[The standard search supporters rule response (B): "[There] [are] nothing on [the noun]."]
 [The standard search supporters rule response (B): "[There] [are] nothing on [the noun]."]
 
 [The report other people searching rule response (A): "[The actor] [search] [the noun]."]
+[The report other people searching rule response (A): "[The actor] [search] [the noun]."]
 
+[The block consulting rule response (A): "[We] [discover] nothing of interest in [the noun]."]
 [The block consulting rule response (A): "[We] [discover] nothing of interest in [the noun]."]
 
 [The block consulting rule response (B): "[The actor] [look] at [the noun]."]
+[The block consulting rule response (B): "[The actor] [look] at [the noun]."]
 
+[The can't lock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] lock."]
 [The can't lock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] lock."]
 
 [The can't lock what's already locked rule response (A): "[regarding the noun][They're] locked at the [if story tense is present tense]moment[otherwise]time[end if]."]
+[The can't lock what's already locked rule response (A): "[regarding the noun][They're] locked at the [if story tense is present tense]moment[otherwise]time[end if]."]
 
+[The can't lock what's open rule response (A): "First [we] [would have] to close [the noun]."]
 [The can't lock what's open rule response (A): "First [we] [would have] to close [the noun]."]
 
 [The can't lock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
+[The can't lock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
 
+[The standard report locking rule response (A): "[We] [lock] [the noun]."]
 [The standard report locking rule response (A): "[We] [lock] [the noun]."]
 
 [The standard report locking rule response (B): "[The actor] [lock] [the noun]."]
+[The standard report locking rule response (B): "[The actor] [lock] [the noun]."]
 
+[The can't unlock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] unlock."]
 [The can't unlock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] unlock."]
 
 [The can't unlock what's already unlocked rule response (A): "[regarding the noun][They're] unlocked at the [if story tense is present tense]moment[otherwise]time[end if]."]
+[The can't unlock what's already unlocked rule response (A): "[regarding the noun][They're] unlocked at the [if story tense is present tense]moment[otherwise]time[end if]."]
 
+[The can't unlock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
 [The can't unlock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
 
 [The standard report unlocking rule response (A): "[We] [unlock] [the noun]."]
+[The standard report unlocking rule response (A): "[We] [unlock] [the noun]."]
 
+[The standard report unlocking rule response (B): "[The actor] [unlock] [the noun]."]
 [The standard report unlocking rule response (B): "[The actor] [unlock] [the noun]."]
 
 [The can't switch on unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
+[The can't switch on unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
 
+[The can't switch on what's already on rule response (A): "[regarding the noun][They're] already on."]
 [The can't switch on what's already on rule response (A): "[regarding the noun][They're] already on."]
 
 [The standard report switching on rule response (A): "[The actor] [switch] [the noun] on."]
+[The standard report switching on rule response (A): "[The actor] [switch] [the noun] on."]
 
 [The can't switch off unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
+[The can't switch off unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
 
-
+[The can't switch off what's already off rule response (A): "[regarding the noun][They're] already off."]
 [The can't switch off what's already off rule response (A): "[regarding the noun][They're] already off."]
 
 [The standard report switching off rule response (A): "[The actor] [switch] [the noun] off."]
+[The standard report switching off rule response (A): "[The actor] [switch] [the noun] off."]
 
+[The can't open unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] open."]
 [The can't open unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] open."]
 
 [The can't open what's locked rule response (A): "[regarding the noun][They] [seem] to be locked."]
+[The can't open what's locked rule response (A): "[regarding the noun][They] [seem] to be locked."]
 
+[The can't open what's already open rule response (A): "[regarding the noun][They're] already open."]
 [The can't open what's already open rule response (A): "[regarding the noun][They're] already open."]
 
 [The reveal any newly visible interior rule response (A): "[We] [open] [the noun], revealing "]
+[The reveal any newly visible interior rule response (A): "[We] [open] [the noun], revealing "]
 
+[The standard report opening rule response (A): "[We] [open] [the noun]."]
 [The standard report opening rule response (A): "[We] [open] [the noun]."]
 
 [The standard report opening rule response (B): "[The actor] [open] [the noun]."]
+[The standard report opening rule response (B): "[The actor] [open] [the noun]."]
 
+[The standard report opening rule response (C): "[The noun] [open]."]
 [The standard report opening rule response (C): "[The noun] [open]."]
 
 [The can't close unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] close."]
+[The can't close unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] close."]
 
+[The can't close what's already closed rule response (A): "[regarding the noun][They're] already closed."]
 [The can't close what's already closed rule response (A): "[regarding the noun][They're] already closed."]
 
 [The standard report closing rule response (A): "[We] [close] [the noun]."]
+[The standard report closing rule response (A): "[We] [close] [the noun]."]
 
+[The standard report closing rule response (B): "[The actor] [close] [the noun]."]
 [The standard report closing rule response (B): "[The actor] [close] [the noun]."]
 
 [The standard report closing rule response (C): "[The noun] [close]."]
+[The standard report closing rule response (C): "[The noun] [close]."]
 
+[The can't wear what's not clothing rule response (A): "[We] [can't wear] [regarding the noun][those]!"]
 [The can't wear what's not clothing rule response (A): "[We] [can't wear] [regarding the noun][those]!"]
 
 [The can't wear what's not held rule response (A): "[We] [aren't] holding [regarding the noun][those]!"]
+[The can't wear what's not held rule response (A): "[We] [aren't] holding [regarding the noun][those]!"]
 
+[The can't wear what's already worn rule response (A): "[We]['re] already wearing [regarding the noun][those]!"]
 [The can't wear what's already worn rule response (A): "[We]['re] already wearing [regarding the noun][those]!"]
 
 [The standard report wearing rule response (A): "[We] [put] on [the noun]."]
+[The standard report wearing rule response (A): "[We] [put] on [the noun]."]
 
+[The standard report wearing rule response (B): "[The actor] [put] on [the noun]."]
 [The standard report wearing rule response (B): "[The actor] [put] on [the noun]."]
 
 [The can't take off what's not worn rule response (A): "[We] [aren't] wearing [the noun]."]
+[The can't take off what's not worn rule response (A): "[We] [aren't] wearing [the noun]."]
 
+[The can't exceed carrying capacity when taking off rule response (A): "[We]['re] carrying too many things already."]
 [The can't exceed carrying capacity when taking off rule response (A): "[We]['re] carrying too many things already."]
 
 [The standard report taking off rule response (A): "[We] [take] off [the noun]."]
+[The standard report taking off rule response (A): "[We] [take] off [the noun]."]
 
+[The standard report taking off rule response (B): "[The actor] [take] off [the noun]."]
 [The standard report taking off rule response (B): "[The actor] [take] off [the noun]."]
 
 [The can't give what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
+[The can't give what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
 
+[The can't give to yourself rule response (A): "[We] [can't give] [the noun] to [ourselves]."]
 [The can't give to yourself rule response (A): "[We] [can't give] [the noun] to [ourselves]."]
 
 [The can't give to a non-person rule response (A): "[The second noun] [aren't] able to receive things."]
+[The can't give to a non-person rule response (A): "[The second noun] [aren't] able to receive things."]
 
 [The can't give clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
+[The can't give clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
 
-
+[The block giving rule response (A): "[The second noun] [don't] seem interested."]
 [The block giving rule response (A): "[The second noun] [don't] seem interested."]
 
 [The can't exceed carrying capacity when giving rule response (A): "[The second noun] [are] carrying too many things already."]
+[The can't exceed carrying capacity when giving rule response (A): "[The second noun] [are] carrying too many things already."]
 
+[The standard report giving rule response (A): "[We] [give] [the noun] to [the second noun]."]
 [The standard report giving rule response (A): "[We] [give] [the noun] to [the second noun]."]
 
 [The standard report giving rule response (B): "[The actor] [give] [the noun] to [us]."]
+[The standard report giving rule response (B): "[The actor] [give] [the noun] to [us]."]
 
+[The standard report giving rule response (C): "[The actor] [give] [the noun] to [the second noun]."]
 [The standard report giving rule response (C): "[The actor] [give] [the noun] to [the second noun]."]
 
 [The can't show what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
+[The can't show what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
 
+[The block showing rule response (A): "[The second noun] [are] unimpressed."]
 [The block showing rule response (A): "[The second noun] [are] unimpressed."]
 
 [The block waking rule response (A): "That [seem] unnecessary."]
+[The block waking rule response (A): "That [seem] unnecessary."]
 
+[The implicitly remove thrown clothing rule response (A): "(first taking [the noun] off)[command clarification break]"]
 [The implicitly remove thrown clothing rule response (A): "(first taking [the noun] off)[command clarification break]"]
 
 [The futile to throw things at inanimate objects rule response (A): "Futile."]
+[The futile to throw things at inanimate objects rule response (A): "Futile."]
 
+[The block throwing at rule response (A): "[We] [lack] the nerve when it [if story tense is the past tense]came[otherwise]comes[end if] to the crucial moment."]
 [The block throwing at rule response (A): "[We] [lack] the nerve when it [if story tense is the past tense]came[otherwise]comes[end if] to the crucial moment."]
 
 [The block attacking rule response (A): "Violence [aren't] the answer to this one."]
+[The block attacking rule response (A): "Violence [aren't] the answer to this one."]
 
+[The kissing yourself rule response (A): "[We] [don't] get much from that."]
 [The kissing yourself rule response (A): "[We] [don't] get much from that."]
 
 [The block kissing rule response (A): "[The noun] [might not] like that."]
+[The block kissing rule response (A): "[The noun] [might not] like that."]
 
+[The block answering rule response (A): "[There] [are] no reply."]
 [The block answering rule response (A): "[There] [are] no reply."]
 
 [The telling yourself rule response (A): "[We] [talk] to [ourselves] a while."]
+[The telling yourself rule response (A): "[We] [talk] to [ourselves] a while."]
 
+[The block telling rule response (A): "This [provoke] no reaction."]
 [The block telling rule response (A): "This [provoke] no reaction."]
 
 [The block asking rule response (A): "[There] [are] no reply."]
+[The block asking rule response (A): "[There] [are] no reply."]
 
+[The standard report waiting rule response (A): "Time [pass]."]
 [The standard report waiting rule response (A): "Time [pass]."]
 
 [The standard report waiting rule response (B): "[The actor] [wait]."]
+[The standard report waiting rule response (B): "[The actor] [wait]."]
 
+[The report touching yourself rule response (A): "[We] [achieve] nothing by this."]
 [The report touching yourself rule response (A): "[We] [achieve] nothing by this."]
 
 [The report touching yourself rule response (B): "[The actor] [touch] [themselves]."]
+[The report touching yourself rule response (B): "[The actor] [touch] [themselves]."]
 
+[The report touching other people rule response (A): "[The noun] [might not like] that."]
 [The report touching other people rule response (A): "[The noun] [might not like] that."]
 
 [The report touching other people rule response (B): "[The actor] [touch] [us]."]
+[The report touching other people rule response (B): "[The actor] [touch] [us]."]
 
+[The report touching other people rule response (C): "[The actor] [touch] [the noun]."]
 [The report touching other people rule response (C): "[The actor] [touch] [the noun]."]
 
 [The report touching things rule response (A): "[We] [feel] nothing unexpected."]
+[The report touching things rule response (A): "[We] [feel] nothing unexpected."]
 
+[The report touching things rule response (B): "[The actor] [touch] [the noun]."]
 [The report touching things rule response (B): "[The actor] [touch] [the noun]."]
 
 [The can't wave what's not held rule response (A): "But [we] [aren't] holding [regarding the noun][those]."]
+[The can't wave what's not held rule response (A): "But [we] [aren't] holding [regarding the noun][those]."]
 
+[The report waving things rule response (A): "[We] [wave] [the noun]."]
 [The report waving things rule response (A): "[We] [wave] [the noun]."]
 
 [The report waving things rule response (B): "[The actor] [wave] [the noun]."]
+[The report waving things rule response (B): "[The actor] [wave] [the noun]."]
 
+[The can't pull what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
 [The can't pull what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
 
 [The can't pull scenery rule response (A): "[We] [are] unable to."]
+[The can't pull scenery rule response (A): "[We] [are] unable to."]
 
+[The can't pull people rule response (A): "[The noun] [might not like] that."]
 [The can't pull people rule response (A): "[The noun] [might not like] that."]
 
 [The report pulling rule response (A): "Nothing obvious [happen]."]
+[The report pulling rule response (A): "Nothing obvious [happen]."]
 
+[The report pulling rule response (B): "[The actor] [pull] [the noun]."]
 [The report pulling rule response (B): "[The actor] [pull] [the noun]."]
 
 [The can't push what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
+[The can't push what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
 
+[The can't push scenery rule response (A): "[We] [are] unable to."]
 [The can't push scenery rule response (A): "[We] [are] unable to."]
 
 [The can't push people rule response (A): "[The noun] [might not like] that."]
+[The can't push people rule response (A): "[The noun] [might not like] that."]
 
+[The report pushing rule response (A): "Nothing obvious [happen]."]
 [The report pushing rule response (A): "Nothing obvious [happen]."]
 
 [The report pushing rule response (B): "[The actor] [push] [the noun]."]
+[The report pushing rule response (B): "[The actor] [push] [the noun]."]
 
 [The can't turn what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
+[The can't turn what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
 
-
+[The can't turn scenery rule response (A): "[We] [are] unable to."]
 [The can't turn scenery rule response (A): "[We] [are] unable to."]
 
 [The can't turn people rule response (A): "[The noun] [might not like] that."]
+[The can't turn people rule response (A): "[The noun] [might not like] that."]
 
+[The report turning rule response (A): "Nothing obvious [happen]."]
 [The report turning rule response (A): "Nothing obvious [happen]."]
 
 [The report turning rule response (B): "[The actor] [turn] [the noun]."]
+[The report turning rule response (B): "[The actor] [turn] [the noun]."]
 
+[The can't push unpushable things rule response (A): "[The noun] [cannot] be pushed from place to place."]
 [The can't push unpushable things rule response (A): "[The noun] [cannot] be pushed from place to place."]
 
 [The can't push to non-directions rule response (A): "[regarding the noun][They] [aren't] a direction."]
+[The can't push to non-directions rule response (A): "[regarding the noun][They] [aren't] a direction."]
 
+[The can't push vertically rule response (A): "[The noun] [cannot] be pushed up or down."]
 [The can't push vertically rule response (A): "[The noun] [cannot] be pushed up or down."]
 
 [The can't push from within rule response (A): "[The noun] [cannot] be pushed from here."]
+[The can't push from within rule response (A): "[The noun] [cannot] be pushed from here."]
 
+[The block pushing in directions rule response (A): "[The noun] [cannot] be pushed from place to place."]
 [The block pushing in directions rule response (A): "[The noun] [cannot] be pushed from place to place."]
 
 [The innuendo about squeezing people rule response (A): "[The noun] [might not like] that."]
+[The innuendo about squeezing people rule response (A): "[The noun] [might not like] that."]
 
+[The report squeezing rule response (A): "[We] [achieve] nothing by this."]
 [The report squeezing rule response (A): "[We] [achieve] nothing by this."]
 
 [The report squeezing rule response (B): "[The actor] [squeeze] [the noun]."]
+[The report squeezing rule response (B): "[The actor] [squeeze] [the noun]."]
 
+[The block saying yes rule response (A): "That was a rhetorical question."]
 [The block saying yes rule response (A): "That was a rhetorical question."]
 
 [The block saying no rule response (A): "That was a rhetorical question."]
+[The block saying no rule response (A): "That was a rhetorical question."]
 
+[The block burning rule response (A): "This dangerous act [would achieve] little."]
 [The block burning rule response (A): "This dangerous act [would achieve] little."]
 
 [The block waking up rule response (A): "The dreadful truth [are], this [are not] a dream."]
+[The block waking up rule response (A): "The dreadful truth [are], this [are not] a dream."]
 
+[The block thinking rule response (A): "What a good idea."]
 [The block thinking rule response (A): "What a good idea."]
 
 [The report smelling rule response (A): "[We] [smell] nothing unexpected."]
+[The report smelling rule response (A): "[We] [smell] nothing unexpected."]
 
+[The report smelling rule response (B): "[The actor] [sniff]."]
 [The report smelling rule response (B): "[The actor] [sniff]."]
 
 [The report listening rule response (A): "[We] [hear] nothing unexpected."]
+[The report listening rule response (A): "[We] [hear] nothing unexpected."]
 
+[The report listening rule response (B): "[The actor] [listen]."]
 [The report listening rule response (B): "[The actor] [listen]."]
 
 [The report tasting rule response (A): "[We] [taste] nothing unexpected."]
+[The report tasting rule response (A): "[We] [taste] nothing unexpected."]
 
+[The report tasting rule response (B): "[The actor] [taste] [the noun]."]
 [The report tasting rule response (B): "[The actor] [taste] [the noun]."]
 
 [The block cutting rule response (A): "Cutting [regarding the noun][them] up [would achieve] little."]
+[The block cutting rule response (A): "Cutting [regarding the noun][them] up [would achieve] little."]
 
+[The report jumping rule response (A): "[We] [jump] on the spot."]
 [The report jumping rule response (A): "[We] [jump] on the spot."]
 
 [The report jumping rule response (B): "[The actor] [jump] on the spot."]
+[The report jumping rule response (B): "[The actor] [jump] on the spot."]
 
+[The block tying rule response (A): "[We] [would achieve] nothing by this."]
 [The block tying rule response (A): "[We] [would achieve] nothing by this."]
 
 [The block drinking rule response (A): "[There's] nothing suitable to drink here."]
+[The block drinking rule response (A): "[There's] nothing suitable to drink here."]
 
+[The block saying sorry rule response (A): "Oh, don't [if American dialect option is active]apologize[otherwise]apologise[end if]."]
 [The block saying sorry rule response (A): "Oh, don't [if American dialect option is active]apologize[otherwise]apologise[end if]."]
 
 [The block swinging rule response (A): "[There's] nothing sensible to swing here."]
+[The block swinging rule response (A): "[There's] nothing sensible to swing here."]
 
+[The can't rub another person rule response (A): "[The noun] [might not like] that."]
 [The can't rub another person rule response (A): "[The noun] [might not like] that."]
 
 [The report rubbing rule response (A): "[We] [rub] [the noun]."]
+[The report rubbing rule response (A): "[We] [rub] [the noun]."]
 
+[The report rubbing rule response (B): "[The actor] [rub] [the noun]."]
 [The report rubbing rule response (B): "[The actor] [rub] [the noun]."]
 
 [The block setting it to rule response (A): "No, [we] [can't set] [regarding the noun][those] to anything."]
+[The block setting it to rule response (A): "No, [we] [can't set] [regarding the noun][those] to anything."]
 
+[The report waving hands rule response (A): "[We] [wave]."]
 [The report waving hands rule response (A): "[We] [wave]."]
 
 [The report waving hands rule response (B): "[The actor] [wave]."]
+[The report waving hands rule response (B): "[The actor] [wave]."]
 
+[The block buying rule response (A): "Nothing [are] on sale."]
 [The block buying rule response (A): "Nothing [are] on sale."]
 
 [The block climbing rule response (A): "Little [are] to be achieved by that."]
+[The block climbing rule response (A): "Little [are] to be achieved by that."]
 
 [The block sleeping rule response (A): "[We] [aren't] feeling especially drowsy."]
-
-
-*****************]
+[The block sleeping rule response (A): "[We] [aren't] feeling especially drowsy."]
 
 [generate action rule response (A): "(considering the first sixteen objects only)"]
 The generate action rule response (A) is "(ограничиваясь первыми 16 объектами)[command clarification break]".
