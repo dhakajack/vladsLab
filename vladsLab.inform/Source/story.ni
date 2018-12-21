@@ -301,11 +301,15 @@ For printing the locale description (this is the you-can-also-see rule):
 					if the list item is mentioned, now the list item is not marked for listing;
 				filter list recursion to unmentioned things;
 				if contents form of list is true and the common holder is not nothing,
+					[*** edited bit ***]
 					let L be the list of things in the common holder;
-					generate listing of L in the acc case, as a sentence, not listing concealed items, listing marked items only;
+					generate listing of L in the acc case;
+					[/*** edited bit ***]
 				otherwise:
+					[*** edited bit ***]
 					let L be the list of marked for listing things;
 					generate listing of L in the acc case;
+					[/*** edited bit ***]
 				if the domain is the location, say " here" (F);
 				say ".[paragraph break]";
 				unfilter list recursion;
@@ -447,25 +451,27 @@ To say capitalized (item - a thing) in the (itemcase - a case) case:
 	let PN be "[item in the itemcase case]";
 	say PN with initial capital.
 
-To say list-writer-internal-rule-worn:
-	say say short form of "надетый" regarding noun.
+To say short-form-available regarding (item - a thing):
+	say short form of "недосягаемый" regarding item.
 	
-To say list-writer-internal-rule-available:
-	say short form of "недосягаемый" regarding noun.
+To say short-form-worn regarding (item - a thing):
+	say say short form of "надетый" regarding item.
 	
-To say list-writer-internal-rule-empty:
-	say short form of "пустый" regarding noun.
+To say short-form-empty regarding (item - a thing):
+	say short form of "пустый" regarding item.
 	
-To say list-writer-internal-rule-open:
-	say short form of "открытый" regarding noun.
+To say short-form-open regarding (item - a thing):
+	say short form of "открытый" regarding item.
 	
-To say list-writer-internal-rule-closed:
-	say short form of "закрытый" regarding noun.
+To say short-form-closed regarding (item - a thing):
+	say short form of "закрытый" regarding item.
 	
-To say list-writer-internal-rule-locked:
-	say short form of "запертый" regarding noun.
+To say short-form-locked regarding (item - a thing):
+	say short form of "запертый" regarding item.
 	
-
+To say long-form-which regarding (item - a thing) in the (itemcase - a case) case:
+	say long form of "который" regarding item in the itemcase case.
+	
 [announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
 The announce items from multiple object lists rule response (A) is "[current item from the multiple object list in the nom case]: [run paragraph on]"
 
@@ -486,7 +492,7 @@ The standard respond to final question rule response (A) is "Нужен один
 [departing from the rInform6 implmentation that listed items in the nominative, here the accusative is required as output from the list]
 
 [The you-can-also-see rule response (A): "[We] "]
-The you-can-also-see rule response (A) is "Вы ".
+The you-can-also-see rule response (A) is "Здесь вы ".
 
 [The you-can-also-see rule response (B): "On [the domain] [we] "]
 The you-can-also-see rule response (B) is "На [domain in the pre case] ".
@@ -501,7 +507,7 @@ The you-can-also-see rule response (D) is "также видите".
 The you-can-also-see rule response (E) is "видите ".
 
 [The you-can-also-see rule response (F): " here"]
-The you-can-also-see rule response (F) is " здесь".
+The you-can-also-see rule response (F) is "".
 
 [The use initial appearance in room descriptions rule response (A): "On [the item] "]
 [The use initial appearance in room descriptions rule response (A): "On [the item] "]
@@ -1264,16 +1270,16 @@ The requested actions require persuasion rule response (A) is "[capitalized noun
 [*review]The carry out requested actions rule response (A) is "[capitalized noun in the nom case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a] этого сделать."
 	
 [access through barriers rule response (A): "[regarding the noun][Those] [aren't] available."]
-The access through barriers rule response (A) is "[capitalized noun in the nom case] не [list-writer-internal-rule-available]."
+The access through barriers rule response (A) is "[capitalized noun in the nom case] не [short-form-available regarding noun]."
 
 [can't reach inside closed containers rule response (A): "[The noun] [aren't] open."]
-The can't reach inside closed containers rule response (A) is "[capitalized noun in the nom case] не [list-writer-internal-rule-open]."
+The can't reach inside closed containers rule response (A) is "[capitalized noun in the nom case] не [short-form-open regarding noun]."
 
 [can't reach inside rooms rule response (A): "[We] [can't] reach into [the noun]."]
 [*translate]The can't reach inside rooms rule response (A) is "[We] [can't] reach into [the noun]."
 
 [can't reach outside closed containers rule response (A): "[The noun] [aren't] open."]
-The can't reach outside closed containers rule response (A) is "[capitalized noun in the nom case] не [list-writer-internal-rule-open]."
+The can't reach outside closed containers rule response (A) is "[capitalized noun in the nom case] не [short-form-open regarding noun]."
 
 [
 list writer internal rule response (A): " ("
@@ -1284,43 +1290,42 @@ list writer internal rule response (C): " and "
 The list writer internal rule response (C) is " и ".
 
 [list writer internal rule response (D): "providing light"]
-The list writer internal rule response (D) is "свет[noun does a verb of class v2b]".
 
 [list writer internal rule response (E): "closed"]
-The list writer internal rule response (E) is "[list-writer-internal-rule-closed]".
+
 	
 [list writer internal rule response (F): "empty"]
-The list writer internal rule response (F) is "[list-writer-internal-rule-empty]".
+
 
 [list writer internal rule response (G): "closed and empty"]
-The list writer internal rule response (G) is "[list-writer-internal-rule-closed] и [list-writer-internal-rule-empty]".
+
 
 [list writer internal rule response (H): "closed and providing light"]
-The list writer internal rule response (H) is "свет[noun does a verb of class v2b] и [list-writer-internal-rule-closed]".
+
 
 [list writer internal rule response (I): "empty and providing light"]
-The list writer internal rule response (I) is "свет[noun does a verb of class v2b] и [list-writer-internal-rule-empty]".
+
 
 [list writer internal rule response (J): "closed, empty[if serial comma option is active],[end if] and providing light"]
-The list writer internal rule response (J) is "свет[noun does a verb of class v2b], [list-writer-internal-rule-closed] и [list-writer-internal-rule-empty]".
+
 
 [list writer internal rule response (K): "providing light and being worn"]
-The list writer internal rule response (K) is "свет[noun does a verb of class v2b] и [list-writer-internal-rule-worn]".
+
 
 [list writer internal rule response (L): "being worn"]
-The list writer internal rule response (L) is "[list-writer-internal-rule-worn]".
+
 
 [list writer internal rule response (M): "open"]
-The list writer internal rule response (M) is "[list-writer-internal-rule-open]".
+
 
 [list writer internal rule response (N): "open but empty"]
-The list writer internal rule response (N) is "[list-writer-internal-rule-open] и [list-writer-internal-rule-empty]".
+
 
 [list writer internal rule response (O): "closed"]
-The list writer internal rule response (O) is "[list-writer-internal-rule-closed]".
+
 
 [list writer internal rule response (P): "closed and locked"]
-The list writer internal rule response (P) is "[list-writer-internal-rule-closed] и [list-writer-internal-rule-locked]".
+
 
 [list writer internal rule response (Q): "containing"]
 The list writer internal rule response (Q) is "содерж[noun does a verb of class v2a]".
@@ -1440,7 +1445,7 @@ The parser nothing error internal rule response (C) is "[capitalized noun in the
 The parser nothing error internal rule response (D) is "[capitalized noun in the nom case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a]  что-либо содержать."
 
 [parser nothing error internal rule response (E): "[The noun] [aren't] open."]
-The parser nothing error internal rule response (E) is "[capitalized noun in the nom case] [list-writer-internal-rule-closed]."
+The parser nothing error internal rule response (E) is "[capitalized noun in the nom case] [short-form-closed regarding noun]."
 
 [parser nothing error internal rule response (F): "[The noun] [are] empty."]
 The parser nothing error internal rule response (F) is "В [noun in the pre case] ничего нет."
@@ -1658,23 +1663,47 @@ exemplar 	pattern
 "noch&"	{"","-и","-и","","ю","-и","-и","-ей","-aм","-и","-ами","-ах"}
 "doch&"	{"","-ери","-ери","","ерью","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}
 
+[A subset of the full listwriter for use in generating you-can-see]
 
-
-
-To generate listing of (itemlist - a list of things) in the (itemcase - a case) case, with with newlines, indented, as a sentence, including contents, including all contents, giving inventory information, giving brief inventory information, listing marked items only, not listing concealed items, and/or with extra indentation:
+To generate listing of (itemlist - a list of things) in the (itemcase - a case) case:
 	repeat with item running through itemlist:
-		if not listing concealed items:
-			if item is concealed, remove item from itemlist;
-		if listing marked items only:
-			if item is not marked for listing, remove item from itemlist;
+		if item is concealed:
+			remove item from itemlist;
+		if item is not marked for listing:
+			remove item from itemlist;
 	repeat with N running from 1 to the number of entries in itemlist:
 		if N is greater than 1 and N is the number of entries in itemlist:
-			if as a sentence:
-				say The list writer internal rule response (C);
+			say " и ";
+		let item be entry N of itemlist;
+		say item in the itemcase case;
+		let T be a list of text;[list of parenthetical attributes of the item, not including lit, worn, etc., here]
+		if item is openable and item is closed:
+			add "[short-form-closed regarding item][if item is locked]и [short-form-locked regarding item][end if]" to T;
+		if item is a container and the number of things in item is zero:
+			add "[short-form-empty regarding item]" to T;
+		if the number of entries in T is greater than 0:
+			say " ([T])";
+		let mentionables be 0;
+		repeat with inneritem running through things enclosed by the item:
+			[would need to explictly designate items on a person as marked for listing]			
+			if item is a supporter and inneritem is on item:
+				now inneritem is marked for listing;
+				increase mentionables by 1;
+			otherwise if item is a container and (item is open or item is transparent) and inneritem is in item:
+				now inneritem is marked for listing;
+				increase mentionables by 1;
+		if mentionables is greater than 0:
+			say " (";
+			let stuff be the list of marked for listing things enclosed by the item;
+			if item is a person:
+				say "у [long-form-which regarding item in the pre case] есть";
+			otherwise if item is a supporter:
+				say "на [long-form-which regarding item in the pre case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
 			otherwise:
-				say ", ";
-		let E be entry N of itemlist;
-		say E in the itemcase case;
+				say "в [long-form-which regarding item in the pre case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
+			say " ";
+			generate listing of stuff in the nom case;
+			say ")";
 		if the number of entries in itemlist is greater than 2 and N is less than (the number of entries in itemlist minus 1):
 			say ", ".
 			
@@ -1756,7 +1785,7 @@ To say (itemtext - a text) in the (itemcase - a case) case (itemmult - a multipl
 	
 Section 3 - Decline Long From Adjectives
 
-To say long form of (adj - text) regarding (item - a thing) in the (case - a case):
+To say long form of (adj - text) regarding (item - a thing) in the (case - a case) case:
 	let G be the gender of the item;
 	let C be the case;
 	let M be the multiplicity of the item;
@@ -2080,13 +2109,13 @@ Chapter 8 - World
 
 The Laboratory is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
-The daughter is a woman in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. 
+The daughter is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. The gender of daughter is f. 
 
-The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. 
+The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. The worktable is lit.
 
 The workbook is in box. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. The workbook is lit.
 
-A box is in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
+A box is an open transparent container. It is in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
 
 The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
 
@@ -2118,7 +2147,7 @@ A cucumber is edible. It is on the dining table. The description is "Спелы�
 
 The kasha is edible. It is on the dining table. The description is "Каша без молока." The name of kasha is "каша". The inflection pattern is "kasha". Understand "kasha/kashu" as kasha. 
 
-The apple is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "yablokо". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
+The apple is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "яблоко". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
 
 Chapter 9 - Transliterations
 
