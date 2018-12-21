@@ -132,6 +132,10 @@ Include (-
 
 -) Instead of "Release Number" in "Glulx.i6t".
 
+
+
+
+
 Chapter 4 - Kinds
 
 
@@ -215,6 +219,224 @@ The verb to be mapped above means the reversed mapping up relation.
 The verb to be below means the reversed mapping down relation.
 The verb to be mapped below means the reversed mapping down relation.
 
+Section 2 - Locale descriptions unindexed (in place of Section SR3/4 - Locale descriptions - Unindexed in Standard Rules by Graham Nelson)
+
+Table of Locale Priorities
+notable-object (an object)	locale description priority (a number)
+--							--
+with blank rows for each thing.
+
+To describe locale for (O - object):
+	carry out the printing the locale description activity with O.
+
+To set the/-- locale priority of (O - an object) to (N - a number):
+	if O is a thing:
+		if N <= 0, now O is mentioned;
+		if there is a notable-object of O in the Table of Locale Priorities:
+			choose row with a notable-object of O in the Table of Locale Priorities;
+			if N <= 0, blank out the whole row;
+			otherwise now the locale description priority entry is N;
+		otherwise:
+			if N is greater than 0:
+				choose a blank row in the Table of Locale Priorities;
+				now the notable-object entry is O;
+				now the locale description priority entry is N;
+
+Printing the locale description of something (documented at act_pld) is an activity. [30]
+
+The locale paragraph count is a number that varies.
+
+Before printing the locale description (this is the initialise locale description rule):
+	now the locale paragraph count is 0;
+	repeat through the Table of Locale Priorities:
+		blank out the whole row.
+
+Before printing the locale description (this is the find notable locale objects rule):
+	let the domain be the parameter-object;
+	carry out the choosing notable locale objects activity with the domain;
+	continue the activity.
+
+For printing the locale description (this is the interesting locale paragraphs rule):
+	let the domain be the parameter-object;
+	sort the Table of Locale Priorities in locale description priority order;
+	repeat through the Table of Locale Priorities:
+		carry out the printing a locale paragraph about activity with the notable-object entry;
+	continue the activity.
+
+For printing the locale description (this is the you-can-also-see rule):
+	let the domain be the parameter-object;
+	let the mentionable count be 0;
+	repeat with item running through things:
+		now the item is not marked for listing;
+	repeat through the Table of Locale Priorities:
+		if the locale description priority entry is greater than 0,
+			now the notable-object entry is marked for listing;
+		increase the mentionable count by 1;
+	if the mentionable count is greater than 0:
+		repeat with item running through things:
+			if the item is mentioned:
+				now the item is not marked for listing;
+		begin the listing nondescript items activity with the domain;
+		if the number of marked for listing things is 0:
+			abandon the listing nondescript items activity with the domain;
+		otherwise:
+			if handling the listing nondescript items activity with the domain:
+				if the domain is the location:
+					say "[We] " (A);
+				otherwise if the domain is a supporter or the domain is an animal:
+					say "On [the domain] [we] " (B);
+				otherwise:
+					say "In [the domain] [we] " (C);
+				if the locale paragraph count is greater than 0:
+					say "[regarding the player][can] also see " (D);
+				otherwise:
+					say "[regarding the player][can] see " (E);
+				let the common holder be nothing;
+				let contents form of list be true;
+				repeat with list item running through marked for listing things:
+					if the holder of the list item is not the common holder:
+						if the common holder is nothing,
+							now the common holder is the holder of the list item;
+						otherwise now contents form of list is false;
+					if the list item is mentioned, now the list item is not marked for listing;
+				filter list recursion to unmentioned things;
+				if contents form of list is true and the common holder is not nothing,
+					let L be the list of things in the common holder;
+					generate listing of L in the acc case, as a sentence, not listing concealed items, listing marked items only;
+				otherwise:
+					let L be the list of marked for listing things;
+					generate listing of L in the acc case;
+				if the domain is the location, say " here" (F);
+				say ".[paragraph break]";
+				unfilter list recursion;
+			end the listing nondescript items activity with the domain;
+	continue the activity.
+
+Choosing notable locale objects of something (documented at act_cnlo) is an activity. [31]
+
+For choosing notable locale objects (this is the standard notable locale objects rule):
+	let the domain be the parameter-object;
+	let the held item be the first thing held by the domain;
+	while the held item is a thing:
+		set the locale priority of the held item to 5;
+		now the held item is the next thing held after the held item;
+	continue the activity.
+
+Printing a locale paragraph about something (documented at act_plp) is an activity. [32]
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the don't mention player's supporter in room descriptions rule):
+	if the item encloses the player, set the locale priority of the item to 0;
+	continue the activity.
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the don't mention scenery in room descriptions rule):
+	if the item is scenery, set the locale priority of the item to 0;
+	continue the activity.
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the don't mention undescribed items in room descriptions rule):
+	if the item is undescribed:
+		set the locale priority of the item to 0;
+	continue the activity.
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the set pronouns from items in room descriptions rule):
+	if the item is not mentioned, set pronouns from the item;
+	continue the activity.
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the offer items to writing a paragraph about rule):
+	if the item is not mentioned:
+		if a paragraph break is pending, say "[conditional paragraph break]";
+		carry out the writing a paragraph about activity with the item;
+		if a paragraph break is pending:
+			increase the locale paragraph count by 1;
+			now the item is mentioned;
+			say "[conditional paragraph break]";
+	continue the activity.
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the use initial appearance in room descriptions rule):
+	if the item is not mentioned:
+		if the item provides the property initial appearance and the
+			item is not handled and the initial appearance of the item is
+			not "":
+			increase the locale paragraph count by 1;
+			say "[initial appearance of the item]";
+			say "[paragraph break]";
+			if a locale-supportable thing is on the item:
+				repeat with possibility running through things on the item:
+					now the possibility is marked for listing;
+					if the possibility is mentioned:
+						now the possibility is not marked for listing;
+				say "On [the item] " (A);
+				list the contents of the item, as a sentence, including contents,
+					giving brief inventory information, tersely, not listing
+					concealed items, prefacing with is/are, listing marked items only;
+				say ".[paragraph break]";
+			now the item is mentioned;
+	continue the activity.
+
+For printing a locale paragraph about a supporter (called the tabletop)
+	(this is the initial appearance on supporters rule):
+	repeat with item running through not handled things on the tabletop which
+		provide the property initial appearance:
+		if the item is not a person and the initial appearance of the item is not ""
+			and the item is not undescribed:
+			now the item is mentioned;
+			say initial appearance of the item;
+			say paragraph break;
+	continue the activity.
+
+Definition: a thing (called the item) is locale-supportable if the item is not
+scenery and the item is not mentioned and the item is not undescribed.
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the describe what's on scenery supporters in room descriptions rule):
+	if the item is scenery and the item does not enclose the player:
+		if a locale-supportable thing is on the item:
+			set pronouns from the item;
+			repeat with possibility running through things on the item:
+				now the possibility is marked for listing;
+				if the possibility is mentioned:
+					now the possibility is not marked for listing;
+			increase the locale paragraph count by 1;
+			say "On [the item] " (A);
+			list the contents of the item, as a sentence, including contents,
+				giving brief inventory information, tersely, not listing
+				concealed items, prefacing with is/are, listing marked items only;
+			say ".[paragraph break]";
+	continue the activity.
+
+For printing a locale paragraph about a thing (called the item)
+	(this is the describe what's on mentioned supporters in room descriptions rule):
+	if the item is mentioned and the item is not undescribed and the item is
+		not scenery and the item does not enclose the player:
+		if a locale-supportable thing is on the item:
+			set pronouns from the item;
+			repeat with possibility running through things on the item:
+				now the possibility is marked for listing;
+				if the possibility is mentioned:
+					now the possibility is not marked for listing;
+			increase the locale paragraph count by 1;
+			say "On [the item] " (A);
+			list the contents of the item, as a sentence, including contents,
+				giving brief inventory information, tersely, not listing
+				concealed items, prefacing with is/are, listing marked items only;
+			say ".[paragraph break]";
+	continue the activity.
+
+Issuing the response text of something -- documented at act_resp -- is an
+activity on responses. [33]
+
+The standard issuing the response text rule is listed last in for issuing the
+response text.
+
+The standard issuing the response text rule translates into I6 as
+"STANDARD_RESPONSE_ISSUING_R".
+
+
 Section 3 - The Player
 
 The description of the player is "Ты выглядишь как обычно."
@@ -222,7 +444,7 @@ The description of the player is "Ты выглядишь как обычно."
 Section 4 - Response Overrides
 
 To say capitalized (item - a thing) in the (itemcase - a case) case:
-	let PN be "[printed name of item in the itemcase case]";
+	let PN be "[item in the itemcase case]";
 	say PN with initial capital.
 
 To say list-writer-internal-rule-worn:
@@ -245,40 +467,41 @@ To say list-writer-internal-rule-locked:
 	
 
 [announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
-[announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
+The announce items from multiple object lists rule response (A) is "[current item from the multiple object list in the nom case]: [run paragraph on]"
 
 [The block vaguely going rule response (A): "You'll have to say which compass direction to go in."]
-[The block vaguely going rule response (A): "You'll have to say which compass direction to go in."]
+The block vaguely going rule response (A) is "Идти можно только в некотором направлении."
 
-[The print the final prompt rule response (A): "> [run paragraph on]"]
-[The print the final prompt rule response (A): "> [run paragraph on]"]
+[no chnage][The print the final prompt rule response (A): "> [run paragraph on]"]
 
 [The print the final question rule response (A): "Would you like to "]
-[The print the final question rule response (A): "Would you like to "]
+The print the final question rule response (A) is "Вы хотите ".
 
 [The print the final question rule response (B): " or "]
-[The print the final question rule response (B): " or "]
+The print the final question rule response (B) is " или ".
 
 [The standard respond to final question rule response (A): "Please give one of the answers above."]
-[The standard respond to final question rule response (A): "Please give one of the answers above."]
+The standard respond to final question rule response (A) is "Нужен один из перечисленных ответов."
+
+[departing from the rInform6 implmentation that listed items in the nominative, here the accusative is required as output from the list]
 
 [The you-can-also-see rule response (A): "[We] "]
-[The you-can-also-see rule response (A): "[We] "]
+The you-can-also-see rule response (A) is "Вы ".
 
 [The you-can-also-see rule response (B): "On [the domain] [we] "]
-[The you-can-also-see rule response (B): "On [the domain] [we] "]
+The you-can-also-see rule response (B) is "На [domain in the pre case] ".
 
 [The you-can-also-see rule response (C): "In [the domain] [we] "]
-[The you-can-also-see rule response (C): "In [the domain] [we] "]
+The you-can-also-see rule response (C) is "В [domain in the pre case] ".
 
 [The you-can-also-see rule response (D): "[regarding the player][can] also see "]
-[The you-can-also-see rule response (D): "[regarding the player][can] also see "]
+The you-can-also-see rule response (D) is "также видите".
 
 [The you-can-also-see rule response (E): "[regarding the player][can] see "]
-[The you-can-also-see rule response (E): "[regarding the player][can] see "]
+The you-can-also-see rule response (E) is "видите ".
 
 [The you-can-also-see rule response (F): " here"]
-[The you-can-also-see rule response (F): " here"]
+The you-can-also-see rule response (F) is " здесь".
 
 [The use initial appearance in room descriptions rule response (A): "On [the item] "]
 [The use initial appearance in room descriptions rule response (A): "On [the item] "]
@@ -1196,7 +1419,7 @@ The parser error internal rule response (T) is "Команда не может �
 The parser error internal rule response (U) is "Непонятно, к кому ты обращаешься."
 
 [parser error internal rule response (V): "You can't talk to [the noun]."]
-The parser error internal rule response (V) is "Бессмысленно говорить с [printed name of the noun in the ins case]."
+The parser error internal rule response (V) is "Бессмысленно говорить с [noun in the ins case]."
 
 [parser error internal rule response (W): "To talk to someone, try 'someone, hello' or some such."]
 The parser error internal rule response (W) is "Чтобы обратиться к собеседнику, введите [bold type]собеседник, привет[roman type].";
@@ -1211,7 +1434,7 @@ The parser nothing error internal rule response (A) is "Действий нет!
 The parser nothing error internal rule response (B) is "Нет совсем ничего подходящего."
 
 [parser nothing error internal rule response (C): "[regarding the noun][Those] [seem] to belong to [the noun]."]
-The parser nothing error internal rule response (C) is "[capitalized noun in the nom case] явно принадлеж[noun does a verb of class v2a] [printed name of the second noun in the dat case]."
+The parser nothing error internal rule response (C) is "[capitalized noun in the nom case] явно принадлеж[noun does a verb of class v2a] [second noun in the dat case]."
 
 [parser nothing error internal rule response (D): "[regarding the noun][Those] [can't] contain things."]
 The parser nothing error internal rule response (D) is "[capitalized noun in the nom case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a]  что-либо содержать."
@@ -1220,7 +1443,7 @@ The parser nothing error internal rule response (D) is "[capitalized noun in the
 The parser nothing error internal rule response (E) is "[capitalized noun in the nom case] [list-writer-internal-rule-closed]."
 
 [parser nothing error internal rule response (F): "[The noun] [are] empty."]
-The parser nothing error internal rule response (F) is "В [printed name of the noun in the pre case] ничего нет."
+The parser nothing error internal rule response (F) is "В [noun in the pre case] ничего нет."
 
 [darkness name internal rule response (A): "Darkness"]
 The darkness name internal rule response (A) is "Темнота".
@@ -1272,7 +1495,7 @@ The print protagonist internal rule response (B) is "себя".
 The print protagonist internal rule response (C) is "ты (ранее)".
 
 [standard implicit taking rule response (A): "(first taking [the noun])[command clarification break]"]
-The standard implicit taking rule response (A) is "(сначала взяв [the printed name of the noun])[command clarification break]".
+The standard implicit taking rule response (A) is "(сначала взяв [noun])[command clarification break]".
 
 [standard implicit taking rule response (B): "([the second noun] first taking [the noun])[command clarification break]"]
 The standard implicit taking rule response (B) is "([the second noun] сначала взяв [the noun])[command clarification break]".
@@ -1435,6 +1658,45 @@ exemplar 	pattern
 "noch&"	{"","-и","-и","","ю","-и","-и","-ей","-aм","-и","-ами","-ах"}
 "doch&"	{"","-ери","-ери","","ерью","-ери","-ери","-ерей","-ерям","-ерей","-ерьми","-ерях"}
 
+
+
+
+To generate listing of (itemlist - a list of things) in the (itemcase - a case) case, with with newlines, indented, as a sentence, including contents, including all contents, giving inventory information, giving brief inventory information, listing marked items only, not listing concealed items, and/or with extra indentation:
+	repeat with item running through itemlist:
+		if not listing concealed items:
+			if item is concealed, remove item from itemlist;
+		if listing marked items only:
+			if item is not marked for listing, remove item from itemlist;
+	repeat with N running from 1 to the number of entries in itemlist:
+		if N is greater than 1 and N is the number of entries in itemlist:
+			if as a sentence:
+				say The list writer internal rule response (C);
+			otherwise:
+				say ", ";
+		let E be entry N of itemlist;
+		say E in the itemcase case;
+		if the number of entries in itemlist is greater than 2 and N is less than (the number of entries in itemlist minus 1):
+			say ", ".
+			
+To say listing of (itemlist - a list of things) in the (itemcase - a case) case:
+	let L be a list of text;
+	repeat with item running through itemlist:
+		add "[item in the itemcase case]" to L;
+	say L.
+
+	
+
+[says noun and coupled modifier]
+
+To say (item - a thing) in the (itemcase - a case) case:
+	let IG be the gender of the item;
+	let IM be the multiplicity of the item;
+	if modifier of the item is not empty:
+		say long form modifier of the item in the itemcase case IG gender IM;
+		say " ";
+	say item in the itemcase case IM.
+	
+[say just the noun]
 
 To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplicity):
 	let N be the name of the item;
@@ -1746,17 +2008,7 @@ To say (item - thing) does a verb of class (class - verb class):
 			-- v2b:
 				say "ит";
 				
-Section 6 - Printed Name Generation
 
-To say printed name of (item - a thing) in the (itemcase - a case) case:
-	let IG be the gender of the item;
-	let IM be singular;
-	if the item is plural-named:
-		let the IM be plural;
-	if modifier of the item is not empty:
-		say long form modifier of the item in the itemcase case IG gender IM;
-		say " ";
-	say item in the itemcase case IM.
 	
 Section 7 - Das Kapital
 
@@ -2203,7 +2455,7 @@ The printed name of outside is "";]
 Chapter 10 - Start
 
 When play begins:
-	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. There are plenty of errors, I have not extensively implemented grammar or replaced library responses. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
+	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. I'm sure that there are plenty of errors -- this is a work in progress. I am slowly adding standard rules and grammar based mostly in rInform. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
 Chapter 11 - Some example customized responses
 
