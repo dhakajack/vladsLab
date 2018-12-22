@@ -301,15 +301,22 @@ For printing the locale description (this is the you-can-also-see rule):
 					if the list item is mentioned, now the list item is not marked for listing;
 				filter list recursion to unmentioned things;
 				if contents form of list is true and the common holder is not nothing,
-					[*** edited bit ***]
+					[
+					*** edited bit ***
+					list the contents of the common holder, as a sentence, including contents,
+						giving brief inventory information, tersely, not listing
+						concealed items, listing marked items only;
+					
+					]
 					let L be the list of things in the common holder;
 					generate listing of L in the acc case;
-					[/*** edited bit ***]
 				otherwise:
-					[*** edited bit ***]
+					[
+					*** edited bit ***
+					otherwise say "[a list of marked for listing things including contents]";
+					]
 					let L be the list of marked for listing things;
 					generate listing of L in the acc case;
-					[/*** edited bit ***]
 				if the domain is the location, say " here" (F);
 				say ".[paragraph break]";
 				unfilter list recursion;
@@ -375,9 +382,16 @@ For printing a locale paragraph about a thing (called the item)
 					if the possibility is mentioned:
 						now the possibility is not marked for listing;
 				say "On [the item] " (A);
+				[
+				***  edited bit ***
 				list the contents of the item, as a sentence, including contents,
 					giving brief inventory information, tersely, not listing
 					concealed items, prefacing with is/are, listing marked items only;
+			
+				]
+				let L be the list of things on the item;
+				generate listing of L in the nom case;
+				[*** edited bit ***]
 				say ".[paragraph break]";
 			now the item is mentioned;
 	continue the activity.
@@ -407,9 +421,14 @@ For printing a locale paragraph about a thing (called the item)
 					now the possibility is not marked for listing;
 			increase the locale paragraph count by 1;
 			say "On [the item] " (A);
+			[
+			***  edited bit ***
 			list the contents of the item, as a sentence, including contents,
 				giving brief inventory information, tersely, not listing
 				concealed items, prefacing with is/are, listing marked items only;
+			]
+			let L be the list of things on the item;
+			generate listing of L in the nom case;
 			say ".[paragraph break]";
 	continue the activity.
 
@@ -425,9 +444,14 @@ For printing a locale paragraph about a thing (called the item)
 					now the possibility is not marked for listing;
 			increase the locale paragraph count by 1;
 			say "On [the item] " (A);
+			[
+			***  edited bit ***
 			list the contents of the item, as a sentence, including contents,
 				giving brief inventory information, tersely, not listing
 				concealed items, prefacing with is/are, listing marked items only;
+			]
+			let L be the list of things on the item;
+			generate listing of L in the nom case;
 			say ".[paragraph break]";
 	continue the activity.
 
@@ -510,7 +534,7 @@ The you-can-also-see rule response (E) is "видите ".
 The you-can-also-see rule response (F) is "".
 
 [The use initial appearance in room descriptions rule response (A): "On [the item] "]
-[The use initial appearance in room descriptions rule response (A): "On [the item] "]
+The use initial appearance in room descriptions rule response (A)is  "На [the item in the pre case] "
 
 [The describe what's on scenery supporters in room descriptions rule response (A): "On [the item] "]
 [The describe what's on scenery supporters in room descriptions rule response (A): "On [the item] "]
