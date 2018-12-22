@@ -493,8 +493,18 @@ To say short-form-closed regarding (item - a thing):
 To say short-form-locked regarding (item - a thing):
 	say short form of "запертый" regarding item.
 	
+To say short-form-fixed regarding (item - a thing):
+	say short form of "закрепленный" regarding item.
+	
+To say short-form-dropped regarding (item - a thing):
+	say short form of "брошенный" regarding item.
+	
 To say long-form-which regarding (item - a thing) in the (itemcase - a case) case:
 	say long form of "который" regarding item in the itemcase case.
+	
+
+	
+
 	
 [announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
 The announce items from multiple object lists rule response (A) is "[current item from the multiple object list in the nom case]: [run paragraph on]"
@@ -537,118 +547,122 @@ The you-can-also-see rule response (F) is "".
 The use initial appearance in room descriptions rule response (A)is  "На [the item in the pre case] "
 
 [The describe what's on scenery supporters in room descriptions rule response (A): "On [the item] "]
-[The describe what's on scenery supporters in room descriptions rule response (A): "On [the item] "]
+The describe what's on scenery supporters in room descriptions rule response (A) is "На [the item in the pre case] "
 
 [The describe what's on mentioned supporters in room descriptions rule response (A): "On [the item] "]
-[The describe what's on mentioned supporters in room descriptions rule response (A): "On [the item] "]
+The describe what's on mentioned supporters in room descriptions rule response (A) is "На [the item in the pre case] "
 
 [The print empty inventory rule response (A): "[We] [are] carrying nothing."]
-[The print empty inventory rule response (A): "[We] [are] carrying nothing."]
+The print empty inventory rule response (A) is "У тебя с собой ничего нет."
 
 [The print standard inventory rule response (A): "[We] [are] carrying:[line break]"]
-[The print standard inventory rule response (A): "[We] [are] carrying:[line break]"]
+The print standard inventory rule response (A) is "У тебя с собой есть:[line break]"
 
 [The report other people taking inventory rule response (A): "[The actor] [look] through [their] possessions."]
-[The report other people taking inventory rule response (A): "[The actor] [look] through [their] possessions."]
+[translate][The report other people taking inventory rule response (A): "[The actor] [look] through [their] possessions."]
 
 [The can't take yourself rule response (A): "[We] [are] always self-possessed."]
-[The can't take yourself rule response (A): "[We] [are] always self-possessed."]
+The can't take yourself rule response (A) is "Ты всегда есть у себя."
 
 [The can't take other people rule response (A): "I don't suppose [the noun] [would care] for that."]
-[The can't take other people rule response (A): "I don't suppose [the noun] [would care] for that."]
+The can't take other people rule response (A) is "[capitalized noun in the dat case] это вряд ли понравится."
 
 [The can't take component parts rule response (A): "[regarding the noun][Those] [seem] to be a part of [the whole]."]
-[The can't take component parts rule response (A): "[regarding the noun][Those] [seem] to be a part of [the whole]."]
+The can't take component parts rule response (A) is "[capitalized noun in the nom case] явно явля[noun does a verb of class v1b]ся частью [whole in the gen case]."
 
 [The can't take people's possessions rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
-[The can't take people's possessions rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
+The can't take people's possessions rule response (A) is "[capitalized noun in the nom case] явнo принадлеж[noun does a verb of class v2a] [the owner in the dat case]."
 
 [The can't take items out of play rule response (A): "[regarding the noun][Those] [aren't] available."]
-[The can't take items out of play rule response (A): "[regarding the noun][Those] [aren't] available."]
+The can't take items out of play rule response (A) is "[capitalized noun in the nom case] [short-form-available regarding noun]."
 
 [The can't take what you're inside rule response (A): "[We] [would have] to get [if noun is a supporter]off[otherwise]out of[end if] [the noun] first."]
-[The can't take what you're inside rule response (A): "[We] [would have] to get [if noun is a supporter]off[otherwise]out of[end if] [the noun] first."]
+The can't take what you're inside rule response (A) is "Сначала тебе необходимо покинуть [noun in the acc case]."
 
 [The can't take what's already taken rule response (A): "[We] already [have] [regarding the noun][those]."]
-[The can't take what's already taken rule response (A): "[We] already [have] [regarding the noun][those]."]
+The can't take what's already taken rule response (A) is "[capitalized noun in the nom case] у тебя уже есть."
 
 [The can't take scenery rule response (A): "[regarding the noun][They're] hardly portable."]
-[The can't take scenery rule response (A): "[regarding the noun][They're] hardly portable."]
+The can't take scenery rule response (A) is "[capitalized noun in the acc case] невозможно взять."
 
 [The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
-[The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
+[translate][The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
 
 [The can't take what's fixed in place rule response (A): "[regarding the noun][They're] fixed in place."]
-[The can't take what's fixed in place rule response (A): "[regarding the noun][They're] fixed in place."]
+The can't take what's fixed in place rule response (A) is "[capitalized noun in the nom case] жёстко [short-form-fixed regarding noun]."
 
 [The use player's holdall to avoid exceeding carrying capacity rule response (A): "(putting [the transferred item] into [the current working sack] to make room)[command clarification break]"]
-[The use player's holdall to avoid exceeding carrying capacity rule response (A): "(putting [the transferred item] into [the current working sack] to make room)[command clarification break]"]
+The use player's holdall to avoid exceeding carrying capacity rule response (A) is "(укладывая [transferred item in the acc case] внутрь [current working sack in the gen case], чтобы освободить место)."
 
 [The can't exceed carrying capacity rule response (A): "[We]['re] carrying too many things already."]
-[The can't exceed carrying capacity rule response (A): "[We]['re] carrying too many things already."]
+The can't exceed carrying capacity rule response (A) is "У тебя с собой слишком много вещей."
 
 [The standard report taking rule response (A): "Taken."]
-[The standard report taking rule response (A): "Taken."]
+The standard report taking rule response (A) is "Ты берёшь [if noun is plural-named]их[otherwise if gender of noun is f]её[otherwise]его[end if]."
 
 [The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
-[The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
+[translate][The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
 
 [The can't remove what's not inside rule response (A): "But [regarding the noun][they] [aren't] there now."]
-[The can't remove what's not inside rule response (A): "But [regarding the noun][they] [aren't] there now."]
+The can't remove what's not inside rule response (A) is "[capitalized noun in the nom case] не наход[noun does a verb of class v2b]ся [if noun is a supporter]на[otherwise]в[end if] [second noun in the pre case]."
 
 [The can't remove from people rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
-[The can't remove from people rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
+The can't remove from people rule response (A) is "[capitalized noun in the nom case] явнo принадлеж[noun does a verb of class v2a] [the owner in the dat case]."
 
 [The can't drop yourself rule response (A): "[We] [lack] the dexterity."]
-[The can't drop yourself rule response (A): "[We] [lack] the dexterity."]
+The can't drop yourself rule response (A) is "У тебя не хватит ловкости."
 
 [The can't drop body parts rule response (A): "[We] [can't drop] part of [ourselves]."]
-[The can't drop body parts rule response (A): "[We] [can't drop] part of [ourselves]."]
+[translate][The can't drop body parts rule response (A): "[We] [can't drop] part of [ourselves]."]
 
 [The can't drop what's already dropped rule response (A): "[The noun] [are] already here."]
-[The can't drop what's already dropped rule response (A): "[The noun] [are] already here."]
+The can't drop what's already dropped rule response (A) is "У тебя нет [noun in the gen case]."
 
 [The can't drop what's not held rule response (A): "[We] [haven't] got [regarding the noun][those]."]
-[The can't drop what's not held rule response (A): "[We] [haven't] got [regarding the noun][those]."]
+The can't drop what's not held rule response (A) is "[capitalized noun in the nom case] не у тебя."
 
 [The can't drop clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
-[The can't drop clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
+The can't drop clothes being worn rule response (A) is "(сначала сняв [noun in the acc case] с себя)[command clarification break]".
 
 [The can't drop if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the receptacle]."]
-[The can't drop if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the receptacle]."]
+The can't drop if this exceeds carrying capacity rule response (A) is "Больше нет места на [the receptacle in the pre case]."
 
 [The can't drop if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the receptacle]."]
-[The can't drop if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the receptacle]."]
+The can't drop if this exceeds carrying capacity rule response (B) is "Больше нет места в [the receptacle in the pre case]."
 
 [The standard report dropping rule response (A): "Dropped."]
-[The standard report dropping rule response (A): "Dropped."]
+The standard report dropping rule response (A) is "[standard-report-dropping-rule-response-a]."
+
+To say standard-report-dropping-rule-response-a:
+	let PN be "[short-form-dropped regarding noun]";
+	say PN with initial capital.
 
 [The standard report dropping rule response (B): "[The actor] [put] down [the noun]."]
-[The standard report dropping rule response (B): "[The actor] [put] down [the noun]."]
+[translate][The standard report dropping rule response (B): "[The actor] [put] down [the noun]."]
 
 [The can't put something on itself rule response (A): "[We] [can't put] something on top of itself."]
-[The can't put something on itself rule response (A): "[We] [can't put] something on top of itself."]
+The can't put something on itself rule response (A) is "Невозможно положить что-либо на себя."
 
 [The can't put onto what's not a supporter rule response (A): "Putting things on [the second noun] [would achieve] nothing."]
-[The can't put onto what's not a supporter rule response (A): "Putting things on [the second noun] [would achieve] nothing."]
+The can't put onto what's not a supporter rule response (A) is "Класть что-либо на [second noun in the acc case] бессмысленно."
 
 [The can't put clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
-[The can't put clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
+The can't put clothes being worn rule response (A) is "(сначала сняв [noun in the acc case] с себя)[command clarification break]"
 
 [The can't put if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the second noun]."]
-[The can't put if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the second noun]."]
+The can't put if this exceeds carrying capacity rule response (A) is "Больше нет места на [the second noun]."
 
 [The concise report putting rule response (A): "Done."]
-[The concise report putting rule response (A): "Done."]
+[review]The concise report putting rule response (A) is "Ты кладёшь всё на [second noun in the acc case]."
 
 [The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
-[The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
+[translate][The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
 
 [The can't insert something into itself rule response (A): "[We] [can't put] something inside itself."]
-[The can't insert something into itself rule response (A): "[We] [can't put] something inside itself."]
+The can't insert something into itself rule response (A) is "Невозможно вложить что-либо внутрь себя."
 
 [The can't insert into closed containers rule response (A): "[The second noun] [are] closed."]
-[The can't insert into closed containers rule response (A): "[The second noun] [are] closed."]
+The can't insert into closed containers rule response (A) is "[capitalized second noun in the nom case] [short-form-closed regarding second noun]."
 
 
 [The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
@@ -2011,6 +2025,7 @@ To say short form (item - text) with (itemgender - gender) gender (itemmult - a 
 	let intercalator be item;
 	replace the regular expression "(\w*)(\w)\w" in intercalator with "\2"; [next to last letter, a vowel]
 	replace the regular expression "(\w*)(\w{2})" in stem with "\1"; [extract stem, all but last two letters]
+	replace the regular expression "(\w*н)н" in stem with "\1"; [drop final of double n in stem]
 	if itemmult is plural:
 		say stem;
 		if stem exactly matches the regular expression "\w*<гкхжшщч>":
@@ -2157,9 +2172,9 @@ The bathroom is west from the hall. The description is "Ничем не прим
 
 The toilet is a supporter in the bathroom. The description is "Белый унитаз."  The name of toilet is "унитаз". The inflection pattern is "dom".  Understand "belyj/unitaz" as the toilet.
 
-The sink is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "voda". Understand "rakovina/rakovinu/rakovine" as the sink. 
+The sink is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "voda". Understand "rakovina/rakovinu/rakovine" as the sink. The gender of the sink is f.
 
-The bathtub is an open container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "voda". Understand "vanna/vannu/vanne" as the bathtub.
+The bathtub is an open fixed in place container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "voda". Understand "vanna/vannu/vanne" as the bathtub.
 
 The rubber duck is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The name of the rubber duck is "утка". The inflection pattern is "korobka". The modifier is "резиновый". Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
 
