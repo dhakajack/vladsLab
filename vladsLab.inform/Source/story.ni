@@ -153,8 +153,9 @@ To decide which multiplicity is the multiplicity of (item - a thing):
 	if item is plural-named, let D be plural;
 	decide on D.
 
-Gender is a kind of value. The genders are m, f, and n.
-A thing has a gender. The gender of a thing is usually m.
+A thing has grammatical gender. The grammatical gender of a thing is usually masculine gender.
+
+A room has grammatical gender. The grammatical gender of a room is usually masculine gender.
 
 A thing has a text called name. The name of a thing is usually "".
 A thing has a text called inflection pattern. The inflection pattern of a thing is usually "dom".
@@ -598,7 +599,7 @@ The use player's holdall to avoid exceeding carrying capacity rule response (A) 
 The can't exceed carrying capacity rule response (A) is "У тебя с собой слишком много вещей."
 
 [The standard report taking rule response (A): "Taken."]
-The standard report taking rule response (A) is "Ты берёшь [if noun is plural-named]их[otherwise if gender of noun is f]её[otherwise]его[end if]."
+The standard report taking rule response (A) is "Ты берёшь [if noun is plural-named]их[otherwise if grammatical gender of noun is feminine gender]её[otherwise]его[end if]."
 
 [The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
 [translate][The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
@@ -1756,7 +1757,7 @@ To say listing of (itemlist - a list of things) in the (itemcase - a case) case:
 [says noun and coupled modifier]
 
 To say (item - a thing) in the (itemcase - a case) case:
-	let IG be the gender of the item;
+	let IG be the grammatical gender of the item;
 	let IM be the multiplicity of the item;
 	if modifier of the item is not empty:
 		say long form modifier of the item in the itemcase case IG gender IM;
@@ -1824,16 +1825,16 @@ To say (itemtext - a text) in the (itemcase - a case) case (itemmult - a multipl
 Section 3 - Decline Long From Adjectives
 
 To say long form of (adj - text) regarding (item - a thing) in the (case - a case) case:
-	let G be the gender of the item;
+	let G be the grammatical gender of the item;
 	let C be the case;
 	let M be the multiplicity of the item;
 	say long form adj in the C case G gender M.
 	
 [Algorithmic declension of regular long form adjectives]
-To say long form (item - text) in the (itemcase - a case) case (itemgender - gender) gender (itemmult - a multiplicity):
+To say long form (item - text) in the (itemcase - a case) case (itemgender - grammatical gender) gender (itemmult - a multiplicity):
 	if item is empty:
 		 the rule succeeds; [if there is no adjective, end processing here.]
-	if (itemcase is nom and itemgender is m and itemmult is singular) or (itemcase is acc and itemgender is m and itemmult is singular):
+	if (itemcase is nom and itemgender is masculine gender and itemmult is singular) or (itemcase is acc and itemgender is masculine gender and itemmult is singular):
 		say item;
 		the rule succeeds; [if it's nom masc singular just use the exemplar.]
 	let stem be the item; 
@@ -1897,60 +1898,60 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gen
 					say "ERROR: ITEM CASE NOT DEFINED";
 					the rule fails;
 		-- singular: [nom masc sing is the exemplar itself and returned above.]
-			if (itemcase is acc and itemgender is n):[recode acc neu sing to nominative]
+			if (itemcase is acc and itemgender is neuter gender):[recode acc neu sing to nominative]
 				let itemcase be nom;
 			if itemcase is:
 				-- nom:
 					if the category is:
 						-- 1:
 							if the itemgender is: [m is addressed at start of routine as default]
-								-- f:
+								-- feminine gender:
 									let newterm be "ая";
-								-- n:
+								-- neuter gender:
 									let newterm be "ое";
 						-- 2:
 							if itemgender is:
-								-- f:
+								-- feminine gender:
 									let newterm be "яя";
-								-- n:
+								-- neuter gender:
 									let newterm be "ее";
 						-- 3:		
 							if itemgender is:
-								-- f:
+								-- feminine gender:
 									let newterm be "ая";
-								-- n:
+								-- neuter gender:
 									let newterm be "ое";								
 						-- 4:
 							if itemgender is:
-								-- f:
+								-- feminine gender:
 									let newterm be "ая";
-								-- n:
+								-- neuter gender:
 									let newterm be "ое";
 						-- 5:	
 							if itemgender is:
-								-- f:
+								-- feminine gender:
 									let newterm be "ая";
-								-- n:
+								-- neuter gender:
 									let newterm be "ее";		
 				-- gen:
 					if category is 2 or category is 5: [нь or sibilant]
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ей";
 						otherwise:
 							let newterm be "его";
 					otherwise:
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ой";
 						otherwise:
 							let newterm be "ого";
 				-- dat:
 					if category is 2 or category is 5: [нь or sibilant]
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ей";
 						otherwise:
 							let newterm be "ему";
 					otherwise:
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ой";
 						otherwise:
 							let newterm be "ому";
@@ -1961,28 +1962,28 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gen
 						let newterm be "ую";
 				-- ins:
 					if category is 2 or category is 5: [нь or sibilant]
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ей";
 						otherwise:
 							let newterm be "им";
 					otherwise if category is 3 or category is 4: [stressed]
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ой";
 						otherwise:
 							let newterm be "им";
 					otherwise:
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ой";
 						otherwise:
 							let newterm be "ым";
 				-- pre:
 					if category is 2 or category is 5: [нь or sibilant]
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ей";
 						otherwise:
 							let newterm be "ем";
 					otherwise:
-						if itemgender is f:
+						if itemgender is feminine gender:
 							let newterm be "ой";
 						otherwise:
 							let newterm be "ом";
@@ -1991,21 +1992,21 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gen
 Section 4 - Short Form Adjectives
 
 To say short form of (adj - text) regarding (item - a thing):
-	let G be the gender of the item;
+	let G be the grammatical gender of the item;
 	let M be the multiplicity of the item;
 	say short form adj with G gender M.
 
-To say short form (item - text) with (itemgender - gender) gender (itemmult - a multiplicity) :
+To say short form (item - text) with (itemgender - grammatical gender) gender (itemmult - a multiplicity) :
 	if item exactly matches the text "большой":
 		if itemmult is plural:
 			say "велики";
 		otherwise:
 			if itemgender is:
-				-- m:
+				-- masculine gender:
 					say "велик";
-				-- f:
+				-- feminine gender:
 					say "велика";
-				-- n:
+				-- neuter gender:
 					say "велико";
 		the rule succeeds;
 	if item exactly matches the text "маленький":
@@ -2013,11 +2014,11 @@ To say short form (item - text) with (itemgender - gender) gender (itemmult - a 
 			say "малы";
 		otherwise:
 			if itemgender is:
-				-- m:
+				-- masculine gender:
 					say "мал";
-				-- f:
+				-- feminine gender:
 					say "мала";
-				-- n:
+				-- neuter gender:
 					say "мало";
 		the rule succeeds;
 	[if it'snot one of those special cases:]	
@@ -2034,11 +2035,11 @@ To say short form (item - text) with (itemgender - gender) gender (itemmult - a 
 			say "ы";
 	otherwise:
 		if itemgender is:
-			-- f:
+			-- feminine gender:
 				say "[stem]а";
-			-- n:
+			-- neuter gender:
 				say "[stem]о";
-			-- m:
+			-- masculine gender:
 				if stem exactly matches the regular expression "<^аеиоуыэ><^аеиоуыэ>":
 					replace the regular expression "(\w)(\w)" in stem with "\1[intercalator]\2";
 				otherwise if stem exactly matches the regular expression "\w*<^аеиоуыэ>к":
@@ -2148,13 +2149,13 @@ Chapter 8 - World
 
 The Laboratory is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
-The daughter is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. The gender of daughter is f. 
+The daughter (f) is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. 
 
 The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. The worktable is lit.
 
 The workbook is in box. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. The workbook is lit.
 
-A box is an open transparent container. It is in the laboratory. The gender of the box is f. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
+A box (f) is an open transparent container. It is in the laboratory. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
 
 The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
 
@@ -2172,7 +2173,7 @@ The bathroom is west from the hall. The description is "Ничем не прим
 
 The toilet is a supporter in the bathroom. The description is "Белый унитаз."  The name of toilet is "унитаз". The inflection pattern is "dom".  Understand "belyj/unitaz" as the toilet.
 
-The sink is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "voda". Understand "rakovina/rakovinu/rakovine" as the sink. The gender of the sink is f.
+The sink (f) is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "voda". Understand "rakovina/rakovinu/rakovine" as the sink.
 
 The bathtub is an open fixed in place container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "voda". Understand "vanna/vannu/vanne" as the bathtub.
 
@@ -2601,7 +2602,7 @@ Adclining is an action applying to one visible thing. Understand "adcline [any t
 Carry out adclining:
 	repeat with itemmult running through multiplicities:
 		repeat with itemcase running through cases:
-			repeat with itemgender running through genders:
+			repeat with itemgender running through grammatical genders:
 				say "[long form modifier of the noun in the itemcase case itemgender gender itemmult]."
 
 Test adclination with "adcline korobka/adcline portret/adcline stol/adcline tetrad&/adcline sablya".
@@ -2616,7 +2617,7 @@ The list of text called shortAdjTest is always
 Carry out shortAdjing:
 	repeat with L running through shortAdjTest:
 		repeat with itemmult running through multiplicities:
-			repeat with itemgender running through genders:
+			repeat with itemgender running through grammatical genders:
 				say "[short form L with itemgender gender itemmult].";
 		say paragraph break.	
 
