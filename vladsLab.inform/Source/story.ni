@@ -481,7 +481,7 @@ To say capitalized (item - a thing) in the (itemcase - a grammatical case) case:
 	say PN with initial capital.
 
 To say short-form-available regarding (item - a thing):
-	say short form of "недосягаемый" regarding item.
+	say short form of "недосягаемый" regarding item. 
 	
 To say short-form-worn regarding (item - a thing):
 	say say short form of "надетый" regarding item.
@@ -2147,47 +2147,47 @@ Understand "ya/menya" as yourself.
 
 Chapter 8 - World
 
-The Laboratory is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
+The Laboratory (f) is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
 The daughter (f) is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. 
 
-The worktable is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. The worktable is lit.
+The worktable (m) is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. The worktable is lit.
 
-The workbook is in box. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. The workbook is lit.
+The workbook (f) is in box. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. The workbook is lit.
 
 A box (f) is an open transparent container. It is in the laboratory. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
 
-The hall is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
+The hall (m) is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
 
-The sabre is in the hall. The description is "Ржавая сабля."  The name is "сабля". The inflection pattern is "zemlya". The modifier of sabre is "старший". Understand "sablya" as the sabre.
+The sabre (f) is in the hall. The description is "Ржавая сабля."  The name is "сабля". The inflection pattern is "zemlya". The modifier of sabre is "старший". Understand "sablya" as the sabre.
 
-The plant is in the hall. The description is "Растение без цветов." The name is "растение". The inflection pattern is "izvestie". Understand "rastenie" as the plant. 
+The plant (n) is in the hall. The description is "Растение без цветов." The name is "растение". The inflection pattern is "izvestie". Understand "rastenie" as the plant. 
 
-The portrait is in the hall. The description is "Портрет старика." The name of portrait is "портрет".  The inflection pattern is "dom". The modifier of portrait is "синий". Understand "portret/starika" as portrait. 
+The portrait (m) is in the hall. The description is "Портрет старика." The name of portrait is "портрет".  The inflection pattern is "dom". The modifier of portrait is "синий". Understand "portret/starika" as portrait. 
 
-The book is in the hall. The description is "Толстая книга." The name of book is "книга". The inflection pattern is "voda". Understand "kniga/knigu" as the book. 
+The book (f) is in the hall. The description is "Толстая книга." The name of book is "книга". The inflection pattern is "voda". Understand "kniga/knigu" as the book. 
 
-The mummy is in the hall. The description is "Египетские мумии." The name is "мумия". The inflection pattern is "lektsiya". Understand "mumiya/mumiyu" as the mummy. 
+The mummy (f) is in the hall. The description is "Египетские мумии." The name is "мумия". The inflection pattern is "lektsiya". Understand "mumiya/mumiyu" as the mummy. 
 
-The bathroom is west from the hall. The description is "Ничем не примечательная ванная комната. Центральный коридор находится к востоку." The printed name is "Санузел".
+The bathroom (m) is west from the hall. The description is "Ничем не примечательная ванная комната. Центральный коридор находится к востоку." The printed name is "Санузел".
 
-The toilet is a supporter in the bathroom. The description is "Белый унитаз."  The name of toilet is "унитаз". The inflection pattern is "dom".  Understand "belyj/unitaz" as the toilet.
+The toilet (m) is a supporter in the bathroom. The description is "Белый унитаз."  The name of toilet is "унитаз". The inflection pattern is "dom".  Understand "belyj/unitaz" as the toilet.
 
 The sink (f) is in the bathroom. It is fixed in place. The description is "Маленькая раковина. На данный момент, похоже, сломан." The name is "раковина". The inflection pattern is "voda". Understand "rakovina/rakovinu/rakovine" as the sink.
 
-The bathtub is an open fixed in place container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "voda". Understand "vanna/vannu/vanne" as the bathtub.
+The bathtub (f) is an open fixed in place container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "voda". Understand "vanna/vannu/vanne" as the bathtub.
 
-The rubber duck is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The name of the rubber duck is "утка". The inflection pattern is "korobka". The modifier is "резиновый". Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
+The rubber duck (f) is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The name of the rubber duck is "утка". The inflection pattern is "korobka". The modifier is "резиновый". Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
 
-The cafeteria is east from the hall. "Место, где все обедают. Центральный коридор находится к западу." The printed name of the cafeteria is "Столовая".
+The cafeteria (f) is east from the hall. "Место, где все обедают. Центральный коридор находится к западу." The printed name of the cafeteria is "Столовая".
 
-The dining table is in the cafeteria. It is a supporter. The description is "Деревянный стол." The name is "стол". The inflection pattern is "dom". The modifier is "деревянный". Understand "derevyannyj/stol" as the dining table.
+The dining table (m) is in the cafeteria. It is a supporter. The description is "Деревянный стол." The name is "стол". The inflection pattern is "dom". The modifier is "деревянный". Understand "derevyannyj/stol" as the dining table.
 
-A cucumber is edible. It is on the dining table. The description is "Спелый огурец." The name of cucumber is "огурец". The inflection pattern is "ogurets". The modifier is "спелый". Understand "spelyj/ogurets" as the cucumber. 
+A cucumber (m) is edible. It is on the dining table. The description is "Спелый огурец." The name of cucumber is "огурец". The inflection pattern is "ogurets". The modifier is "спелый". Understand "spelyj/ogurets" as the cucumber. 
 
-The kasha is edible. It is on the dining table. The description is "Каша без молока." The name of kasha is "каша". The inflection pattern is "kasha". Understand "kasha/kashu" as kasha. 
+The kasha (f) is edible. It is on the dining table. The description is "Каша без молока." The name of kasha is "каша". The inflection pattern is "kasha". Understand "kasha/kashu" as kasha. 
 
-The apple is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "яблоко". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
+The apple (n) is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "яблоко". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
 
 Chapter 9 - Transliterations
 
