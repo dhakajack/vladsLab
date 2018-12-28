@@ -169,7 +169,10 @@ The indefinite article of a thing is "".
 A thing has a text called modifier. The modifier of a thing is usually "". 
 [The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
 
-Chapter 5 - Standard Rules Overrides
+An Adjective is a kind of object.  Some adjectives are defined by the Table of Known Adjectives.
+
+
+Chapter 6 - Standard Rules Overrides
 
 Section 1 - Napravlenie (in place of Section SR1/4 - Directions in Standard Rules by Graham Nelson)
 
@@ -479,30 +482,6 @@ Section 4 - Response Overrides
 To say capitalized (item - a thing) in the (itemcase - a grammatical case) case:
 	let PN be "[item in the itemcase case]";
 	say PN with initial capital.
-
-To say short-form-available regarding (item - a thing):
-	say short form of "недосягаемый" regarding item. 
-	
-To say short-form-worn regarding (item - a thing):
-	say say short form of "надетый" regarding item.
-	
-To say short-form-empty regarding (item - a thing):
-	say short form of "пустый" regarding item.
-	
-To say short-form-open regarding (item - a thing):
-	say short form of "открытый" regarding item.
-	
-To say short-form-closed regarding (item - a thing):
-	say short form of "закрытый" regarding item.
-	
-To say short-form-locked regarding (item - a thing):
-	say short form of "запертый" regarding item.
-	
-To say short-form-fixed regarding (item - a thing):
-	say short form of "закрепленный" regarding item.
-	
-To say short-form-dropped regarding (item - a thing):
-	say short form of "брошенный" regarding item.
 	
 To say long-form-which regarding (item - a thing) in the (itemcase - a grammatical case) case:
 	say long form of "который" regarding item in the itemcase case.
@@ -575,7 +554,7 @@ The can't take component parts rule response (A) is "[capitalized noun in the no
 The can't take people's possessions rule response (A) is "[capitalized noun in the nominative case] явнo принадлеж[noun does a verb of class v2a] [the owner in the dative case]."
 
 [The can't take items out of play rule response (A): "[regarding the noun][Those] [aren't] available."]
-The can't take items out of play rule response (A) is "[capitalized noun in the nominative case] [short-form-available regarding noun]."
+The can't take items out of play rule response (A) is "[capitalized noun in the nominative case] [short form of nedosyagaemyj regarding noun]."
 
 [The can't take what you're inside rule response (A): "[We] [would have] to get [if noun is a supporter]off[otherwise]out of[end if] [the noun] first."]
 The can't take what you're inside rule response (A) is "Сначала тебе необходимо покинуть [noun in the accusative case]."
@@ -590,7 +569,7 @@ The can't take scenery rule response (A) is "[capitalized noun in the accusative
 [translate][The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
 
 [The can't take what's fixed in place rule response (A): "[regarding the noun][They're] fixed in place."]
-The can't take what's fixed in place rule response (A) is "[capitalized noun in the nominative case] жёстко [short-form-fixed regarding noun]."
+The can't take what's fixed in place rule response (A) is "[capitalized noun in the nominative case] жёстко [short form of zakreplennyj regarding noun]."
 
 [The use player's holdall to avoid exceeding carrying capacity rule response (A): "(putting [the transferred item] into [the current working sack] to make room)[command clarification break]"]
 The use player's holdall to avoid exceeding carrying capacity rule response (A) is "(укладывая [transferred item in the accusative case] внутрь [current working sack in the genitive case], чтобы освободить место)."
@@ -635,7 +614,7 @@ The can't drop if this exceeds carrying capacity rule response (B) is "Боль�
 The standard report dropping rule response (A) is "[standard-report-dropping-rule-response-a]."
 
 To say standard-report-dropping-rule-response-a:
-	let PN be "[short-form-dropped regarding noun]";
+	let PN be "[short form of broshennyj regarding noun]";
 	say PN with initial capital.
 
 [The standard report dropping rule response (B): "[The actor] [put] down [the noun]."]
@@ -663,8 +642,7 @@ The can't put if this exceeds carrying capacity rule response (A) is "Больш
 The can't insert something into itself rule response (A) is "Невозможно вложить что-либо внутрь себя."
 
 [The can't insert into closed containers rule response (A): "[The second noun] [are] closed."]
-The can't insert into closed containers rule response (A) is "[capitalized second noun in the nominative case] [short-form-closed regarding second noun]."
-
+The can't insert into closed containers rule response (A) is "[capitalized second noun in the nominative case] [short form of zakrytyj regarding second noun]."
 
 [The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
 [The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
@@ -1309,16 +1287,16 @@ The requested actions require persuasion rule response (A) is "[capitalized noun
 [*review]The carry out requested actions rule response (A) is "[capitalized noun in the nominative case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a] этого сделать."
 	
 [access through barriers rule response (A): "[regarding the noun][Those] [aren't] available."]
-The access through barriers rule response (A) is "[capitalized noun in the nominative case] не [short-form-available regarding noun]."
+The access through barriers rule response (A) is "[capitalized noun in the nominative case] не [short form of nedosyagaemyj regarding noun]."
 
 [can't reach inside closed containers rule response (A): "[The noun] [aren't] open."]
-The can't reach inside closed containers rule response (A) is "[capitalized noun in the nominative case] не [short-form-open regarding noun]."
+The can't reach inside closed containers rule response (A) is "[capitalized noun in the nominative case] не [short form of otkrytyj regarding noun]."
 
 [can't reach inside rooms rule response (A): "[We] [can't] reach into [the noun]."]
 [*translate]The can't reach inside rooms rule response (A) is "[We] [can't] reach into [the noun]."
 
 [can't reach outside closed containers rule response (A): "[The noun] [aren't] open."]
-The can't reach outside closed containers rule response (A) is "[capitalized noun in the nominative case] не [short-form-open regarding noun]."
+The can't reach outside closed containers rule response (A) is "[capitalized noun in the nominative case] не [short form of otkrytyj regarding noun]."
 
 [
 list writer internal rule response (A): " ("
@@ -1484,7 +1462,7 @@ The parser nothing error internal rule response (C) is "[capitalized noun in the
 The parser nothing error internal rule response (D) is "[capitalized noun in the nominative case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a]  что-либо содержать."
 
 [parser nothing error internal rule response (E): "[The noun] [aren't] open."]
-The parser nothing error internal rule response (E) is "[capitalized noun in the nominative case] [short-form-closed regarding noun]."
+The parser nothing error internal rule response (E) is "[capitalized noun in the nominative case] [short form of zakrytyj regarding noun]."
 
 [parser nothing error internal rule response (F): "[The noun] [are] empty."]
 The parser nothing error internal rule response (F) is "В [noun in the prepositional case] ничего нет."
@@ -1661,7 +1639,7 @@ The announce the pronoun meanings rule response (C) is "отсутствует"
 The display Vorple credits rule response (A) is "Ворпeл версия [version number][line break]".
 
 
-Chapter 6 - Some  grammar
+Chapter 7 - Some  grammar
 
 
 Section 1 - Noun Dictionary
@@ -1717,9 +1695,9 @@ To generate listing of (itemlist - a list of things) in the (itemcase - a gramma
 		say item in the itemcase case;
 		let T be a list of text;[list of parenthetical attributes of the item, not including lit, worn, etc., here]
 		if item is openable and item is closed:
-			add "[short-form-closed regarding item][if item is locked]и [short-form-locked regarding item][end if]" to T;
+			add "[short form of zakrytyj regarding item][if item is locked]и [short form of zapertyj regarding item][end if]" to T;
 		if item is a container and the number of things in item is zero:
-			add "[short-form-empty regarding item]" to T;
+			add "[short form of pustyj regarding item]" to T;
 		if the number of entries in T is greater than 0:
 			say " ([T])";
 		let mentionables be 0;
@@ -1820,6 +1798,33 @@ To say (itemtext - a text) in the (itemcase - a grammatical case) case (itemmult
 				let T be "[T][C]"; [append one character]
 		replace character number 1 in termination with "";
 	say T.
+	
+Section 2 - Known Adjectives
+
+Table of Known Adjectives
+adjective	rus-adjective	
+pustyj	"пустый"
+nedosyagaemyj	"недосягаемый"
+nadetyj	"надетый"
+otkrytyj	"открытый"
+zakrytyj	"закрытый"
+zapertyj	"запертый"
+zakreplennyj	"закрепленный"
+broshennyj	"брошенный"
+kotoryj	"который"
+bol&shoj	"большой"
+malen&kij	"маленький"
+khoroshij	"хороший"
+gotovyj	"готовый"
+korotkij	"короткий"
+redkij	"редкий"
+vazhnyj	"важный"
+bol&noj	"больной"
+polnyj	"полный"
+smeshnoj	"смешной"
+zloj	"злой"
+spokojnyj	"спокойный"
+blizkij	"близкий"
 
 	
 Section 3 - Decline Long From Adjectives
@@ -1991,12 +1996,16 @@ To say long form (item - text) in the (itemcase - a grammatical case) case (item
 		
 Section 4 - Short Form Adjectives
 
-To say short form of (adj - text) regarding (item - a thing):
+To say short form of (adj - an adjective) regarding (item - a thing):
 	let G be the grammatical gender of the item;
 	let M be the multiplicity of the item;
-	say short form adj with G gender M.
+	say short form of adj with G gender M.
 
-To say short form (item - text) with (itemgender - grammatical gender) gender (itemmult - a multiplicity) :
+To say short form of (adj - an adjective) with (itemgender - grammatical gender) gender (itemmult - a multiplicity) :
+	if adj is not an adjective listed in the Table of Known Adjectives:
+		say "ERROR: adjective not found in Table of Known Adjectives.";
+		the rule fails;
+	let item be the rus-adjective corresponding to the adjective of adj in the Table of Known Adjectives;
 	if item exactly matches the text "большой":
 		if itemmult is plural:
 			say "велики";
@@ -2079,7 +2088,7 @@ To say (item - thing) does a verb of class (class - verb class):
 				
 
 	
-Section 7 - Das Kapital
+Section 6 - Das Kapital
 
 To say (phrase - text) with initial capital:
 	let LC be character number 1 in phrase;
@@ -2125,7 +2134,7 @@ lower	upper
 "я"	"Я"
 
 
-Chapter 7 - Grammar Tweaks
+Chapter 8 - Grammar Tweaks
 
 [Rule for listing nondescript items:
 	let L be a list of things;
@@ -2145,7 +2154,7 @@ Chapter 7 - Grammar Tweaks
 	
 Understand "ya/menya" as yourself.
 
-Chapter 8 - World
+Chapter 9 - World
 
 The Laboratory (f) is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
@@ -2189,7 +2198,7 @@ The kasha (f) is edible. It is on the dining table. The description is "Каша
 
 The apple (n) is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "яблоко". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
 
-Chapter 9 - Transliterations
+Chapter 10 - Transliterations
 
 [clear definitions]
 
@@ -2521,12 +2530,12 @@ The printed name of down is "вниз".
 The printed name of outside is "";]
 
 
-Chapter 10 - Start
+Chapter 11 - Start
 
 When play begins:
 	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. I'm sure that there are plenty of errors -- this is a work in progress. I am slowly adding standard rules and grammar based mostly in rInform. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
-Chapter 11 - Some example customized responses
+Chapter 12 - Some example customized responses
 
 After inserting something (called the item) into the box:
 	say "Вы положите [item] в коробку. Теперь в коробке ";	
@@ -2550,7 +2559,7 @@ After inserting something (called the item) into the box:
 After eating something:
 	say "[one of]Ммммм[or]Не плохо[or]Отлично[or]Как вкусно[in random order]."
 	
-Chapter 12 - Tests
+Chapter 13 - Tests
 
 Section 1 - Decline an object
 
@@ -2611,14 +2620,12 @@ Section 4 - Decline short adjectives
 
 shortAdjing is an action applying to nothing. Understand "shortAdj" as shortAdjing.
 
-The list of text called shortAdjTest is always 
-	{ "большой", "маленький", "хороший", "готовый", "короткий", "редкий", "важный", "больной", "полный", "смешной","злой", "спокойный", "близкий" }
-
 Carry out shortAdjing:
-	repeat with L running through shortAdjTest:
+	repeat through Table of Known Adjectives:
 		repeat with itemmult running through multiplicities:
 			repeat with itemgender running through grammatical genders:
-				say "[short form L with itemgender gender itemmult].";
-		say paragraph break.	
+				say short form of adjective entry with itemgender gender itemmult;
+				say line break;
+		say line break.
 
 
