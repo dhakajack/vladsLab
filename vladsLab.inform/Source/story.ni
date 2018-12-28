@@ -146,6 +146,8 @@ An obvious shortcoming of this approach is that input and output are entirely di
 Case is a kind of value. The cases are nom, gen, dat, acc, ins and pre.
 Verb class is a kind of value. The verb classes are v1a, v1b, v2a, v2b.
 
+The grammatical cases are nominative, genitive, dative, accusative, instrumental, and prepositional. [overriding English extension or later to be put in a Russian Language extension.]
+
 Multiplicity is a kind of value. The multiplicities are singular and plural.
 
 To decide which multiplicity is the multiplicity of (item - a thing): 
@@ -156,6 +158,8 @@ To decide which multiplicity is the multiplicity of (item - a thing):
 A thing has grammatical gender. The grammatical gender of a thing is usually masculine gender.
 
 A room has grammatical gender. The grammatical gender of a room is usually masculine gender.
+
+A thing has grammatical case. The grammatical case of a thing is usually nominative.
 
 A thing has a text called name. The name of a thing is usually "".
 A thing has a text called inflection pattern. The inflection pattern of a thing is usually "dom".
@@ -310,14 +314,14 @@ For printing the locale description (this is the you-can-also-see rule):
 					
 					]
 					let L be the list of things in the common holder;
-					generate listing of L in the acc case;
+					generate listing of L in the accusative case;
 				otherwise:
 					[
 					*** edited bit ***
 					otherwise say "[a list of marked for listing things including contents]";
 					]
 					let L be the list of marked for listing things;
-					generate listing of L in the acc case;
+					generate listing of L in the accusative case;
 				if the domain is the location, say " here" (F);
 				say ".[paragraph break]";
 				unfilter list recursion;
@@ -391,7 +395,7 @@ For printing a locale paragraph about a thing (called the item)
 			
 				]
 				let L be the list of things on the item;
-				generate listing of L in the nom case;
+				generate listing of L in the nominative case;
 				[*** edited bit ***]
 				say ".[paragraph break]";
 			now the item is mentioned;
@@ -429,7 +433,7 @@ For printing a locale paragraph about a thing (called the item)
 				concealed items, prefacing with is/are, listing marked items only;
 			]
 			let L be the list of things on the item;
-			generate listing of L in the nom case;
+			generate listing of L in the nominative case;
 			say ".[paragraph break]";
 	continue the activity.
 
@@ -452,7 +456,7 @@ For printing a locale paragraph about a thing (called the item)
 				concealed items, prefacing with is/are, listing marked items only;
 			]
 			let L be the list of things on the item;
-			generate listing of L in the nom case;
+			generate listing of L in the nominative case;
 			say ".[paragraph break]";
 	continue the activity.
 
@@ -472,7 +476,7 @@ The description of the player is "Ты выглядишь как обычно."
 
 Section 4 - Response Overrides
 
-To say capitalized (item - a thing) in the (itemcase - a case) case:
+To say capitalized (item - a thing) in the (itemcase - a grammatical case) case:
 	let PN be "[item in the itemcase case]";
 	say PN with initial capital.
 
@@ -500,15 +504,11 @@ To say short-form-fixed regarding (item - a thing):
 To say short-form-dropped regarding (item - a thing):
 	say short form of "брошенный" regarding item.
 	
-To say long-form-which regarding (item - a thing) in the (itemcase - a case) case:
+To say long-form-which regarding (item - a thing) in the (itemcase - a grammatical case) case:
 	say long form of "который" regarding item in the itemcase case.
-	
-
-	
-
-	
+		
 [announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
-The announce items from multiple object lists rule response (A) is "[current item from the multiple object list in the nom case]: [run paragraph on]"
+The announce items from multiple object lists rule response (A) is "[current item from the multiple object list in the nominative case]: [run paragraph on]"
 
 [The block vaguely going rule response (A): "You'll have to say which compass direction to go in."]
 The block vaguely going rule response (A) is "Идти можно только в некотором направлении."
@@ -530,10 +530,10 @@ The standard respond to final question rule response (A) is "Нужен один
 The you-can-also-see rule response (A) is "Здесь вы ".
 
 [The you-can-also-see rule response (B): "On [the domain] [we] "]
-The you-can-also-see rule response (B) is "На [domain in the pre case] ".
+The you-can-also-see rule response (B) is "На [domain in the prepositional case] ".
 
 [The you-can-also-see rule response (C): "In [the domain] [we] "]
-The you-can-also-see rule response (C) is "В [domain in the pre case] ".
+The you-can-also-see rule response (C) is "В [domain in the prepositional case] ".
 
 [The you-can-also-see rule response (D): "[regarding the player][can] also see "]
 The you-can-also-see rule response (D) is "также видите".
@@ -545,13 +545,13 @@ The you-can-also-see rule response (E) is "видите ".
 The you-can-also-see rule response (F) is "".
 
 [The use initial appearance in room descriptions rule response (A): "On [the item] "]
-The use initial appearance in room descriptions rule response (A)is  "На [the item in the pre case] "
+The use initial appearance in room descriptions rule response (A)is  "На [the item in the prepositional case] "
 
 [The describe what's on scenery supporters in room descriptions rule response (A): "On [the item] "]
-The describe what's on scenery supporters in room descriptions rule response (A) is "На [the item in the pre case] "
+The describe what's on scenery supporters in room descriptions rule response (A) is "На [the item in the prepositional case] "
 
 [The describe what's on mentioned supporters in room descriptions rule response (A): "On [the item] "]
-The describe what's on mentioned supporters in room descriptions rule response (A) is "На [the item in the pre case] "
+The describe what's on mentioned supporters in room descriptions rule response (A) is "На [the item in the prepositional case] "
 
 [The print empty inventory rule response (A): "[We] [are] carrying nothing."]
 The print empty inventory rule response (A) is "У тебя с собой ничего нет."
@@ -566,34 +566,34 @@ The print standard inventory rule response (A) is "У тебя с собой е�
 The can't take yourself rule response (A) is "Ты всегда есть у себя."
 
 [The can't take other people rule response (A): "I don't suppose [the noun] [would care] for that."]
-The can't take other people rule response (A) is "[capitalized noun in the dat case] это вряд ли понравится."
+The can't take other people rule response (A) is "[capitalized noun in the dative case] это вряд ли понравится."
 
 [The can't take component parts rule response (A): "[regarding the noun][Those] [seem] to be a part of [the whole]."]
-The can't take component parts rule response (A) is "[capitalized noun in the nom case] явно явля[noun does a verb of class v1b]ся частью [whole in the gen case]."
+The can't take component parts rule response (A) is "[capitalized noun in the nominative case] явно явля[noun does a verb of class v1b]ся частью [whole in the genitive case]."
 
 [The can't take people's possessions rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
-The can't take people's possessions rule response (A) is "[capitalized noun in the nom case] явнo принадлеж[noun does a verb of class v2a] [the owner in the dat case]."
+The can't take people's possessions rule response (A) is "[capitalized noun in the nominative case] явнo принадлеж[noun does a verb of class v2a] [the owner in the dative case]."
 
 [The can't take items out of play rule response (A): "[regarding the noun][Those] [aren't] available."]
-The can't take items out of play rule response (A) is "[capitalized noun in the nom case] [short-form-available regarding noun]."
+The can't take items out of play rule response (A) is "[capitalized noun in the nominative case] [short-form-available regarding noun]."
 
 [The can't take what you're inside rule response (A): "[We] [would have] to get [if noun is a supporter]off[otherwise]out of[end if] [the noun] first."]
-The can't take what you're inside rule response (A) is "Сначала тебе необходимо покинуть [noun in the acc case]."
+The can't take what you're inside rule response (A) is "Сначала тебе необходимо покинуть [noun in the accusative case]."
 
 [The can't take what's already taken rule response (A): "[We] already [have] [regarding the noun][those]."]
-The can't take what's already taken rule response (A) is "[capitalized noun in the nom case] у тебя уже есть."
+The can't take what's already taken rule response (A) is "[capitalized noun in the nominative case] у тебя уже есть."
 
 [The can't take scenery rule response (A): "[regarding the noun][They're] hardly portable."]
-The can't take scenery rule response (A) is "[capitalized noun in the acc case] невозможно взять."
+The can't take scenery rule response (A) is "[capitalized noun in the accusative case] невозможно взять."
 
 [The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
 [translate][The can only take things rule response (A): "[We] [cannot] carry [the noun]."]
 
 [The can't take what's fixed in place rule response (A): "[regarding the noun][They're] fixed in place."]
-The can't take what's fixed in place rule response (A) is "[capitalized noun in the nom case] жёстко [short-form-fixed regarding noun]."
+The can't take what's fixed in place rule response (A) is "[capitalized noun in the nominative case] жёстко [short-form-fixed regarding noun]."
 
 [The use player's holdall to avoid exceeding carrying capacity rule response (A): "(putting [the transferred item] into [the current working sack] to make room)[command clarification break]"]
-The use player's holdall to avoid exceeding carrying capacity rule response (A) is "(укладывая [transferred item in the acc case] внутрь [current working sack in the gen case], чтобы освободить место)."
+The use player's holdall to avoid exceeding carrying capacity rule response (A) is "(укладывая [transferred item in the accusative case] внутрь [current working sack in the genitive case], чтобы освободить место)."
 
 [The can't exceed carrying capacity rule response (A): "[We]['re] carrying too many things already."]
 The can't exceed carrying capacity rule response (A) is "У тебя с собой слишком много вещей."
@@ -605,10 +605,10 @@ The standard report taking rule response (A) is "Ты берёшь [if noun is p
 [translate][The standard report taking rule response (B): "[The actor] [pick] up [the noun]."]
 
 [The can't remove what's not inside rule response (A): "But [regarding the noun][they] [aren't] there now."]
-The can't remove what's not inside rule response (A) is "[capitalized noun in the nom case] не наход[noun does a verb of class v2b]ся [if noun is a supporter]на[otherwise]в[end if] [second noun in the pre case]."
+The can't remove what's not inside rule response (A) is "[capitalized noun in the nominative case] не наход[noun does a verb of class v2b]ся [if noun is a supporter]на[otherwise]в[end if] [second noun in the prepositional case]."
 
 [The can't remove from people rule response (A): "[regarding the noun][Those] [seem] to belong to [the owner]."]
-The can't remove from people rule response (A) is "[capitalized noun in the nom case] явнo принадлеж[noun does a verb of class v2a] [the owner in the dat case]."
+The can't remove from people rule response (A) is "[capitalized noun in the nominative case] явнo принадлеж[noun does a verb of class v2a] [the owner in the dative case]."
 
 [The can't drop yourself rule response (A): "[We] [lack] the dexterity."]
 The can't drop yourself rule response (A) is "У тебя не хватит ловкости."
@@ -617,19 +617,19 @@ The can't drop yourself rule response (A) is "У тебя не хватит ло
 [translate][The can't drop body parts rule response (A): "[We] [can't drop] part of [ourselves]."]
 
 [The can't drop what's already dropped rule response (A): "[The noun] [are] already here."]
-The can't drop what's already dropped rule response (A) is "У тебя нет [noun in the gen case]."
+The can't drop what's already dropped rule response (A) is "У тебя нет [noun in the genitive case]."
 
 [The can't drop what's not held rule response (A): "[We] [haven't] got [regarding the noun][those]."]
-The can't drop what's not held rule response (A) is "[capitalized noun in the nom case] не у тебя."
+The can't drop what's not held rule response (A) is "[capitalized noun in the nominative case] не у тебя."
 
 [The can't drop clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
-The can't drop clothes being worn rule response (A) is "(сначала сняв [noun in the acc case] с себя)[command clarification break]".
+The can't drop clothes being worn rule response (A) is "(сначала сняв [noun in the accusative case] с себя)[command clarification break]".
 
 [The can't drop if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the receptacle]."]
-The can't drop if this exceeds carrying capacity rule response (A) is "Больше нет места на [the receptacle in the pre case]."
+The can't drop if this exceeds carrying capacity rule response (A) is "Больше нет места на [the receptacle in the prepositional case]."
 
 [The can't drop if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the receptacle]."]
-The can't drop if this exceeds carrying capacity rule response (B) is "Больше нет места в [the receptacle in the pre case]."
+The can't drop if this exceeds carrying capacity rule response (B) is "Больше нет места в [the receptacle in the prepositional case]."
 
 [The standard report dropping rule response (A): "Dropped."]
 The standard report dropping rule response (A) is "[standard-report-dropping-rule-response-a]."
@@ -645,16 +645,16 @@ To say standard-report-dropping-rule-response-a:
 The can't put something on itself rule response (A) is "Невозможно положить что-либо на себя."
 
 [The can't put onto what's not a supporter rule response (A): "Putting things on [the second noun] [would achieve] nothing."]
-The can't put onto what's not a supporter rule response (A) is "Класть что-либо на [second noun in the acc case] бессмысленно."
+The can't put onto what's not a supporter rule response (A) is "Класть что-либо на [second noun in the accusative case] бессмысленно."
 
 [The can't put clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
-The can't put clothes being worn rule response (A) is "(сначала сняв [noun in the acc case] с себя)[command clarification break]"
+The can't put clothes being worn rule response (A) is "(сначала сняв [noun in the accusative case] с себя)[command clarification break]"
 
 [The can't put if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the second noun]."]
 The can't put if this exceeds carrying capacity rule response (A) is "Больше нет места на [the second noun]."
 
 [The concise report putting rule response (A): "Done."]
-[review]The concise report putting rule response (A) is "Ты кладёшь всё на [second noun in the acc case]."
+[review]The concise report putting rule response (A) is "Ты кладёшь всё на [second noun in the accusative case]."
 
 [The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
 [translate][The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
@@ -663,7 +663,7 @@ The can't put if this exceeds carrying capacity rule response (A) is "Больш
 The can't insert something into itself rule response (A) is "Невозможно вложить что-либо внутрь себя."
 
 [The can't insert into closed containers rule response (A): "[The second noun] [are] closed."]
-The can't insert into closed containers rule response (A) is "[capitalized second noun in the nom case] [short-form-closed regarding second noun]."
+The can't insert into closed containers rule response (A) is "[capitalized second noun in the nominative case] [short-form-closed regarding second noun]."
 
 
 [The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
@@ -1303,22 +1303,22 @@ The basic accessibility rule response (A) is "You must name something more subst
 The basic visibility rule response (A) is "Кромешная тьма — не видно ни зги!"
 
 [requested actions require persuasion rule response (A): "[The noun] [have] better things to do."]
-The requested actions require persuasion rule response (A) is "[capitalized noun in the nom case] явно не собира[noun does a verb of class v1b]ся тебя слушать."
+The requested actions require persuasion rule response (A) is "[capitalized noun in the nominative case] явно не собира[noun does a verb of class v1b]ся тебя слушать."
 
 [carry out requested actions rule response (A): "[The noun] [are] unable to do that."]
-[*review]The carry out requested actions rule response (A) is "[capitalized noun in the nom case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a] этого сделать."
+[*review]The carry out requested actions rule response (A) is "[capitalized noun in the nominative case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a] этого сделать."
 	
 [access through barriers rule response (A): "[regarding the noun][Those] [aren't] available."]
-The access through barriers rule response (A) is "[capitalized noun in the nom case] не [short-form-available regarding noun]."
+The access through barriers rule response (A) is "[capitalized noun in the nominative case] не [short-form-available regarding noun]."
 
 [can't reach inside closed containers rule response (A): "[The noun] [aren't] open."]
-The can't reach inside closed containers rule response (A) is "[capitalized noun in the nom case] не [short-form-open regarding noun]."
+The can't reach inside closed containers rule response (A) is "[capitalized noun in the nominative case] не [short-form-open regarding noun]."
 
 [can't reach inside rooms rule response (A): "[We] [can't] reach into [the noun]."]
 [*translate]The can't reach inside rooms rule response (A) is "[We] [can't] reach into [the noun]."
 
 [can't reach outside closed containers rule response (A): "[The noun] [aren't] open."]
-The can't reach outside closed containers rule response (A) is "[capitalized noun in the nom case] не [short-form-open regarding noun]."
+The can't reach outside closed containers rule response (A) is "[capitalized noun in the nominative case] не [short-form-open regarding noun]."
 
 [
 list writer internal rule response (A): " ("
@@ -1463,7 +1463,7 @@ The parser error internal rule response (T) is "Команда не может �
 The parser error internal rule response (U) is "Непонятно, к кому ты обращаешься."
 
 [parser error internal rule response (V): "You can't talk to [the noun]."]
-The parser error internal rule response (V) is "Бессмысленно говорить с [noun in the ins case]."
+The parser error internal rule response (V) is "Бессмысленно говорить с [noun in the instrumental case]."
 
 [parser error internal rule response (W): "To talk to someone, try 'someone, hello' or some such."]
 The parser error internal rule response (W) is "Чтобы обратиться к собеседнику, введите [bold type]собеседник, привет[roman type].";
@@ -1478,16 +1478,16 @@ The parser nothing error internal rule response (A) is "Действий нет!
 The parser nothing error internal rule response (B) is "Нет совсем ничего подходящего."
 
 [parser nothing error internal rule response (C): "[regarding the noun][Those] [seem] to belong to [the noun]."]
-The parser nothing error internal rule response (C) is "[capitalized noun in the nom case] явно принадлеж[noun does a verb of class v2a] [second noun in the dat case]."
+The parser nothing error internal rule response (C) is "[capitalized noun in the nominative case] явно принадлеж[noun does a verb of class v2a] [second noun in the dative case]."
 
 [parser nothing error internal rule response (D): "[regarding the noun][Those] [can't] contain things."]
-The parser nothing error internal rule response (D) is "[capitalized noun in the nom case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a]  что-либо содержать."
+The parser nothing error internal rule response (D) is "[capitalized noun in the nominative case] не мо[if the noun is plural-named]г[otherwise]ж[noun does a verb of class v1a]  что-либо содержать."
 
 [parser nothing error internal rule response (E): "[The noun] [aren't] open."]
-The parser nothing error internal rule response (E) is "[capitalized noun in the nom case] [short-form-closed regarding noun]."
+The parser nothing error internal rule response (E) is "[capitalized noun in the nominative case] [short-form-closed regarding noun]."
 
 [parser nothing error internal rule response (F): "[The noun] [are] empty."]
-The parser nothing error internal rule response (F) is "В [noun in the pre case] ничего нет."
+The parser nothing error internal rule response (F) is "В [noun in the prepositional case] ничего нет."
 
 [darkness name internal rule response (A): "Darkness"]
 The darkness name internal rule response (A) is "Темнота".
@@ -1704,7 +1704,7 @@ exemplar 	pattern
 
 [A subset of the full listwriter for use in generating you-can-see]
 
-To generate listing of (itemlist - a list of things) in the (itemcase - a case) case:
+To generate listing of (itemlist - a list of things) in the (itemcase - a grammatical case) case:
 	repeat with item running through itemlist:
 		if item is concealed:
 			remove item from itemlist;
@@ -1735,18 +1735,18 @@ To generate listing of (itemlist - a list of things) in the (itemcase - a case) 
 			say " (";
 			let stuff be the list of marked for listing things enclosed by the item;
 			if item is a person:
-				say "у [long-form-which regarding item in the pre case] есть";
+				say "у [long-form-which regarding item in the prepositional case] есть";
 			otherwise if item is a supporter:
-				say "на [long-form-which regarding item in the pre case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
+				say "на [long-form-which regarding item in the prepositional case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
 			otherwise:
-				say "в [long-form-which regarding item in the pre case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
+				say "в [long-form-which regarding item in the prepositional case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
 			say " ";
-			generate listing of stuff in the nom case;
+			generate listing of stuff in the nominative case;
 			say ")";
 		if the number of entries in itemlist is greater than 2 and N is less than (the number of entries in itemlist minus 1):
 			say ", ".
 			
-To say listing of (itemlist - a list of things) in the (itemcase - a case) case:
+To say listing of (itemlist - a list of things) in the (itemcase - a grammatical case) case:
 	let L be a list of text;
 	repeat with item running through itemlist:
 		add "[item in the itemcase case]" to L;
@@ -1756,7 +1756,7 @@ To say listing of (itemlist - a list of things) in the (itemcase - a case) case:
 
 [says noun and coupled modifier]
 
-To say (item - a thing) in the (itemcase - a case) case:
+To say (item - a thing) in the (itemcase - a grammatical case) case:
 	let IG be the grammatical gender of the item;
 	let IM be the multiplicity of the item;
 	if modifier of the item is not empty:
@@ -1766,13 +1766,13 @@ To say (item - a thing) in the (itemcase - a case) case:
 	
 [say just the noun]
 
-To say (item - a thing) in the (itemcase - a case) case (itemmult - a multiplicity):
+To say (item - a thing) in the (itemcase - a grammatical case) case (itemmult - a multiplicity):
 	let N be the name of the item;
 	let itempattern be the inflection pattern of the item;
 	[say "Calling text routine with text [N] based on a pattern of [itempattern].";]
 	say N in the itemcase case itemmult multiplicity with itempattern pattern.
 
-To say (itemtext - a text) in the (itemcase - a case) case (itemmult - a multiplicity) multiplicity with (itempattern - a text) pattern:
+To say (itemtext - a text) in the (itemcase - a grammatical case) case (itemmult - a multiplicity) multiplicity with (itempattern - a text) pattern:
 	[say "Text routine called with itemtext [itemtext] in the [itemcase] case and [itemmult] multiplicity with [itempattern] pattern.";]
 	if itempattern is not an exemplar listed in the Table of Noun Inflections:
 		say "ERROR: declination pattern not found in lookup table";
@@ -1782,31 +1782,31 @@ To say (itemtext - a text) in the (itemcase - a case) case (itemmult - a multipl
 	let terminationList be the pattern corresponding to an exemplar of itempattern in the Table of Noun Inflections;
 	if the itemmult is singular:
 		if the itemcase is:
-			-- nom:
+			-- nominative:
 				now the termination is "[entry 1 of terminationList]";
-			-- gen:
+			-- genitive:
 				now the termination is "[entry 2 of terminationList]";
-			-- dat:
+			-- dative:
 				now the termination is "[entry 3 of terminationList]";
-			-- acc:
+			-- accusative:
 				now the termination is "[entry 4 of terminationList]";
-			-- ins:
+			-- instrumental:
 				now the termination is "[entry 5 of terminationList]";
-			-- pre:
+			-- prepositional:
 				now the termination is "[entry 6 of terminationList]";	
 	otherwise:[item is plural]
 		if the itemcase is:
-			-- nom:
+			-- nominative:
 				now the termination is "[entry 7 of terminationList]";
-			-- gen:
+			-- genitive:
 				now the termination is "[entry 8 of terminationList]";
-			-- dat:
+			-- dative:
 				now the termination is "[entry 9 of terminationList]";
-			-- acc:
+			-- accusative:
 				now the termination is "[entry 10 of terminationList]";
-			-- ins:
+			-- instrumental:
 				now the termination is "[entry 11 of terminationList]";
-			-- pre:
+			-- prepositional:
 				now the termination is "[entry 12 of terminationList]";
 	[say "The current termination is: [termination].";]
 	while termination is not empty:
@@ -1824,17 +1824,17 @@ To say (itemtext - a text) in the (itemcase - a case) case (itemmult - a multipl
 	
 Section 3 - Decline Long From Adjectives
 
-To say long form of (adj - text) regarding (item - a thing) in the (case - a case) case:
+To say long form of (adj - text) regarding (item - a thing) in the (case - a grammatical case) case:
 	let G be the grammatical gender of the item;
-	let C be the case;
+	let C be the grammatical case;
 	let M be the multiplicity of the item;
 	say long form adj in the C case G gender M.
 	
 [Algorithmic declension of regular long form adjectives]
-To say long form (item - text) in the (itemcase - a case) case (itemgender - grammatical gender) gender (itemmult - a multiplicity):
+To say long form (item - text) in the (itemcase - a grammatical case) case (itemgender - grammatical gender) gender (itemmult - a multiplicity):
 	if item is empty:
 		 the rule succeeds; [if there is no adjective, end processing here.]
-	if (itemcase is nom and itemgender is masculine gender and itemmult is singular) or (itemcase is acc and itemgender is masculine gender and itemmult is singular):
+	if (itemcase is nominative and itemgender is masculine gender and itemmult is singular) or (itemcase is accusative and itemgender is masculine gender and itemmult is singular):
 		say item;
 		the rule succeeds; [if it's nom masc singular just use the exemplar.]
 	let stem be the item; 
@@ -1869,27 +1869,27 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gra
 	if the itemmult is:
 		-- plural:
 			if itemcase is:[collapse redundancies]
-				-- acc:
-					let itemcase be nom;
-				-- pre:
-					let itemcase be gen;				
+				-- accusative:
+					let itemcase be nominative;
+				-- prepositional:
+					let itemcase be genitive;				
 			if itemcase is:
-				-- nom:
+				-- nominative:
 					if the category is 1:
 						let newterm be "ые";
 					otherwise:
 						let newterm be "ие";
-				-- gen:
+				-- genitive:
 					if the category is 1:
 						let newterm be "ых";
 					otherwise:
 						let newterm be "их";
-				-- dat:
+				-- dative:
 					if the category is 1:
 						let newterm be "ым";
 					otherwise:
 						let newterm be "им";
-				-- ins:
+				-- instrumental:
 				if the category is 1:
 						let newterm be "ыми";
 					otherwise:
@@ -1898,10 +1898,10 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gra
 					say "ERROR: ITEM CASE NOT DEFINED";
 					the rule fails;
 		-- singular: [nom masc sing is the exemplar itself and returned above.]
-			if (itemcase is acc and itemgender is neuter gender):[recode acc neu sing to nominative]
-				let itemcase be nom;
+			if (itemcase is accusative and itemgender is neuter gender):[recode acc neu sing to nominative]
+				let itemcase be nominative;
 			if itemcase is:
-				-- nom:
+				-- nominative:
 					if the category is:
 						-- 1:
 							if the itemgender is: [m is addressed at start of routine as default]
@@ -1933,7 +1933,7 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gra
 									let newterm be "ая";
 								-- neuter gender:
 									let newterm be "ее";		
-				-- gen:
+				-- genitive:
 					if category is 2 or category is 5: [нь or sibilant]
 						if itemgender is feminine gender:
 							let newterm be "ей";
@@ -1944,7 +1944,7 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gra
 							let newterm be "ой";
 						otherwise:
 							let newterm be "ого";
-				-- dat:
+				-- dative:
 					if category is 2 or category is 5: [нь or sibilant]
 						if itemgender is feminine gender:
 							let newterm be "ей";
@@ -1955,12 +1955,12 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gra
 							let newterm be "ой";
 						otherwise:
 							let newterm be "ому";
-				-- acc: [only dealing with feminine since masculine and neuter are recoded above as nominative]
+				-- accusative: [only dealing with feminine since masculine and neuter are recoded above as nominative]
 					if category is 2: [нь]
 						let newterm be "юю";
 					otherwise:
 						let newterm be "ую";
-				-- ins:
+				-- instrumental:
 					if category is 2 or category is 5: [нь or sibilant]
 						if itemgender is feminine gender:
 							let newterm be "ей";
@@ -1976,7 +1976,7 @@ To say long form (item - text) in the (itemcase - a case) case (itemgender - gra
 							let newterm be "ой";
 						otherwise:
 							let newterm be "ым";
-				-- pre:
+				-- prepositional:
 					if category is 2 or category is 5: [нь or sibilant]
 						if itemgender is feminine gender:
 							let newterm be "ей";
@@ -2558,7 +2558,7 @@ ItemDeclining is an action applying to one visible thing. Understand "itemdeclin
 
 Carry out itemDeclining:
 	repeat with itemmult running through multiplicities:
-		repeat with itemcase running through cases:
+		repeat with itemcase running through grammatical cases:
 			say "[noun in the itemcase case itemmult]."	
 			
 Section 2 - Decline noun text
@@ -2591,7 +2591,7 @@ Carry out textDeclining:
 		let L1 be entry 1 in L;
 		let L2 be entry 2 in L;
 		repeat with itemmult running through multiplicities:
-			repeat with itemcase running through cases:
+			repeat with itemcase running through grammatical cases:
 				say "[L1 in the itemcase case itemmult multiplicity with L2 pattern].";
 		say paragraph break.	
 		
@@ -2601,7 +2601,7 @@ Adclining is an action applying to one visible thing. Understand "adcline [any t
 
 Carry out adclining:
 	repeat with itemmult running through multiplicities:
-		repeat with itemcase running through cases:
+		repeat with itemcase running through grammatical cases:
 			repeat with itemgender running through grammatical genders:
 				say "[long form modifier of the noun in the itemcase case itemgender gender itemmult]."
 
