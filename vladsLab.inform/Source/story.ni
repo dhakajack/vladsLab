@@ -4,6 +4,10 @@ The story author is "Джекa Уэлчa". [in genitive]
 
 The story headline is "Интерактивная Литература".
 
+Chapter 1 - Compiler Directives
+
+Use MAX_STATIC_DATA of 250000.
+
 Chapter 2 - Vorple Set Up
 
 Include Vorple  by Juhana Leinonen.
@@ -133,9 +137,6 @@ Include (-
 -) Instead of "Release Number" in "Glulx.i6t".
 
 
-
-
-
 Chapter 4 - Kinds
 
 
@@ -156,23 +157,31 @@ To decide which multiplicity is the multiplicity of (item - a thing):
 	decide on D.
 
 A thing has grammatical gender. The grammatical gender of a thing is usually masculine gender.
-
 A room has grammatical gender. The grammatical gender of a room is usually masculine gender.
+A direction has grammatical gender. The grammatical gender of a room is usually masculine gender.
 
 A thing has grammatical case. The grammatical case of a thing is usually nominative.
+A room has grammatical case. The grammatical case of a room is usually nominative.
+A direction has grammatical case. The grammatical case of a room is usually nominative.
 
 A thing has a text called name. The name of a thing is usually "".
+A room has a text called name. The name of a room is usually "".
+A direction has a text called name. The name of a direction is usually "".
+
 A thing has a text called inflection pattern. The inflection pattern of a thing is usually "dom".
+A room has a text called inflection pattern. The inflection pattern of a room is usually "dom".
+A direction has a text called inflection pattern. The inflection pattern of a direction is usually "dom".
 
 The indefinite article of a thing is "".
 
-A thing has a text called modifier. The modifier of a thing is usually "". 
-[The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
-
 An Adjective is a kind of object.  Some adjectives are defined by the Table of Known Adjectives.
 
+A thing has an adjective called modifier. The modifier of a thing is usually null.
+[The modifier is an optional associated adjective to help disambiguate nouns; it is specified in the nominative masculine singular. It is declined based on the 2nd and 3rd letters from the end since the last one is always й. That's enough to classify it as a stressed adjective, on with a stem termination in КГХ, a sibilant, a soft-н or by default, a hard consonant.]
 
-Chapter 6 - Standard Rules Overrides
+Definition: An object is declinable if it is a thing or it is a room or it is a direction.
+
+Chapter 5 - Standard Rules Overrides
 
 Section 1 - Napravlenie (in place of Section SR1/4 - Directions in Standard Rules by Graham Nelson)
 
@@ -482,9 +491,6 @@ Section 4 - Response Overrides
 To say capitalized (item - a thing) in the (itemcase - a grammatical case) case:
 	let PN be "[item in the itemcase case]";
 	say PN with initial capital.
-	
-To say long-form-which regarding (item - a thing) in the (itemcase - a grammatical case) case:
-	say long form of "который" regarding item in the itemcase case.
 		
 [announce items from multiple object lists rule response (A): "[current item from the multiple object list]: [run paragraph on]"]
 The announce items from multiple object lists rule response (A) is "[current item from the multiple object list in the nominative case]: [run paragraph on]"
@@ -645,175 +651,175 @@ The can't insert something into itself rule response (A) is "Невозможн�
 The can't insert into closed containers rule response (A) is "[capitalized second noun in the nominative case] [short form of zakrytyj regarding second noun]."
 
 [The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
-[The can't insert into what's not a container rule response (A): "[regarding the second noun][Those] [can't contain] things."]
+The can't insert into what's not a container rule response (A) is "[capitalized second noun in the nominative case] не мо[if the second noun is plural-named]г[otherwise]ж[noun does a verb of class v1a] что-либо содержать."
 
 [The can't insert clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
-[The can't insert clothes being worn rule response (A): "(first taking [regarding the noun][them] off)[command clarification break]"]
+The can't insert clothes being worn rule response (A) is "(сначала сняв [noun in the accusative case])[command clarification break]".
 
 [The can't insert if this exceeds carrying capacity rule response (A): "[There] [are] no more room in [the second noun]."]
-[The can't insert if this exceeds carrying capacity rule response (A): "[There] [are] no more room in [the second noun]."]
+The can't insert if this exceeds carrying capacity rule response (A) is "Больше нет места в [second noun in the prepositional case]."
 
 [The concise report inserting rule response (A): "Done."]
-[The concise report inserting rule response (A): "Done."]
+The concise report inserting rule response (A) is "Ты кладёшь всё в [second noun in the accusative case]."
 
 [The standard report inserting rule response (A): "[The actor] [put] [the noun] into [the second noun]."]
-[The standard report inserting rule response (A): "[The actor] [put] [the noun] into [the second noun]."]
+[translate][The standard report inserting rule response (A): "[The actor] [put] [the noun] into [the second noun]."]
 
 [The can't eat unless edible rule response (A): "[regarding the noun][They're] plainly inedible."]
-[The can't eat unless edible rule response (A): "[regarding the noun][They're] plainly inedible."]
+The can't eat unless edible rule response (A) is "[capitalized noun in the nominative case] явно не год[noun does a verb of class v2b]ся в пищу."
 
 [The can't eat clothing without removing it first rule response (A): "(first taking [the noun] off)[command clarification break]"]
-[The can't eat clothing without removing it first rule response (A): "(first taking [the noun] off)[command clarification break]"]
+The can't eat clothing without removing it first rule response (A) is "(сначала сняв [noun in the accusative case])[command clarification break]".
 
 [The can't eat other people's food rule response (A): "[The owner] [might not appreciate] that."]
-[The can't eat other people's food rule response (A): "[The owner] [might not appreciate] that."]
+[translate][The can't eat other people's food rule response (A): "[The owner] [might not appreciate] that."]
 
 [The standard report eating rule response (A): "[We] [eat] [the noun]. Not bad."]
-[The standard report eating rule response (A): "[We] [eat] [the noun]. Not bad."]
+The standard report eating rule response (A) is "Ты съедаешь [noun in the accusative case]. Вполне съедобно."
 
 [The standard report eating rule response (B): "[The actor] [eat] [the noun]."]
-[The standard report eating rule response (B): "[The actor] [eat] [the noun]."]
+[translate][The standard report eating rule response (B): "[The actor] [eat] [the noun]."]
 
 [The stand up before going rule response (A): "(first getting off [the chaise])[command clarification break]"]
-[The stand up before going rule response (A): "(first getting off [the chaise])[command clarification break]"]
+[translate][The stand up before going rule response (A): "(first getting off [the chaise])[command clarification break]"]
 
 [The can't travel in what's not a vehicle rule response (A): "[We] [would have] to get off [the nonvehicle] first."]
-[The can't travel in what's not a vehicle rule response (A): "[We] [would have] to get off [the nonvehicle] first."]
+[translate][The can't travel in what's not a vehicle rule response (A): "[We] [would have] to get off [the nonvehicle] first."]
 
 [The can't travel in what's not a vehicle rule response (B): "[We] [would have] to get out of [the nonvehicle] first."]
-[The can't travel in what's not a vehicle rule response (B): "[We] [would have] to get out of [the nonvehicle] first."]
+[translate][The can't travel in what's not a vehicle rule response (B): "[We] [would have] to get out of [the nonvehicle] first."]
 
 [The can't go through undescribed doors rule response (A): "[We] [can't go] that way."]
-[The can't go through undescribed doors rule response (A): "[We] [can't go] that way."]
+The can't go through undescribed doors rule response (A) is "Ты не можешь пойти туда."
 
 [The can't go through closed doors rule response (A): "(first opening [the door gone through])[command clarification break]"]
-[The can't go through closed doors rule response (A): "(first opening [the door gone through])[command clarification break]"]
+[translate][The can't go through closed doors rule response (A): "(first opening [the door gone through])[command clarification break]"]
 
 [The can't go that way rule response (A): "[We] [can't go] that way."]
-[The can't go that way rule response (A): "[We] [can't go] that way."]
+The can't go that way rule response (A) is "Ты не можешь пойти туда."
 
 [The can't go that way rule response (B): "[We] [can't], since [the door gone through] [lead] nowhere."]
-[The can't go that way rule response (B): "[We] [can't], since [the door gone through] [lead] nowhere."]
+The can't go that way rule response (B) is "[capitalized the door gone through in the nominative case] никуда не ведет."
 
 [The describe room gone into rule response (A): "[The actor] [go] up"]
-[The describe room gone into rule response (A): "[The actor] [go] up"]
+[check]The describe room gone into rule response (A) is "[capitalized actor in the nominative case] ид[actor does a verb of class v1a] вверх"
 
 [The describe room gone into rule response (B): "[The actor] [go] down"]
-[The describe room gone into rule response (B): "[The actor] [go] down"]
+[check]The describe room gone into rule response (B) is "[capitalized actor in the nominative case] ид[actor does a verb of class v1a] вниз"
 
 [The describe room gone into rule response (C): "[The actor] [go] [noun]"]
-[The describe room gone into rule response (C): "[The actor] [go] [noun]"]
+[check]The describe room gone into rule response (C) is "[capitalized actor in the nominative case] ид[actor does a verb of class v1a][if noun is up or noun is down][noun in the accusative case][otherwise] на [noun in the accusative case][end if]"
 
 [The describe room gone into rule response (D): "[The actor] [arrive] from above"]
-[The describe room gone into rule response (D): "[The actor] [arrive] from above"]
+[check]The describe room gone into rule response (D) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b] сверху".
 
 [The describe room gone into rule response (E): "[The actor] [arrive] from below"]
-[The describe room gone into rule response (E): "[The actor] [arrive] from below"]
+[check]The describe room gone into rule response (E) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b] снизу".
 
 [The describe room gone into rule response (F): "[The actor] [arrive] from [the back way]"]
-[The describe room gone into rule response (F): "[The actor] [arrive] from [the back way]"]
+The describe room gone into rule response (F) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b] с [the back way in the genitive case]".
 
 [The describe room gone into rule response (G): "[The actor] [arrive]"]
-[The describe room gone into rule response (G): "[The actor] [arrive]"]
+[review]The describe room gone into rule response (G) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b]".
 
 [The describe room gone into rule response (H): "[The actor] [arrive] at [the room gone to] from above"]
-[The describe room gone into rule response (H): "[The actor] [arrive] at [the room gone to] from above"]
+[review]The describe room gone into rule response (H) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b] на [the room gone to in the accusative case] сверху".
 
 [The describe room gone into rule response (I): "[The actor] [arrive] at [the room gone to] from below"]
-[The describe room gone into rule response (I): "[The actor] [arrive] at [the room gone to] from below"]
+[review]The describe room gone into rule response (I) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b] на [the room gone to in the accusative case] снизу".
 
 [The describe room gone into rule response (J): "[The actor] [arrive] at [the room gone to] from [the back way]"]
-[The describe room gone into rule response (J): "[The actor] [arrive] at [the room gone to] from [the back way]"]
+[review]The describe room gone into rule response (J) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b] на [the room gone to in the accusative case] с [the back way in the genitive case]".
 
 [The describe room gone into rule response (K): "[The actor] [go] through [the noun]"]
-[The describe room gone into rule response (K): "[The actor] [go] through [the noun]"]
+[review]The describe room gone into rule response (K) is "[capitalized actor in the nominative case] проход[actor does a verb of class v2b] через [noun in the accusative case]".
 
 [The describe room gone into rule response (L): "[The actor] [arrive] from [the noun]"]
-[The describe room gone into rule response (L): "[The actor] [arrive] from [the noun]"]
+[review]The describe room gone into rule response (L) is "[capitalized actor in the nominative case] прибыва[actor does a verb of class v1b] из [noun in the genitive case]".
 
 [The describe room gone into rule response (M): "on [the vehicle gone by]"]
-[The describe room gone into rule response (M): "on [the vehicle gone by]"]
+[review]The describe room gone into rule response (M) is "на [the vehicle gone by in the prepositional case]".
 
 [The describe room gone into rule response (N): "in [the vehicle gone by]"]
-[The describe room gone into rule response (N): "in [the vehicle gone by]"]
+[review]The describe room gone into rule response (N) is "на [the vehicle gone by in the prepositional case]".
 
 [The describe room gone into rule response (O): ", pushing [the thing gone with] in front, and [us] along too"]
-[The describe room gone into rule response (O): ", pushing [the thing gone with] in front, and [us] along too"]
+[review]The describe room gone into rule response (O) is ", толкая [the thing gone with in the accusative case] впереди, и вы тоже".
 
 [The describe room gone into rule response (P): ", pushing [the thing gone with] in front"]
-[The describe room gone into rule response (P): ", pushing [the thing gone with] in front"]
+[review]The describe room gone into rule response (P) is ", толкая [the thing gone with in the accusative case] впереди"
 
 [The describe room gone into rule response (Q): ", pushing [the thing gone with] away"]
-[The describe room gone into rule response (Q): ", pushing [the thing gone with] away"]
+[review]The describe room gone into rule response (Q) is ", отталкивая [the thing gone with in the accusative case]".
 
 [The describe room gone into rule response (R): ", pushing [the thing gone with] in"]
-[The describe room gone into rule response (R): ", pushing [the thing gone with] in"]
+[review]The describe room gone into rule response (R) is "толкая [the thing gone with in the accusative case]".
 
 [The describe room gone into rule response (S): ", taking [us] along"]
-[The describe room gone into rule response (S): ", taking [us] along"]
+[review]The describe room gone into rule response (S) is "с вами".
 
 [The can't enter what's already entered rule response (A): "But [we]['re] already on [the noun]."]
-[The can't enter what's already entered rule response (A): "But [we]['re] already on [the noun]."]
+The can't enter what's already entered rule response (A) is "Но ты уже на [noun in the prepositional case]."
 
 [The can't enter what's already entered rule response (B): "But [we]['re] already in [the noun]."]
-[The can't enter what's already entered rule response (B): "But [we]['re] already in [the noun]."]
+The can't enter what's already entered rule response (B) is "Но ты уже в [noun in the prepositional case]."
 
 [The can't enter what's not enterable rule response (A): "[regarding the noun][They're] not something [we] [can] stand on."]
-[The can't enter what's not enterable rule response (A): "[regarding the noun][They're] not something [we] [can] stand on."]
+The can't enter what's not enterable rule response (A) is "Но на [noun in the accusative case] невозможно встать."
 
 [The can't enter what's not enterable rule response (B): "[regarding the noun][They're] not something [we] [can] sit down on."]
-[The can't enter what's not enterable rule response (B): "[regarding the noun][They're] not something [we] [can] sit down on."]
+The can't enter what's not enterable rule response (B) is "Но на [noun in the accusative case] невозможно сесть."
 
 [The can't enter what's not enterable rule response (C): "[regarding the noun][They're] not something [we] [can] lie down on."]
-[The can't enter what's not enterable rule response (C): "[regarding the noun][They're] not something [we] [can] lie down on."]
+The can't enter what's not enterable rule response (C) is "Но на [noun in the accusative case] невозможно лечь."
 
 [The can't enter what's not enterable rule response (D): "[regarding the noun][They're] not something [we] [can] enter."]
-[The can't enter what's not enterable rule response (D): "[regarding the noun][They're] not something [we] [can] enter."]
+The can't enter what's not enterable rule response (D) is "Но на [noun in the accusative case] невозможно войти."
 
 [The can't enter closed containers rule response (A): "[We] [can't get] into the closed [noun]."]
-[The can't enter closed containers rule response (A): "[We] [can't get] into the closed [noun]."]
+The can't enter closed containers rule response (A) is "[capitalized noun in the nominative case] [short form of zakrytyj regarding noun], и ты не можешь войти туда."
 
 [The can't enter if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the noun]."]
-[The can't enter if this exceeds carrying capacity rule response (A): "[There] [are] no more room on [the noun]."]
+[review]The can't enter if this exceeds carrying capacity rule response (A) is "Больше нет места на [noun in the accusative case]."
 
 [The can't enter if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the noun]."]
-[The can't enter if this exceeds carrying capacity rule response (B): "[There] [are] no more room in [the noun]."]
+[review]The can't enter if this exceeds carrying capacity rule response (B) is "Больше нет места в [noun in the accusative case]."
 
 [The can't enter something carried rule response (A): "[We] [can] only get into something free-standing."]
-[The can't enter something carried rule response (A): "[We] [can] only get into something free-standing."]
+The can't enter something carried rule response (A) is "Ты не можешь войти в то, что у тебя в руках."
 
 [The implicitly pass through other barriers rule response (A): "(getting off [the current home])[command clarification break]"]
-[The implicitly pass through other barriers rule response (A): "(getting off [the current home])[command clarification break]"]
+[translate][The implicitly pass through other barriers rule response (A): "(getting off [the current home])[command clarification break]"]
 
 [The implicitly pass through other barriers rule response (B): "(getting out of [the current home])[command clarification break]"]
 [The implicitly pass through other barriers rule response (B): "(getting out of [the current home])[command clarification break]"]
 
 [The implicitly pass through other barriers rule response (C): "(getting onto [the target])[command clarification break]"]
-[The implicitly pass through other barriers rule response (C): "(getting onto [the target])[command clarification break]"]
+[translate][The implicitly pass through other barriers rule response (C): "(getting onto [the target])[command clarification break]"]
 
 [The implicitly pass through other barriers rule response (D): "(getting into [the target])[command clarification break]"]
-[The implicitly pass through other barriers rule response (D): "(getting into [the target])[command clarification break]"]
+[translate][The implicitly pass through other barriers rule response (D): "(getting into [the target])[command clarification break]"]
 
 [The implicitly pass through other barriers rule response (E): "(entering [the target])[command clarification break]"]
-[The implicitly pass through other barriers rule response (E): "(entering [the target])[command clarification break]"]
+[translate][The implicitly pass through other barriers rule response (E): "(entering [the target])[command clarification break]"]
 
 [The standard report entering rule response (A): "[We] [get] onto [the noun]."]
-[The standard report entering rule response (A): "[We] [get] onto [the noun]."]
+The standard report entering rule response (A) is "Ты влезаешь на [noun in the accusative case]."
 
 [The standard report entering rule response (B): "[We] [get] into [the noun]."]
-[The standard report entering rule response (B): "[We] [get] into [the noun]."]
+The standard report entering rule response (B) is "Ты влезаешь в [noun in the accusative case]."
 
 [The standard report entering rule response (C): "[The actor] [get] into [the noun]."]
-[The standard report entering rule response (C): "[The actor] [get] into [the noun]."]
+The standard report entering rule response (C) is "[capitalized actor in the nominative case] влеза[noun does a verb of class v1b] в [noun in the accusative case]."
 
 [The standard report entering rule response (D): "[The actor] [get] onto [the noun]."]
-[The standard report entering rule response (D): "[The actor] [get] onto [the noun]."]
+The standard report entering rule response (D) is "[capitalized actor in the nominative case] залеза[noun does a verb of class v1b] в [noun in the accusative case]."
 
 [The can't exit when not inside anything rule response (A): "But [we] [aren't] in anything at the [if story tense is present tense]moment[otherwise]time[end if]."]
-[The can't exit when not inside anything rule response (A): "But [we] [aren't] in anything at the [if story tense is present tense]moment[otherwise]time[end if]."]
+The can't exit when not inside anything rule response (A) is "Но ты сейчас не находишься в чём-либо."
 
 [The can't exit closed containers rule response (A): "You can't get out of the closed [cage]."]
-[The can't exit closed containers rule response (A): "You can't get out of the closed [cage]."]
+The can't exit closed containers rule response (A) is "[capitalized cage in the nominative case] [short form of zakrytyj regarding cage], и ты не можешь выйти."
 
 [The standard report exiting rule response (A): "[We] [get] off [the container exited from]."]
 [The standard report exiting rule response (A): "[We] [get] off [the container exited from]."]
@@ -825,7 +831,7 @@ The can't insert into closed containers rule response (A) is "[capitalized secon
 [The standard report exiting rule response (C): "[The actor] [get] out of [the container exited from]."]
 
 [The can't get off things rule response (A): "But [we] [aren't] on [the noun] at the [if story tense is present tense]moment[otherwise]time[end if]."]
-[The can't get off things rule response (A): "But [we] [aren't] on [the noun] at the [if story tense is present tense]moment[otherwise]time[end if]."]
+The can't get off things rule response (A) is "Но ты сейчас не находишься в чём-либо."
 
 [The standard report getting off rule response (A): "[The actor] [get] off [the noun]."]
 [The standard report getting off rule response (A): "[The actor] [get] off [the noun]."]
@@ -1477,7 +1483,7 @@ The parser command internal rule response (A) is "Это невозможно и
 The parser command internal rule response (B) is "Исправить это нельзя."
 
 [parser command internal rule response (C): "'Oops' can only correct a single word."]
-The parser command internal rule response (C) is "'Команда [bold type]ой@[roman type] исправляет только одно слово."
+The parser command internal rule response (C) is "'Команда [bold type]ой[roman type] исправляет только одно слово."
 
 [parser command internal rule response (D): "You can hardly repeat that."]
 The parser command internal rule response (D) is "Это вряд ли можно повторить."
@@ -1639,7 +1645,7 @@ The announce the pronoun meanings rule response (C) is "отсутствует"
 The display Vorple credits rule response (A) is "Ворпeл версия [version number][line break]".
 
 
-Chapter 7 - Some  grammar
+Chapter 6 - Some  grammar
 
 
 Section 1 - Noun Dictionary
@@ -1713,11 +1719,11 @@ To generate listing of (itemlist - a list of things) in the (itemcase - a gramma
 			say " (";
 			let stuff be the list of marked for listing things enclosed by the item;
 			if item is a person:
-				say "у [long-form-which regarding item in the prepositional case] есть";
+				say "у [long form of kotoryj regarding item in the prepositional case] есть";
 			otherwise if item is a supporter:
-				say "на [long-form-which regarding item in the prepositional case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
+				say "на [long form of kotoryj regarding item in the prepositional case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
 			otherwise:
-				say "в [long-form-which regarding item in the prepositional case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
+				say "в [long form of kotoryj regarding item in the prepositional case] сто[if mentionables is 1]ит[otherwise]ят[end if]";
 			say " ";
 			generate listing of stuff in the nominative case;
 			say ")";
@@ -1730,21 +1736,19 @@ To say listing of (itemlist - a list of things) in the (itemcase - a grammatical
 		add "[item in the itemcase case]" to L;
 	say L.
 
-	
-
 [says noun and coupled modifier]
 
-To say (item - a thing) in the (itemcase - a grammatical case) case:
+To say (item - a declinable object) in the (itemcase - a grammatical case) case:
 	let IG be the grammatical gender of the item;
 	let IM be the multiplicity of the item;
-	if modifier of the item is not empty:
-		say long form modifier of the item in the itemcase case IG gender IM;
+	if item is a thing and modifier of item is not null:
+		say long form of modifier of the item in the itemcase case IG gender IM;
 		say " ";
 	say item in the itemcase case IM.
 	
 [say just the noun]
 
-To say (item - a thing) in the (itemcase - a grammatical case) case (itemmult - a multiplicity):
+To say (item - an object) in the (itemcase - a grammatical case) case (itemmult - a multiplicity):
 	let N be the name of the item;
 	let itempattern be the inflection pattern of the item;
 	[say "Calling text routine with text [N] based on a pattern of [itempattern].";]
@@ -1800,9 +1804,11 @@ To say (itemtext - a text) in the (itemcase - a grammatical case) case (itemmult
 	say T.
 	
 Section 2 - Known Adjectives
+[kind of a pain, but beats re-typing them each time; these do double duty for both short and long form stems]
 
 Table of Known Adjectives
 adjective	rus-adjective	
+null	""
 pustyj	"пустый"
 nedosyagaemyj	"недосягаемый"
 nadetyj	"надетый"
@@ -1825,20 +1831,36 @@ smeshnoj	"смешной"
 zloj	"злой"
 spokojnyj	"спокойный"
 blizkij	"близкий"
+novyj	"новый"
+starshij	"старший"
+sinij	"синий"
+tolstyj	"толстый"
+rezinovyj	"резиновый"
+derevyannyj	"деревянный"
+spelyj	"спелый"
+krasnyj	"красный"
+
+
 
 	
 Section 3 - Decline Long From Adjectives
 
-To say long form of (adj - text) regarding (item - a thing) in the (case - a grammatical case) case:
+To say long form of (adj - an adjective) regarding (item - a thing) in the (case - a grammatical case) case:
+	if adj is null:
+		the rule fails;
 	let G be the grammatical gender of the item;
-	let C be the grammatical case;
+	let C be the case;
 	let M be the multiplicity of the item;
-	say long form adj in the C case G gender M.
+	say long form of adj in the C case G gender M.
 	
 [Algorithmic declension of regular long form adjectives]
-To say long form (item - text) in the (itemcase - a grammatical case) case (itemgender - grammatical gender) gender (itemmult - a multiplicity):
-	if item is empty:
-		 the rule succeeds; [if there is no adjective, end processing here.]
+To say long form of (adj - an adjective) in the (itemcase - a grammatical case) case (itemgender - grammatical gender) gender (itemmult - a multiplicity):
+	if adj is null:
+		the rule fails;
+	if adj is not an adjective listed in the Table of Known Adjectives:
+		say "ERROR: adjective not found in Table of Known Adjectives.";
+		the rule fails;
+	let item be the rus-adjective corresponding to the adjective of adj in the Table of Known Adjectives;
 	if (itemcase is nominative and itemgender is masculine gender and itemmult is singular) or (itemcase is accusative and itemgender is masculine gender and itemmult is singular):
 		say item;
 		the rule succeeds; [if it's nom masc singular just use the exemplar.]
@@ -1997,11 +2019,15 @@ To say long form (item - text) in the (itemcase - a grammatical case) case (item
 Section 4 - Short Form Adjectives
 
 To say short form of (adj - an adjective) regarding (item - a thing):
+	if adj is null:
+		the rule fails;
 	let G be the grammatical gender of the item;
 	let M be the multiplicity of the item;
 	say short form of adj with G gender M.
 
 To say short form of (adj - an adjective) with (itemgender - grammatical gender) gender (itemmult - a multiplicity) :
+	if adj is null:
+		the rule fails;
 	if adj is not an adjective listed in the Table of Known Adjectives:
 		say "ERROR: adjective not found in Table of Known Adjectives.";
 		the rule fails;
@@ -2134,7 +2160,7 @@ lower	upper
 "я"	"Я"
 
 
-Chapter 8 - Grammar Tweaks
+Chapter 7 - Grammar Tweaks
 
 [Rule for listing nondescript items:
 	let L be a list of things;
@@ -2154,27 +2180,27 @@ Chapter 8 - Grammar Tweaks
 	
 Understand "ya/menya" as yourself.
 
-Chapter 9 - World
+Chapter 8 - World
 
 The Laboratory (f) is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
 The daughter (f) is in the laboratory. The description is "Ваша дочь." The name is "дочь". The inflection pattern is "noch&".  Understand "doch&" as daughter. 
 
-The worktable (m) is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is "большой". Understand "rabochij/stol" as the worktable. The worktable is lit.
+The worktable (m) is a supporter in the Laboratory. The description is "Изношенный рабочий стол." The name is "стол". The inflection pattern is "dom". The modifier is bol&shoj. Understand "rabochij/stol" as the worktable. The worktable is lit.
 
-The workbook (f) is in box. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is "маленький". Understand "tetrad&" as the workbook. The workbook is lit.
+A box (f) is an open transparent container. It is in the laboratory. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is novyj. Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
 
-A box (f) is an open transparent container. It is in the laboratory. The description is "Картонная коробка." The name is "коробка". The inflection pattern is "korobka". The modifier is "новый". Understand "kartonnaya/korobka/kartonnuyu/korobku" as box. 
+The workbook (f) is in box. The description is "Тетрадь с миллиметровкой." The name is "тетрадь". The inflection pattern is "tetrad&". The modifier is malen&kij. Understand "tetrad&" as the workbook. The workbook is lit.
 
 The hall (m) is south from Laboratory. "Узкий коридор. Ваша лаборатория к северу, санузел [unicode 8212] к западу, а столовая [unicode 8212] на востоке." The printed name is "Коридор". 
 
-The sabre (f) is in the hall. The description is "Ржавая сабля."  The name is "сабля". The inflection pattern is "zemlya". The modifier of sabre is "старший". Understand "sablya" as the sabre.
+The sabre (f) is in the hall. The description is "Ржавая сабля."  The name is "сабля". The inflection pattern is "zemlya". The modifier of sabre is starshij. Understand "sablya" as the sabre.
 
 The plant (n) is in the hall. The description is "Растение без цветов." The name is "растение". The inflection pattern is "izvestie". Understand "rastenie" as the plant. 
 
-The portrait (m) is in the hall. The description is "Портрет старика." The name of portrait is "портрет".  The inflection pattern is "dom". The modifier of portrait is "синий". Understand "portret/starika" as portrait. 
+The portrait (m) is in the hall. The description is "Портрет старика." The name of portrait is "портрет".  The inflection pattern is "dom". The modifier of portrait is sinij. Understand "portret/starika" as portrait. 
 
-The book (f) is in the hall. The description is "Толстая книга." The name of book is "книга". The inflection pattern is "voda". Understand "kniga/knigu" as the book. 
+The book (f) is in the hall. The description is "Толстая книга." The name of book is "книга". The inflection pattern is "voda". The modifier of book is tolstyj. Understand "kniga/knigu" as the book. 
 
 The mummy (f) is in the hall. The description is "Египетские мумии." The name is "мумия". The inflection pattern is "lektsiya". Understand "mumiya/mumiyu" as the mummy. 
 
@@ -2186,19 +2212,19 @@ The sink (f) is in the bathroom. It is fixed in place. The description is "Ма�
 
 The bathtub (f) is an open fixed in place container in the bathroom. It is fixed in place. The description is "Чугунная ванна.". The name is "ванна". The inflection pattern is "voda". Understand "vanna/vannu/vanne" as the bathtub.
 
-The rubber duck (f) is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The name of the rubber duck is "утка". The inflection pattern is "korobka". The modifier is "резиновый". Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
+The rubber duck (f) is in the bathtub. The description of the rubber duck is "Крошечная желтая утка". The name of the rubber duck is "утка". The inflection pattern is "korobka". The modifier is rezinovyj. Understand "rezinovaya/rezinovayu/utochka/utochku" as the rubber duck.
 
 The cafeteria (f) is east from the hall. "Место, где все обедают. Центральный коридор находится к западу." The printed name of the cafeteria is "Столовая".
 
-The dining table (m) is in the cafeteria. It is a supporter. The description is "Деревянный стол." The name is "стол". The inflection pattern is "dom". The modifier is "деревянный". Understand "derevyannyj/stol" as the dining table.
+The dining table (m) is in the cafeteria. It is a supporter. The description is "Деревянный стол." The name is "стол". The inflection pattern is "dom". The modifier is derevyannyj. Understand "derevyannyj/stol" as the dining table.
 
-A cucumber (m) is edible. It is on the dining table. The description is "Спелый огурец." The name of cucumber is "огурец". The inflection pattern is "ogurets". The modifier is "спелый". Understand "spelyj/ogurets" as the cucumber. 
+A cucumber (m) is edible. It is on the dining table. The description is "Спелый огурец." The name of cucumber is "огурец". The inflection pattern is "ogurets". The modifier is spelyj. Understand "spelyj/ogurets" as the cucumber. 
 
 The kasha (f) is edible. It is on the dining table. The description is "Каша без молока." The name of kasha is "каша". The inflection pattern is "kasha". Understand "kasha/kashu" as kasha. 
 
-The apple (n) is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "яблоко". The  The inflection pattern is "oblako". Understand "yabloko" as the apple. 
+The apple (n) is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "яблоко". The  The inflection pattern is "oblako". The modifier of apple is krasnyj. Understand "yabloko" as the apple. 
 
-Chapter 10 - Transliterations
+Chapter 9 - Transliterations
 
 [clear definitions]
 
@@ -2418,7 +2444,7 @@ Understand "inventar&" as taking inventory.
 Understand  "vzyat& [something]" as taking.
 Understand  "vzyat& [things inside] iz [something]" as removing it from.
 Understand "polozhit& [something preferably held]" as dropping.
-Understand "vybrocit& [something preferably held]" as dropping.
+Understand "vybrosit& [something preferably held]" as dropping.
 Understand "polozhit& [other things] na [something]" as putting it on.
 Understand "polozhit& [other things] v [something]" as inserting it into.
 [бросить в]
@@ -2500,7 +2526,8 @@ Understand "n" as saying no.
 Understand "da" as saying yes.
 Understand "net" as saying no.
 
-[Направления]
+[Направления - Directions are a subclass of object and have grammatical gender and case]
+
 Understand "s" or "sever" as north.
 Understand "yu" or "yug" as south.
 Understand "v" or "vostok" as east.
@@ -2512,30 +2539,26 @@ Understand "sz" or "severo-zapad" as northwest.
 Understand "yuv" or "yugo-vostok" as southeast.
 Understand "yuz" or "yugo-zapad" as southwest.
 
-
-[might need to implement additional properties for directions, like dativePrintName for go к направлению (or maybe just get away with sticking a "у" on the end programmatically?]
-
-The printed name of north is "север".
-The printed name of south is "юг".
-The printed name of east is "восток".
-The printed name of west is "запад".
-The printed name of northeast is "северо-восток".
-The printed name of northwest is "северо-запад".
-The printed name of southeast is "юго-восток".
-The printed name of southwest is "юго-запад".
-The printed name of up is "вверх".
-The printed name of down is "вниз".
-
-[The printed name of inside is "";
-The printed name of outside is "";]
+The name of north is "север".
+The name of south is "юг".
+The name of east is "восток".
+The name of west is "запад".
+The name of northeast is "северо-восток".
+The name of northwest is "северо-запад".
+The name of southeast is "юго-восток".
+The name of southwest is "юго-запад".
+The name of up is "вверх".
+The name of down is "вниз".
+The name of inside is "вход".
+The name of outside is "выход".
 
 
-Chapter 11 - Start
+Chapter 10 - Start
 
 When play begins:
 	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. I'm sure that there are plenty of errors -- this is a work in progress. I am slowly adding standard rules and grammar based mostly in rInform. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
-Chapter 12 - Some example customized responses
+Chapter 11 - Some example customized responses
 
 After inserting something (called the item) into the box:
 	say "Вы положите [item] в коробку. Теперь в коробке ";	
@@ -2559,7 +2582,7 @@ After inserting something (called the item) into the box:
 After eating something:
 	say "[one of]Ммммм[or]Не плохо[or]Отлично[or]Как вкусно[in random order]."
 	
-Chapter 13 - Tests
+Chapter 12 - Tests
 
 Section 1 - Decline an object
 
@@ -2599,8 +2622,8 @@ Carry out textDeclining:
 	repeat with L running through testTexts:
 		let L1 be entry 1 in L;
 		let L2 be entry 2 in L;
-		repeat with itemmult running through multiplicities:
-			repeat with itemcase running through grammatical cases:
+		repeat with itemmult running through  {singular, plural}:
+			repeat with itemcase running through {nominative, genitive, dative, accusative, instrumental, prepositional}:
 				say "[L1 in the itemcase case itemmult multiplicity with L2 pattern].";
 		say paragraph break.	
 		
@@ -2609,10 +2632,10 @@ Section 3 - Decline a long form adjective
 Adclining is an action applying to one visible thing. Understand "adcline [any things]" as adclining.
 
 Carry out adclining:
-	repeat with itemmult running through multiplicities:
-		repeat with itemcase running through grammatical cases:
-			repeat with itemgender running through grammatical genders:
-				say "[long form modifier of the noun in the itemcase case itemgender gender itemmult]."
+	repeat with itemmult running through {singular, plural}:
+		repeat with itemcase running through {nominative, genitive, dative, accusative, instrumental, prepositional}:
+			repeat with itemgender running through {masculine gender, feminine gender, neuter gender}:
+				say "[long form of modifier of the noun in the itemcase case itemgender gender itemmult]."
 
 Test adclination with "adcline korobka/adcline portret/adcline stol/adcline tetrad&/adcline sablya".
 
@@ -2622,8 +2645,8 @@ shortAdjing is an action applying to nothing. Understand "shortAdj" as shortAdji
 
 Carry out shortAdjing:
 	repeat through Table of Known Adjectives:
-		repeat with itemmult running through multiplicities:
-			repeat with itemgender running through grammatical genders:
+		repeat with itemmult running through  {singular, plural}:
+			repeat with itemgender running through  {masculine gender, feminine gender, neuter gender}:
 				say short form of adjective entry with itemgender gender itemmult;
 				say line break;
 		say line break.
