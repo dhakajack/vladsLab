@@ -810,10 +810,10 @@ The standard report entering rule response (A) is "Ты влезаешь на [n
 The standard report entering rule response (B) is "Ты влезаешь в [noun in the accusative case]."
 
 [The standard report entering rule response (C): "[The actor] [get] into [the noun]."]
-The standard report entering rule response (C) is "[capitalized actor in the nominative case] влеза[noun does a verb of class v1b] в [noun in the accusative case]."
+The standard report entering rule response (C) is "[capitalized actor in the nominative case] влеза[actor does a verb of class v1b] в [noun in the accusative case]."
 
 [The standard report entering rule response (D): "[The actor] [get] onto [the noun]."]
-The standard report entering rule response (D) is "[capitalized actor in the nominative case] залеза[noun does a verb of class v1b] в [noun in the accusative case]."
+The standard report entering rule response (D) is "[capitalized actor in the nominative case] залеза[actor does a verb of class v1b] в [noun in the accusative case]."
 
 [The can't exit when not inside anything rule response (A): "But [we] [aren't] in anything at the [if story tense is present tense]moment[otherwise]time[end if]."]
 The can't exit when not inside anything rule response (A) is "Но ты сейчас не находишься в чём-либо."
@@ -822,34 +822,34 @@ The can't exit when not inside anything rule response (A) is "Но ты сейч
 The can't exit closed containers rule response (A) is "[capitalized cage in the nominative case] [short form of zakrytyj regarding cage], и ты не можешь выйти."
 
 [The standard report exiting rule response (A): "[We] [get] off [the container exited from]."]
-[The standard report exiting rule response (A): "[We] [get] off [the container exited from]."]
+The standard report exiting rule response (A) is "Ты слезаешь с [container exited from in the genitive case]."
 
 [The standard report exiting rule response (B): "[We] [get] out of [the container exited from]."]
-[The standard report exiting rule response (B): "[We] [get] out of [the container exited from]."]
+The standard report exiting rule response (B) is "Ты выходишь из [container exited from in the genitive case]."
 
 [The standard report exiting rule response (C): "[The actor] [get] out of [the container exited from]."]
-[The standard report exiting rule response (C): "[The actor] [get] out of [the container exited from]."]
+The standard report exiting rule response (C) is "[capitalized actor in the nominative case] выход[actor does a verb of class v2b] из [container exited from in the genitive case]."
 
 [The can't get off things rule response (A): "But [we] [aren't] on [the noun] at the [if story tense is present tense]moment[otherwise]time[end if]."]
 The can't get off things rule response (A) is "Но ты сейчас не находишься в чём-либо."
 
 [The standard report getting off rule response (A): "[The actor] [get] off [the noun]."]
-[The standard report getting off rule response (A): "[The actor] [get] off [the noun]."]
+The standard report getting off rule response (A) is "[capitalized actor in the nominative case] слеза[actor does a verb of class v1b] с [container exited from in the genitive case]."
 
 [The room description heading rule response (A): "Darkness"]
-[The room description heading rule response (A): "Darkness"]
+[review]The room description heading rule response (A) is "Темнота".
 
 [The room description heading rule response (B): " (on [the intermediate level])"]
-[The room description heading rule response (B): " (on [the intermediate level])"]
+The room description heading rule response (B) is " (на [intermediate level in the prepositional case])"
 
 [The room description heading rule response (C): " (in [the intermediate level])"]
-[The room description heading rule response (C): " (in [the intermediate level])"]
+The room description heading rule response (C) is " (в [intermediate level in the prepositional case])"
 
 [The room description body text rule response (A): "[It] [are] pitch dark, and [we] [can't see] a thing."]
-[The room description body text rule response (A): "[It] [are] pitch dark, and [we] [can't see] a thing."]
+The room description body text rule response (A) is "Кромешная тьма — не видно ни зги!"
 
 [The other people looking rule response (A): "[The actor] [look] around."]
-[The other people looking rule response (A): "[The actor] [look] around."]
+[review]The other people looking rule response (A) is "[capitalized actor in the nominative case] смотр[v2b] вокруг."
 
 [The examine directions rule response (A): "[We] [see] nothing unexpected in that direction."]
 [The examine directions rule response (A): "[We] [see] nothing unexpected in that direction."]
