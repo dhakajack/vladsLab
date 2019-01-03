@@ -2208,16 +2208,79 @@ rus	eng
 "ь"	"&"
 
 To say backtransliterated (phrase - text):
+	if phrase is "", the rule fails;
+	let A be "";
 	now phrase is phrase in lower case;
-	say phrase.
-	
-	[let N be the number of characters in phrase;
-	if N is 0, the rule fails;
-	repeat with L running from 1 to N:
-		if character number L in phrase is an upper listed in the Table of UpperCase:
-			now character number L in phrase is the lower entry;
-	say ]
-
+	let L be the number of characters in phrase;
+	repeat with N running from 1 to L:
+		let R be "";
+		let C be character number N in phrase;
+		if C is:
+			-- "s":
+				let R be "с";
+				if N + 1 is not greater than L:
+					if character number N + 1 in phrase is "h":
+						let R be "ш";
+						now N is N + 1;
+						if N + 1 is not greater than L:
+							if character number N + 1 in phrase is "c":
+								if N + 2 is not greater than L:
+									now N is N + 2;
+									if character number N + 2 in phrase is "h":
+										let R be "щ";
+									otherwise:
+										let R be "?";  [ shc? other than shch is not valid]
+			-- "y":
+				let R be "ы";
+				if N + 1 is not greater than L:
+					if character number N + 1 in phrase is "u":
+						let R be "ю";
+						now N is N + 1;
+					otherwise if character number N + 1 in phrase is "a":
+						let R be "я";
+						now N is N + 1;
+			-- "e":
+				let R be "e";
+				if N + 1 is not greater than L:
+					if character number N + 1 in phrase is ":":
+						let R be "ё";
+						now N is N + 1;
+					otherwise if character number N + 1 in phrase is "$":
+						let R be "э";
+						now N is N + 1;
+			-- "t":
+				let R be "т";
+				if N + 1 is not greater than L:
+					if character number N + 1 in phrase is "s":
+						let R be "ц";
+						now N is N + 1;
+			-- "c":
+				let R be "?";
+				if N + 1 is not greater than L:
+					if character number N + 1 in phrase is "h":
+						let R be "ч";
+						now N is N + 1;
+			-- "k":
+				let R be "к";
+				if N + 1 is not greater than L:
+					if character number N + 1 in phrase is "h":
+						let R be "х";
+						now N is N + 1;
+			-- "z":
+				let R be "з";
+				if N + 1 is not greater than L:
+					if character number N + 1 in phrase is "h":
+						let R be "ж";
+						now N is N + 1;
+			-- otherwise:
+				if C is an eng listed in the Table of DirectTransliteration:
+					now R is the rus entry;
+				otherwise if C matches the regular expression "<.,!; >":
+					now R is C;	
+				otherwise:
+					now R is "?";
+		now A is "[A][R]";
+	say A.
 
 Chapter 8 - Grammar Tweaks
 
