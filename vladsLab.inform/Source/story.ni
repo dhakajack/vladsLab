@@ -1307,51 +1307,55 @@ The can't reach inside closed containers rule response (A) is "[capitalized noun
 [can't reach outside closed containers rule response (A): "[The noun] [aren't] open."]
 The can't reach outside closed containers rule response (A) is "[capitalized noun in the nominative case] не [short form of otkrytyj regarding noun]."
 
-[
-list writer internal rule response (A): " ("
-list writer internal rule response (B): ")"
-list writer internal rule response (C): " and "
-]
+[list writer internal rule response (A): " ("]
+[list writer internal rule response (A): " ("]
+
+[list writer internal rule response (B): ")"]
+[list writer internal rule response (B): ")"]
+
+[list writer internal rule response (C): " and "]
+[list writer internal rule response (C): " and "]
 
 The list writer internal rule response (C) is " и ".
 
 [list writer internal rule response (D): "providing light"]
+[list writer internal rule response (D): "providing light"]
 
 [list writer internal rule response (E): "closed"]
-
+[list writer internal rule response (E): "closed"]
 	
 [list writer internal rule response (F): "empty"]
-
+[list writer internal rule response (F): "empty"]
 
 [list writer internal rule response (G): "closed and empty"]
-
+[list writer internal rule response (G): "closed and empty"]
 
 [list writer internal rule response (H): "closed and providing light"]
-
+[list writer internal rule response (H): "closed and providing light"]
 
 [list writer internal rule response (I): "empty and providing light"]
-
+[list writer internal rule response (I): "empty and providing light"]
 
 [list writer internal rule response (J): "closed, empty[if serial comma option is active],[end if] and providing light"]
-
+[list writer internal rule response (J): "closed, empty[if serial comma option is active],[end if] and providing light"]
 
 [list writer internal rule response (K): "providing light and being worn"]
-
+[list writer internal rule response (K): "providing light and being worn"]
 
 [list writer internal rule response (L): "being worn"]
-
+[list writer internal rule response (L): "being worn"]
 
 [list writer internal rule response (M): "open"]
-
+[list writer internal rule response (M): "open"]
 
 [list writer internal rule response (N): "open but empty"]
-
+[list writer internal rule response (N): "open but empty"]
 
 [list writer internal rule response (O): "closed"]
-
+[list writer internal rule response (O): "closed"]
 
 [list writer internal rule response (P): "closed and locked"]
-
+[list writer internal rule response (P): "closed and locked"]
 
 [list writer internal rule response (Q): "containing"]
 The list writer internal rule response (Q) is "содерж[noun does a verb of class v2a]".
@@ -1373,16 +1377,32 @@ The list writer internal rule response (X) is "Ничего".
 [list writer internal rule response (Y): "nothing"]
 The list writer internal rule response (Y) is "ничего".
 
-[*translate]The action processing internal rule response (A) is "[bracket]That command asks to do something outside of play, so it can only make sense from you to me. [The noun] cannot be asked to do this.[close bracket]".
+[The action processing internal rule response (A) is "[bracket]That command asks to do something outside of play, so it can only make sense from you to me. [The noun] cannot be asked to do this.[close bracket]".]
+[translate][The action processing internal rule response (A) is "[bracket]That command asks to do something outside of play, so it can only make sense from you to me. [The noun] cannot be asked to do this.[close bracket]".]
 
- The action processing internal rule response (B) is "You must name an object."
-[*translate]The action processing internal rule response (C) is "You may not name an object."
-[*translate]The action processing internal rule response (D) is "You must supply a noun."
-[*translate]The action processing internal rule response (E) is "You may not supply a noun."
-[*translate]The action processing internal rule response (F) is "You must name a second object."
-[*translate]The action processing internal rule response (G) is "You may not name a second object."
-[*translate]The action processing internal rule response (H) is "You must supply a second noun."
-[*translate]The action processing internal rule response (I) is "You may not supply a second noun."
+[The action processing internal rule response (B) is "You must name an object."]
+[translate][The action processing internal rule response (B) is "You must name an object."]
+
+[The action processing internal rule response (C) is "You may not name an object."]
+[translate][The action processing internal rule response (C) is "You may not name an object."]
+
+[The action processing internal rule response (D) is "You must supply a noun."]
+[translate][The action processing internal rule response (D) is "You must supply a noun."]
+
+[The action processing internal rule response (E) is "You may not supply a noun."]
+[translate][The action processing internal rule response (E) is "You may not supply a noun."]
+
+[The action processing internal rule response (F) is "You must name a second object."]
+[translate][The action processing internal rule response (F) is "You must name a second object."]
+
+[The action processing internal rule response (G) is "You may not name a second object."]
+[translate][The action processing internal rule response (G) is "You may not name a second object."]
+
+[The action processing internal rule response (H) is "You must supply a second noun."]
+[translate][The action processing internal rule response (H) is "You must supply a second noun."]
+
+[The action processing internal rule response (I) is "You may not supply a second noun."]
+[translate][The action processing internal rule response (I) is "You may not supply a second noun."]
 
 [action processing internal rule response (J): "(Since something dramatic has happened, your list of commands has been cut short.)"]
 The action processing internal rule response (J) is "(Произошло что-то, что укоротило ваш список команд.)"
@@ -1503,6 +1523,7 @@ The parser clarification internal rule response (C) is "Но здесь дост
 [TODO][translate][parser clarification internal rule response (D): "Whom do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
 
 [TODO][translate][parser clarification internal rule response (E): "What do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
+The parser clarification internal rule response (E) is  "What do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"
 
 [parser clarification internal rule response (F): "those things"]
 The parser clarification internal rule response (F) is "эти объекты".
@@ -2164,27 +2185,46 @@ lower	upper
 "я"	"Я"
 
 
-Chapter 7 - Grammar Tweaks
+Chapter 7 - Backtransliteration
 
-[Rule for listing nondescript items:
-	let L be a list of things;
-	say "Ты видишь здесь ";
-	repeat with item running through things enclosed by the location:
-		if the item is a person or the item is a door or the item is enclosed by the player:
-			next;
-		add item to L;
-	repeat with N running from 1 to the number of entries in L:
-		if N is greater than 1 and N is the number of entries in L:
-			say " и ";
-		let E be entry N of L;
-		say "[printed name of E in the acc case]";
-		if the number of entries in L is greater than 2 and N is less than (the number of entries in L minus 1):
-			say ", ";
-	say "."]
+Table of DirectTransliteration
+rus	eng
+"а"	"a"
+"б"	"b"
+"в"	"v"
+"г"	"g"
+"д"	"d"
+"и"	"i"
+"й"	"j"
+"л"	"l"
+"м"	"m"
+"н"	"n"
+"о"	"o"
+"п"	"p"
+"р"	"r"
+"у"	"u"
+"ф"	"f"
+"ъ"	"#"
+"ь"	"&"
+
+To say backtransliterated (phrase - text):
+	now phrase is phrase in lower case;
+	say phrase.
+	
+	[let N be the number of characters in phrase;
+	if N is 0, the rule fails;
+	repeat with L running from 1 to N:
+		if character number L in phrase is an upper listed in the Table of UpperCase:
+			now character number L in phrase is the lower entry;
+	say ]
+
+
+Chapter 8 - Grammar Tweaks
+
 	
 Understand "ya/menya" as yourself.
 
-Chapter 8 - World
+Chapter 9 - World
 
 The Laboratory (f) is a room.  The description is "Большая комната для научных экспериментов. Центральный коридор находится к югу.". The printed name is "Лаборатория". 
 
@@ -2228,7 +2268,7 @@ The kasha (f) is edible. It is on the dining table. The description is "Каша
 
 The apple (n) is edible. It is on the dining table. The description is "Красное яблоко." The name of apple is "яблоко". The  The inflection pattern is "oblako". The modifier of apple is krasnyj. Understand "yabloko" as the apple. 
 
-Chapter 9 - Transliterations
+Chapter 10 - Transliterations
 
 [clear definitions]
 
@@ -2557,12 +2597,12 @@ The name of inside is "вход".
 The name of outside is "выход".
 
 
-Chapter 10 - Start
+Chapter 11 - Start
 
 When play begins:
 	say "This is a short proof-of-concept game demonstrating use of vorple to allow text entry in non-Latin characters. I'm sure that there are plenty of errors -- this is a work in progress. I am slowly adding standard rules and grammar based mostly in rInform. This is meant only as a stub for future work. [paragraph break]The point is that it is possible to type unicode characters outside the Latin range and have the parser do the right thing with them rather than summarily dying.[paragraph break]Your mission in this example game: fill the box with stuff.".
 
-Chapter 11 - Some example customized responses
+Chapter 12 - Some example customized responses
 
 After inserting something (called the item) into the box:
 	say "Вы положите [item] в коробку. Теперь в коробке ";	
@@ -2586,7 +2626,7 @@ After inserting something (called the item) into the box:
 After eating something:
 	say "[one of]Ммммм[or]Не плохо[or]Отлично[or]Как вкусно[in random order]."
 	
-Chapter 12 - Tests
+Chapter 13 - Tests
 
 Section 1 - Decline an object
 
@@ -2655,4 +2695,10 @@ Carry out shortAdjing:
 				say line break;
 		say line break.
 
+Section 5 - Backtransliterate
+
+Backtransliterating is an action applying to one topic. Understand "transliterate [text]" as backtransliterating.
+
+Carry out backtransliterating:
+	say "[backtransliterated topic understood]."
 
