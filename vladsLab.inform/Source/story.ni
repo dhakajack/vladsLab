@@ -852,277 +852,279 @@ The room description body text rule response (A) is "Кромешная тьма
 [review]The other people looking rule response (A) is "[capitalized actor in the nominative case] смотр[v2b] вокруг."
 
 [The examine directions rule response (A): "[We] [see] nothing unexpected in that direction."]
-[The examine directions rule response (A): "[We] [see] nothing unexpected in that direction."]
+The examine directions rule response (A) is "В этом направлении не видно ничего примечательного."
 
 [The examine containers rule response (A): "In [the noun] "]
-[The examine containers rule response (A): "In [the noun] "]
+[TODO][The examine containers rule response (A): "In [the noun] "]
 
 [The examine containers rule response (B): "[The noun] [are] empty."]
-[The examine containers rule response (B): "[The noun] [are] empty."]
+The examine containers rule response (B) is "В [noun in the prepositional case] ничего нет."
 
 [The examine supporters rule response (A): "On [the noun] "]
-[The examine supporters rule response (A): "On [the noun] "]
+[TODO][The examine supporters rule response (A): "On [the noun] "]
 
 [The examine devices rule response (A): "[The noun] [are] [if story tense is present tense]currently [end if]switched [if the noun is switched on]on[otherwise]off[end if]."]
-[The examine devices rule response (A): "[The noun] [are] [if story tense is present tense]currently [end if]switched [if the noun is switched on]on[otherwise]off[end if]."]
+The examine devices rule response (A) is "[capitalized noun in the nominative case] уже [if the noun is switched on][short form of vklyuchennyj regarding noun][otherwise][short form of vyklyuchennyj regarding noun][end if]."
 
 [The examine undescribed things rule response (A): "[We] [see] nothing special about [the noun]."]
-[The examine undescribed things rule response (A): "[We] [see] nothing special about [the noun]."]
+The examine undescribed things rule response (A) is "Ничего особенного в [noun in the prepositional case] ты не видишь."
 
 [The report other people examining rule response (A): "[The actor] [look] closely at [the noun]."]
-[The report other people examining rule response (A): "[The actor] [look] closely at [the noun]."]
+[translate][The report other people examining rule response (A): "[The actor] [look] closely at [the noun]."]
 
 [The standard looking under rule response (A): "[We] [find] nothing of interest."]
-[The standard looking under rule response (A): "[We] [find] nothing of interest."]
+The standard looking under rule response (A) is "Ты не находишь под [noun in the instrumental case] ничего интересного."
 
 [The report other people looking under rule response (A): "[The actor] [look] under [the noun]."]
-[The report other people looking under rule response (A): "[The actor] [look] under [the noun]."]
+[translate][The report other people looking under rule response (A): "[The actor] [look] under [the noun]."]
 
 [The can't search unless container or supporter rule response (A): "[We] [find] nothing of interest."]
-[The can't search unless container or supporter rule response (A): "[We] [find] nothing of interest."]
+[review]The can't search unless container or supporter rule response (A) is "Ты не находишь ничего интересного."
 
 [The can't search closed opaque containers rule response (A): "[We] [can't see] inside, since [the noun] [are] closed."]
-[The can't search closed opaque containers rule response (A): "[We] [can't see] inside, since [the noun] [are] closed."]
+The can't search closed opaque containers rule response (A) is "[capitalized noun in the nominative case] [short form of zakrytyj regarding noun], и ты не можешь заглянуть внутрь."
 
 [The standard search containers rule response (A): "In [the noun] "]
-[The standard search containers rule response (A): "In [the noun] "]
+[TODO][The standard search containers rule response (A): "In [the noun] "]
 
 [The standard search containers rule response (B): "[The noun] [are] empty."]
-[The standard search containers rule response (B): "[The noun] [are] empty."]
+The standard search containers rule response (B) is "В [noun in the prepositional case] ничего нет."
 
 [The standard search supporters rule response (A): "On [the noun] "]
-[The standard search supporters rule response (A): "On [the noun] "]
+[TODO][The standard search supporters rule response (A): "On [the noun] "]
 
 [The standard search supporters rule response (B): "[There] [are] nothing on [the noun]."]
-[The standard search supporters rule response (B): "[There] [are] nothing on [the noun]."]
+The standard search supporters rule response (B) is "На [noun in the prepositional case] ничего нет."
 
 [The report other people searching rule response (A): "[The actor] [search] [the noun]."]
-[The report other people searching rule response (A): "[The actor] [search] [the noun]."]
+[translate][The report other people searching rule response (A): "[The actor] [search] [the noun]."]
 
 [The block consulting rule response (A): "[We] [discover] nothing of interest in [the noun]."]
-[The block consulting rule response (A): "[We] [discover] nothing of interest in [the noun]."]
+The block consulting rule response (A) is "Ты не находишь в [noun in the prepositional case] ничего подходящего.."
 
 [The block consulting rule response (B): "[The actor] [look] at [the noun]."]
-[The block consulting rule response (B): "[The actor] [look] at [the noun]."]
+[translate][The block consulting rule response (B): "[The actor] [look] at [the noun]."]
 
 [The can't lock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] lock."]
-[The can't lock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] lock."]
+The can't lock without a lock rule response (A) is "[capitalized noun in the accusative case] невозможно запереть."
 
 [The can't lock what's already locked rule response (A): "[regarding the noun][They're] locked at the [if story tense is present tense]moment[otherwise]time[end if]."]
-[The can't lock what's already locked rule response (A): "[regarding the noun][They're] locked at the [if story tense is present tense]moment[otherwise]time[end if]."]
+The can't lock what's already locked rule response (A) is "[capitalized noun in the nominative case] уже [short form of zapertyj regarding noun]."
 
 [The can't lock what's open rule response (A): "First [we] [would have] to close [the noun]."]
-[The can't lock what's open rule response (A): "First [we] [would have] to close [the noun]."]
+The can't lock what's open rule response (A) is  "Сначала необходимо закрыть [noun in the accusative case]."
 
 [The can't lock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
-[The can't lock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
+The can't lock without the correct key rule response (A) is "[capitalized second noun in the nominative case] не подход[second noun does a verb of class v2b] к замку."
 
 [The standard report locking rule response (A): "[We] [lock] [the noun]."]
-[The standard report locking rule response (A): "[We] [lock] [the noun]."]
+The standard report locking rule response (A) is "Ты запираешь [noun in the accusative case]."
 
 [The standard report locking rule response (B): "[The actor] [lock] [the noun]."]
-[The standard report locking rule response (B): "[The actor] [lock] [the noun]."]
+[review]The standard report locking rule response (B) is "[capitalized actor in the nominative case] запира[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't unlock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] unlock."]
-[The can't unlock without a lock rule response (A): "[regarding the noun][Those] [don't] seem to be something [we] [can] unlock."]
+The can't unlock without a lock rule response (A) is "[capitalized noun in the accusative case] невозможно запереть."
 
 [The can't unlock what's already unlocked rule response (A): "[regarding the noun][They're] unlocked at the [if story tense is present tense]moment[otherwise]time[end if]."]
-[The can't unlock what's already unlocked rule response (A): "[regarding the noun][They're] unlocked at the [if story tense is present tense]moment[otherwise]time[end if]."]
+The can't unlock what's already unlocked rule response (A) is "[capitalized noun in the accusative case] не [short form of zapertyj regarding noun]."
 
 [The can't unlock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
-[The can't unlock without the correct key rule response (A): "[regarding the second noun][Those] [don't] seem to fit the lock."]
+The can't unlock without the correct key rule response (A) is "[capitalized second noun in the nominative case] не подход[second noun does a verb of class v2b] к замку."
 
 [The standard report unlocking rule response (A): "[We] [unlock] [the noun]."]
-[The standard report unlocking rule response (A): "[We] [unlock] [the noun]."]
+The standard report unlocking rule response (A) is "Ты отпираешь [noun in the accusative case]."
 
 [The standard report unlocking rule response (B): "[The actor] [unlock] [the noun]."]
-[The standard report unlocking rule response (B): "[The actor] [unlock] [the noun]."]
+The standard report unlocking rule response (B) is "[capitalized actor in the nominative case] отпира[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't switch on unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
-[The can't switch on unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
+The can't switch on unless switchable rule response (A) is "[capitalized noun in the accusative case] невозможно включить."
 
 [The can't switch on what's already on rule response (A): "[regarding the noun][They're] already on."]
-[The can't switch on what's already on rule response (A): "[regarding the noun][They're] already on."]
+The can't switch on what's already on rule response (A) is "[capitalized noun in the nominative case] уже [short form of vklyuchennyj regarding noun]."
 
 [The standard report switching on rule response (A): "[The actor] [switch] [the noun] on."]
-[The standard report switching on rule response (A): "[The actor] [switch] [the noun] on."]
+The standard report switching on rule response (A) is "[capitalized actor in the nominative case] включа[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't switch off unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
-[The can't switch off unless switchable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] switch."]
+The can't switch off unless switchable rule response (A) is "[capitalized noun in the accusative case] невозможно выключить."
 
 [The can't switch off what's already off rule response (A): "[regarding the noun][They're] already off."]
-[The can't switch off what's already off rule response (A): "[regarding the noun][They're] already off."]
+The can't switch off what's already off rule response (A) is "[capitalized noun in the nominative case] уже [short form of vyklyuchennyj regarding noun]."
 
 [The standard report switching off rule response (A): "[The actor] [switch] [the noun] off."]
-[The standard report switching off rule response (A): "[The actor] [switch] [the noun] off."]
+The standard report switching off rule response (A) is "[capitalized actor in the nominative case] выключа[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't open unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] open."]
-[The can't open unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] open."]
+The can't open unless openable rule response (A) is "[capitalized noun in the accusative case] невозможно открыть."
 
 [The can't open what's locked rule response (A): "[regarding the noun][They] [seem] to be locked."]
-[The can't open what's locked rule response (A): "[regarding the noun][They] [seem] to be locked."]
+The can't open what's locked rule response (A) is "Похоже, что [noun in the nominative case] [short form of zapertyj regarding noun]."
 
 [The can't open what's already open rule response (A): "[regarding the noun][They're] already open."]
-[The can't open what's already open rule response (A): "[regarding the noun][They're] already open."]
+The can't open what's already open rule response (A) is "[capitalized noun in the nominative case] уже [short form of otkrytyj regarding noun]."
 
 [The reveal any newly visible interior rule response (A): "[We] [open] [the noun], revealing "]
-[The reveal any newly visible interior rule response (A): "[We] [open] [the noun], revealing "]
+[TODO]The reveal any newly visible interior rule response (A) is "Ты открываешь [noun in the accusative case]. Внутри ".
 
 [The standard report opening rule response (A): "[We] [open] [the noun]."]
-[The standard report opening rule response (A): "[We] [open] [the noun]."]
+The standard report opening rule response (A) is "Ты открываешь [noun in the accusative case]."
 
 [The standard report opening rule response (B): "[The actor] [open] [the noun]."]
-[The standard report opening rule response (B): "[The actor] [open] [the noun]."]
+The standard report opening rule response (B) is "[capitalized actor in the nominative case] открыва[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The standard report opening rule response (C): "[The noun] [open]."]
-[The standard report opening rule response (C): "[The noun] [open]."]
+[review]The standard report opening rule response (C) is "[capitalized noun in the nominative case] [short form of otkrytyj regarding noun]."
 
 [The can't close unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] close."]
-[The can't close unless openable rule response (A): "[regarding the noun][They] [aren't] something [we] [can] close."]
+The can't close unless openable rule response (A) is "[capitalized noun in the accusative case] невозможно закрыть."
 
 [The can't close what's already closed rule response (A): "[regarding the noun][They're] already closed."]
-[The can't close what's already closed rule response (A): "[regarding the noun][They're] already closed."]
+The can't close what's already closed rule response (A) is "[capitalized noun in the nominative case] уже [short form of zakrytyj regarding noun]."
 
 [The standard report closing rule response (A): "[We] [close] [the noun]."]
-[The standard report closing rule response (A): "[We] [close] [the noun]."]
+The standard report closing rule response (A) is "Ты закрываешь [noun in the accusative case]."
 
 [The standard report closing rule response (B): "[The actor] [close] [the noun]."]
-[The standard report closing rule response (B): "[The actor] [close] [the noun]."]
+The standard report closing rule response (B) is "[capitalized actor in the nominative case] закрыва[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The standard report closing rule response (C): "[The noun] [close]."]
-[The standard report closing rule response (C): "[The noun] [close]."]
+The standard report closing rule response (C) is "[capitalized noun in the nominative case] [short form of zakrytyj regarding noun]."
 
 [The can't wear what's not clothing rule response (A): "[We] [can't wear] [regarding the noun][those]!"]
-[The can't wear what's not clothing rule response (A): "[We] [can't wear] [regarding the noun][those]!"]
+The can't wear what's not clothing rule response (A) is "Надеть [noun in the accusative case] на себя невозможно."
 
 [The can't wear what's not held rule response (A): "[We] [aren't] holding [regarding the noun][those]!"]
-[The can't wear what's not held rule response (A): "[We] [aren't] holding [regarding the noun][those]!"]
+The can't wear what's not held rule response (A) is "[We] [aren't] holding [regarding the noun][those]!"
 
 [The can't wear what's already worn rule response (A): "[We]['re] already wearing [regarding the noun][those]!"]
-[The can't wear what's already worn rule response (A): "[We]['re] already wearing [regarding the noun][those]!"]
+The can't wear what's already worn rule response (A) is "У тебя нет [noun in the genitive case] с собой."
 
 [The standard report wearing rule response (A): "[We] [put] on [the noun]."]
-[The standard report wearing rule response (A): "[We] [put] on [the noun]."]
+The standard report wearing rule response (A) is "Ты надеваешь [noun in the accusative case] на себя."
 
 [The standard report wearing rule response (B): "[The actor] [put] on [the noun]."]
-[The standard report wearing rule response (B): "[The actor] [put] on [the noun]."]
+[review]The standard report wearing rule response (B) is "[capitalized actor in the nominative case] надева[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't take off what's not worn rule response (A): "[We] [aren't] wearing [the noun]."]
-[The can't take off what's not worn rule response (A): "[We] [aren't] wearing [the noun]."]
+The can't take off what's not worn rule response (A) is "[capitalized noun in the nominative case] не на тебе."
 
 [The can't exceed carrying capacity when taking off rule response (A): "[We]['re] carrying too many things already."]
-[The can't exceed carrying capacity when taking off rule response (A): "[We]['re] carrying too many things already."]
+The can't exceed carrying capacity when taking off rule response (A) is "У тебя с собой слишком много вещей."
 
 [The standard report taking off rule response (A): "[We] [take] off [the noun]."]
-[The standard report taking off rule response (A): "[We] [take] off [the noun]."]
+The standard report taking off rule response (A) is "Ты снимаешь [noun in the accusative case] с себя."
 
 [The standard report taking off rule response (B): "[The actor] [take] off [the noun]."]
-[The standard report taking off rule response (B): "[The actor] [take] off [the noun]."]
+[review]The standard report taking off rule response (B) is "[capitalized actor in the nominative case] снима[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't give what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
-[The can't give what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
+The can't give what you haven't got rule response (A) is "[We] [aren't] holding [the noun]."
 
 [The can't give to yourself rule response (A): "[We] [can't give] [the noun] to [ourselves]."]
-[The can't give to yourself rule response (A): "[We] [can't give] [the noun] to [ourselves]."]
+The can't give to yourself rule response (A) is "У тебя нет [noun in the genitive case] с собой."
 
 [The can't give to a non-person rule response (A): "[The second noun] [aren't] able to receive things."]
-[The can't give to a non-person rule response (A): "[The second noun] [aren't] able to receive things."]
+[translate][The can't give to a non-person rule response (A): "[The second noun] [aren't] able to receive things."]
 
 [The can't give clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
-[The can't give clothes being worn rule response (A): "(first taking [the noun] off)[command clarification break]"]
+The can't give clothes being worn rule response (A) is "(сначала сняв [noun in the accusative case] с себя)[command clarification break]".
 
 [The block giving rule response (A): "[The second noun] [don't] seem interested."]
-[The block giving rule response (A): "[The second noun] [don't] seem interested."]
+The block giving rule response (A) is "[capitalized second noun in the accusative case] это не заинтересовало."
 
 [The can't exceed carrying capacity when giving rule response (A): "[The second noun] [are] carrying too many things already."]
-[The can't exceed carrying capacity when giving rule response (A): "[The second noun] [are] carrying too many things already."]
+[review]The can't exceed carrying capacity when giving rule response (A) is "У [actor in the genitive case] слишком много вещей."
 
 [The standard report giving rule response (A): "[We] [give] [the noun] to [the second noun]."]
-[The standard report giving rule response (A): "[We] [give] [the noun] to [the second noun]."]
+[review]The standard report giving rule response (A) is "Ты даешь [second noun in the dative case] [noun in the accusative case]."
 
 [The standard report giving rule response (B): "[The actor] [give] [the noun] to [us]."]
-[The standard report giving rule response (B): "[The actor] [give] [the noun] to [us]."]
+[review]The standard report giving rule response (B) is "[capitalized actor in the nominative case] тебе да[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The standard report giving rule response (C): "[The actor] [give] [the noun] to [the second noun]."]
-[The standard report giving rule response (C): "[The actor] [give] [the noun] to [the second noun]."]
+[review]The standard report giving rule response (C) is "[capitalized actor in the nominative case] да[actor does a verb of class v1b] [second noun in the dative case] [noun in the accusative case]."
 
 [The can't show what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
-[The can't show what you haven't got rule response (A): "[We] [aren't] holding [the noun]."]
+The can't show what you haven't got rule response (A) is "У тебя нет [noun in the genitive case] с собой."
 
 [The block showing rule response (A): "[The second noun] [are] unimpressed."]
-[The block showing rule response (A): "[The second noun] [are] unimpressed."]
+The block showing rule response (A) is "[capitalized second noun in the accusative case] это не впечатлило."
 
 [The block waking rule response (A): "That [seem] unnecessary."]
-[The block waking rule response (A): "That [seem] unnecessary."]
+The block waking rule response (A) is "Будить [noun in the accusative case] не стоит."
 
 [The implicitly remove thrown clothing rule response (A): "(first taking [the noun] off)[command clarification break]"]
-[The implicitly remove thrown clothing rule response (A): "(first taking [the noun] off)[command clarification break]"]
+The implicitly remove thrown clothing rule response (A) is "(сначала сняв [noun in the accusative case] с себя)[command clarification break]"
 
 [The futile to throw things at inanimate objects rule response (A): "Futile."]
-[The futile to throw things at inanimate objects rule response (A): "Futile."]
+The futile to throw things at inanimate objects rule response (A) is "Бросать [noun in the accusative case] в [second noun in the accusative case] бесполезно."
 
 [The block throwing at rule response (A): "[We] [lack] the nerve when it [if story tense is the past tense]came[otherwise]comes[end if] to the crucial moment."]
-[The block throwing at rule response (A): "[We] [lack] the nerve when it [if story tense is the past tense]came[otherwise]comes[end if] to the crucial moment."]
+The block throwing at rule response (A) is "У тебя не хватает решимости бросить [noun in the accusative case] в [second noun in the accusative case]."
 
 [The block attacking rule response (A): "Violence [aren't] the answer to this one."]
-[The block attacking rule response (A): "Violence [aren't] the answer to this one."]
+The block attacking rule response (A) is "Сила есть — ума не надо?"
 
 [The kissing yourself rule response (A): "[We] [don't] get much from that."]
-[The kissing yourself rule response (A): "[We] [don't] get much from that."]
+The kissing yourself rule response (A) is "Будет лучше сосредоточиться на игре."
+[note that this one has changed significantly since version 6, might need more parallel retranslation]
 
 [The block kissing rule response (A): "[The noun] [might not] like that."]
-[The block kissing rule response (A): "[The noun] [might not] like that."]
+[translate][The block kissing rule response (A): "[The noun] [might not] like that."]
 
 [The block answering rule response (A): "[There] [are] no reply."]
-[The block answering rule response (A): "[There] [are] no reply."]
+The block answering rule response (A) is "Ответа не последовало."
 
 [The telling yourself rule response (A): "[We] [talk] to [ourselves] a while."]
-[The telling yourself rule response (A): "[We] [talk] to [ourselves] a while."]
+The telling yourself rule response (A) is "Беседы с собой — занятие нездоровое."
 
 [The block telling rule response (A): "This [provoke] no reaction."]
-[The block telling rule response (A): "This [provoke] no reaction."]
+The block telling rule response (A) is "This [provoke] no reaction."
 
 [The block asking rule response (A): "[There] [are] no reply."]
-[The block asking rule response (A): "[There] [are] no reply."]
+The block asking rule response (A) is "[if grammatical gender of the noun is feminine gender]Твоя собеседница никак не отреагировала[otherwise]Твой собеседник никак не отреагировал[end if]."
 
 [The standard report waiting rule response (A): "Time [pass]."]
-[The standard report waiting rule response (A): "Time [pass]."]
+The standard report waiting rule response (A) is "Проходит немного времени."
 
 [The standard report waiting rule response (B): "[The actor] [wait]."]
-[The standard report waiting rule response (B): "[The actor] [wait]."]
+[review]The standard report waiting rule response (B) is "[capitalized actor in the nominative case] жд[actor does a verb of class v1a]."
 
 [The report touching yourself rule response (A): "[We] [achieve] nothing by this."]
-[The report touching yourself rule response (A): "[We] [achieve] nothing by this."]
+[review]The report touching yourself rule response (A) is "Если тебе очень хочется."
+[note that this one has changed significantly since version 6, might need more parallel retranslation]
 
 [The report touching yourself rule response (B): "[The actor] [touch] [themselves]."]
-[The report touching yourself rule response (B): "[The actor] [touch] [themselves]."]
+The report touching yourself rule response (B) is "[capitalized actor in the nominative case] трога[actor does a verb of class v2a] себя."
 
 [The report touching other people rule response (A): "[The noun] [might not like] that."]
 [The report touching other people rule response (A): "[The noun] [might not like] that."]
 
 [The report touching other people rule response (B): "[The actor] [touch] [us]."]
-[The report touching other people rule response (B): "[The actor] [touch] [us]."]
+[review]The report touching other people rule response (B) is "[capitalized actor in the nominative case] трога[actor does a verb of class v2a] тебя."
 
 [The report touching other people rule response (C): "[The actor] [touch] [the noun]."]
-[The report touching other people rule response (C): "[The actor] [touch] [the noun]."]
+The report touching other people rule response (C) is "[capitalized actor in the nominative case] трога[actor does a verb of class v2a] [noun in the accusative case]."
 
 [The report touching things rule response (A): "[We] [feel] nothing unexpected."]
-[The report touching things rule response (A): "[We] [feel] nothing unexpected."]
+The report touching things rule response (A) is "Никаких необычных ощущений нет."
 
 [The report touching things rule response (B): "[The actor] [touch] [the noun]."]
-[The report touching things rule response (B): "[The actor] [touch] [the noun]."]
+The report touching things rule response (B) is "[capitalized actor in the nominative case] трога[actor does a verb of class v2a] [noun in the accusative case]."
 
 [The can't wave what's not held rule response (A): "But [we] [aren't] holding [regarding the noun][those]."]
-[The can't wave what's not held rule response (A): "But [we] [aren't] holding [regarding the noun][those]."]
+The can't wave what's not held rule response (A) is "Сперва надо взять [noun in the accusative case]."
 
 [The report waving things rule response (A): "[We] [wave] [the noun]."]
-[The report waving things rule response (A): "[We] [wave] [the noun]."]
+[translate][The report waving things rule response (A): "[We] [wave] [the noun]."]
 
 [The report waving things rule response (B): "[The actor] [wave] [the noun]."]
-[The report waving things rule response (B): "[The actor] [wave] [the noun]."]
+[translate][The report waving things rule response (B): "[The actor] [wave] [the noun]."]
 
 [The can't pull what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
-[The can't pull what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
+The can't pull what's fixed in place rule response (A) is "[capitalized noun in the nominative case] трудно сдвинуть с места."
 
 [The can't pull scenery rule response (A): "[We] [are] unable to."]
 [The can't pull scenery rule response (A): "[We] [are] unable to."]
@@ -1137,139 +1139,140 @@ The room description body text rule response (A) is "Кромешная тьма
 [The report pulling rule response (B): "[The actor] [pull] [the noun]."]
 
 [The can't push what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
-[The can't push what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
+The can't push what's fixed in place rule response (A) is "[capitalized noun in the accusative case] трудно сдвинуть с места."
 
 [The can't push scenery rule response (A): "[We] [are] unable to."]
-[The can't push scenery rule response (A): "[We] [are] unable to."]
+The can't push scenery rule response (A) is "[capitalized noun in the accusative case] двигать невозможно."
 
 [The can't push people rule response (A): "[The noun] [might not like] that."]
-[The can't push people rule response (A): "[The noun] [might not like] that."]
+[translate][The can't push people rule response (A): "[The noun] [might not like] that."]
 
 [The report pushing rule response (A): "Nothing obvious [happen]."]
-[The report pushing rule response (A): "Nothing obvious [happen]."]
+The report pushing rule response (A) is "Ничего не произошло."
 
 [The report pushing rule response (B): "[The actor] [push] [the noun]."]
-[The report pushing rule response (B): "[The actor] [push] [the noun]."]
+[review]The report pushing rule response (B) is "[capitalized actor in the nominative case] толка[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't turn what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
-[The can't turn what's fixed in place rule response (A): "[regarding the noun][They] [are] fixed in place."]
+The can't turn what's fixed in place rule response (A) is "[capitalized noun in the accusative case] трудно сдвинуть с места."
 
 [The can't turn scenery rule response (A): "[We] [are] unable to."]
-[The can't turn scenery rule response (A): "[We] [are] unable to."]
+The can't turn scenery rule response (A) is "[capitalized noun in the accusative case] двигать невозможно."
 
 [The can't turn people rule response (A): "[The noun] [might not like] that."]
-[The can't turn people rule response (A): "[The noun] [might not like] that."]
+[translate][The can't turn people rule response (A): "[The noun] [might not like] that."]
 
 [The report turning rule response (A): "Nothing obvious [happen]."]
-[The report turning rule response (A): "Nothing obvious [happen]."]
+The report turning rule response (A) is "Ничего не произошло."
 
 [The report turning rule response (B): "[The actor] [turn] [the noun]."]
-[The report turning rule response (B): "[The actor] [turn] [the noun]."]
+[review]The report turning rule response (B) is "[capitalized actor in the nominative case] поворачива[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The can't push unpushable things rule response (A): "[The noun] [cannot] be pushed from place to place."]
-[The can't push unpushable things rule response (A): "[The noun] [cannot] be pushed from place to place."]
+[translate][The can't push unpushable things rule response (A): "[The noun] [cannot] be pushed from place to place."]
 
 [The can't push to non-directions rule response (A): "[regarding the noun][They] [aren't] a direction."]
-[The can't push to non-directions rule response (A): "[regarding the noun][They] [aren't] a direction."]
+The can't push to non-directions rule response (A) is "Двигать можно только в определённом направлении."
 
 [The can't push vertically rule response (A): "[The noun] [cannot] be pushed up or down."]
-[The can't push vertically rule response (A): "[The noun] [cannot] be pushed up or down."]
+[translate][The can't push vertically rule response (A): "[The noun] [cannot] be pushed up or down."]
 
 [The can't push from within rule response (A): "[The noun] [cannot] be pushed from here."]
-[The can't push from within rule response (A): "[The noun] [cannot] be pushed from here."]
+[translate][The can't push from within rule response (A): "[The noun] [cannot] be pushed from here."]
 
 [The block pushing in directions rule response (A): "[The noun] [cannot] be pushed from place to place."]
-[The block pushing in directions rule response (A): "[The noun] [cannot] be pushed from place to place."]
+[translate][The block pushing in directions rule response (A): "[The noun] [cannot] be pushed from place to place."]
 
 [The innuendo about squeezing people rule response (A): "[The noun] [might not like] that."]
-[The innuendo about squeezing people rule response (A): "[The noun] [might not like] that."]
+The innuendo about squeezing people rule response (A) is "Не стоит давать волю рукам."
+[note that this one has changed significantly since version 6, might need more parallel retranslation]
 
 [The report squeezing rule response (A): "[We] [achieve] nothing by this."]
-[The report squeezing rule response (A): "[We] [achieve] nothing by this."]
+The report squeezing rule response (A) is "Сжимать [noun in the accusative case] бессмысленно."
 
 [The report squeezing rule response (B): "[The actor] [squeeze] [the noun]."]
-[The report squeezing rule response (B): "[The actor] [squeeze] [the noun]."]
+The report squeezing rule response (B) is "[capitalized actor in the nominative case] сжима[actor does a verb of class v1b] [the noun in the accusative case]."
 
 [The block saying yes rule response (A): "That was a rhetorical question."]
-[The block saying yes rule response (A): "That was a rhetorical question."]
+The block saying yes rule response (A) is "Вопрос был риторическим."
 
 [The block saying no rule response (A): "That was a rhetorical question."]
-[The block saying no rule response (A): "That was a rhetorical question."]
+The block saying no rule response (A) is "Вопрос был риторическим."
 
 [The block burning rule response (A): "This dangerous act [would achieve] little."]
-[The block burning rule response (A): "This dangerous act [would achieve] little."]
+The block burning rule response (A) is "Поджигать [noun in the accusative case] бессмысленно."
 
 [The block waking up rule response (A): "The dreadful truth [are], this [are not] a dream."]
-[The block waking up rule response (A): "The dreadful truth [are], this [are not] a dream."]
+The block waking up rule response (A) is "Поверь, это не сон, а явь."
 
 [The block thinking rule response (A): "What a good idea."]
-[The block thinking rule response (A): "What a good idea."]
+The block thinking rule response (A) is "Отличная идея."
 
 [The report smelling rule response (A): "[We] [smell] nothing unexpected."]
-[The report smelling rule response (A): "[We] [smell] nothing unexpected."]
+The report smelling rule response (A) is "Никакого необычного запаха нет."
 
 [The report smelling rule response (B): "[The actor] [sniff]."]
-[The report smelling rule response (B): "[The actor] [sniff]."]
+[review]The report smelling rule response (B) is "[capitalized actor in the nominative case] нюха[actor does a verb of class v1b]."
 
 [The report listening rule response (A): "[We] [hear] nothing unexpected."]
-[The report listening rule response (A): "[We] [hear] nothing unexpected."]
+The report listening rule response (A) is "Никаких необычных звуков нет."
 
 [The report listening rule response (B): "[The actor] [listen]."]
-[The report listening rule response (B): "[The actor] [listen]."]
+[review]The report listening rule response (B) is "[capitalized actor in the nominative case] слуша[actor does a verb of class v1b]."
 
 [The report tasting rule response (A): "[We] [taste] nothing unexpected."]
-[The report tasting rule response (A): "[We] [taste] nothing unexpected."]
+The report tasting rule response (A) is "Никакого необычного вкуса нет."
 
 [The report tasting rule response (B): "[The actor] [taste] [the noun]."]
-[The report tasting rule response (B): "[The actor] [taste] [the noun]."]
+The report tasting rule response (B) is "[capitalized actor in the nominative case] пробу[actor does a verb of class v1b] [noun in the accusative case]."
 
 [The block cutting rule response (A): "Cutting [regarding the noun][them] up [would achieve] little."]
-[The block cutting rule response (A): "Cutting [regarding the noun][them] up [would achieve] little."]
+The block cutting rule response (A) is "Резать [noun in the accusative case] бессмысленно."
 
 [The report jumping rule response (A): "[We] [jump] on the spot."]
-[The report jumping rule response (A): "[We] [jump] on the spot."]
+The report jumping rule response (A) is "Ты глупо подпрыгиваешь на месте."
 
 [The report jumping rule response (B): "[The actor] [jump] on the spot."]
-[The report jumping rule response (B): "[The actor] [jump] on the spot."]
+[review]The report jumping rule response (B) is "[capitalized actor in the nominative case] подпрыгива[actor does a verb of class v1b] на месте."
 
 [The block tying rule response (A): "[We] [would achieve] nothing by this."]
-[The block tying rule response (A): "[We] [would achieve] nothing by this."]
+The block tying rule response (A) is "Привязывать [noun in the accusative case] [if second noun is not nothing] к [second noun in the dative case]бессмысленно."
 
 [The block drinking rule response (A): "[There's] nothing suitable to drink here."]
-[The block drinking rule response (A): "[There's] nothing suitable to drink here."]
+The block drinking rule response (A) is "Выпить [noun in the accusative case] невозможно."
 
 [The block saying sorry rule response (A): "Oh, don't [if American dialect option is active]apologize[otherwise]apologise[end if]."]
-[The block saying sorry rule response (A): "Oh, don't [if American dialect option is active]apologize[otherwise]apologise[end if]."]
+The block saying sorry rule response (A) is "О, не нужно извинений."
 
 [The block swinging rule response (A): "[There's] nothing sensible to swing here."]
-[The block swinging rule response (A): "[There's] nothing sensible to swing here."]
+The block swinging rule response (A) is "Качать [noun in the accusative case] бессмысленно."
 
 [The can't rub another person rule response (A): "[The noun] [might not like] that."]
-[The can't rub another person rule response (A): "[The noun] [might not like] that."]
+[translate][The can't rub another person rule response (A): "[The noun] [might not like] that."]
 
 [The report rubbing rule response (A): "[We] [rub] [the noun]."]
-[The report rubbing rule response (A): "[We] [rub] [the noun]."]
+[review]The report rubbing rule response (A) is "Ты трешь [noun in the accusative case]."
 
 [The report rubbing rule response (B): "[The actor] [rub] [the noun]."]
-[The report rubbing rule response (B): "[The actor] [rub] [the noun]."]
+The report rubbing rule response (B) is "[capitalized actor in the nominative case] тр[actor does a verb of class v1a] [noun in the accusative case]."
 
 [The block setting it to rule response (A): "No, [we] [can't set] [regarding the noun][those] to anything."]
-[The block setting it to rule response (A): "No, [we] [can't set] [regarding the noun][those] to anything."]
+The block setting it to rule response (A) is "Невозможно установить [noun in the accusative case] на что-либо."
 
 [The report waving hands rule response (A): "[We] [wave]."]
-[The report waving hands rule response (A): "[We] [wave]."]
+The report waving hands rule response (A) is "Ты глупо машешь руками."
 
 [The report waving hands rule response (B): "[The actor] [wave]."]
-[The report waving hands rule response (B): "[The actor] [wave]."]
+The report waving hands rule response (B) is "[capitalized actor in the nominative case] маш[actor does a verb of class v1a] руками."
 
 [The block buying rule response (A): "Nothing [are] on sale."]
-[The block buying rule response (A): "Nothing [are] on sale."]
+The block buying rule response (A) is "[capitalized noun in the nominative case] не прода[noun does a verb of class v1a]ся."
 
 [The block climbing rule response (A): "Little [are] to be achieved by that."]
-[The block climbing rule response (A): "Little [are] to be achieved by that."]
+The block climbing rule response (A) is "Забираться на [noun in the accusative case] бессмысленно."
 
 [The block sleeping rule response (A): "[We] [aren't] feeling especially drowsy."]
-[The block sleeping rule response (A): "[We] [aren't] feeling especially drowsy."]
+The block sleeping rule response (A) is "Сейчас тебя не клонит ко сну."
 
 [generate action rule response (A): "(considering the first sixteen objects only)"]
 The generate action rule response (A) is "(ограничиваясь первыми 16 объектами)[command clarification break]".
@@ -1497,9 +1500,9 @@ The parser clarification internal rule response (B) is "Что имеется в
 [parser clarification internal rule response (C): "Sorry, you can only have one item here. Which exactly?"]
 The parser clarification internal rule response (C) is "Но здесь доступен только один предмет. Какой именно?"
 
-[*translate][parser clarification internal rule response (D): "Whom do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
+[TODO][translate][parser clarification internal rule response (D): "Whom do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
 
-[*translate][parser clarification internal rule response (E): "What do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
+[TODO][translate][parser clarification internal rule response (E): "What do you want [if the noun is not the player][the noun] [end if]to [parser command so far]?"]
 
 [parser clarification internal rule response (F): "those things"]
 The parser clarification internal rule response (F) is "эти объекты".
@@ -1510,7 +1513,7 @@ The parser clarification internal rule response (F) is "эти объекты".
 The parser clarification internal rule response (H) is "или".
 
 [yes or no question internal rule response (A): "Please answer yes or no."]
-The yes or no question internal rule response (A) is "Ответьте [bold type]да[roman type] или [bold type]нет[roman type].."
+The yes or no question internal rule response (A) is "Ответьте [bold type]да[roman type] или [bold type]нет[roman type]."
 
 [Consider for future revision allowing parser be на ты/вы as a use option.]
 [print protagonist internal rule response (A): "[We]"]
@@ -1839,7 +1842,8 @@ rezinovyj	"резиновый"
 derevyannyj	"деревянный"
 spelyj	"спелый"
 krasnyj	"красный"
-
+vklyuchennyj	"включенный"
+vyklyuchennyj	"выключенный"
 
 
 	
