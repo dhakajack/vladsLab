@@ -641,8 +641,11 @@ The can't put if this exceeds carrying capacity rule response (A) is "Больш
 [The concise report putting rule response (A): "Done."]
 [review]The concise report putting rule response (A) is "Ты кладёшь всё на [second noun in the accusative case]."
 
+
+
+[***************** here ******************]
 [The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
-[translate][The standard report putting rule response (A): "[The actor] [put] [the noun] on [the second noun]."]
+The standard report putting rule response (A) is "[The actor] полож[actor does a verb of class v2a] [noun in the accusative case] on [second noun in the prepositional case] -- [if the actor is yourself]youz![end if]."
 
 [The can't insert something into itself rule response (A): "[We] [can't put] something inside itself."]
 The can't insert something into itself rule response (A) is "Невозможно вложить что-либо внутрь себя."
@@ -1538,7 +1541,7 @@ The yes or no question internal rule response (A) is "Ответьте [bold typ
 
 [Consider for future revision allowing parser be на ты/вы as a use option.]
 [print protagonist internal rule response (A): "[We]"]
-The print protagonist internal rule response (A) is "ты".
+The print protagonist internal rule response (A) is "Ты".
 
 [print protagonist internal rule response (B): "[ourselves]"]
 The print protagonist internal rule response (B) is "себя".
@@ -2527,7 +2530,7 @@ Understand "zagruzit&" as restoring the game.
 Understand "vosst" as restoring the game.
 Understand "sokh" as saving the game.
 Understand "sokhranit&" as saving the game.
-Understand "schet" as requesting the score.
+Understand "shchet" as requesting the score.
 Understand "otchet" as switching the story transcript on.
 Understand "skript" as switching the story transcript on.
 Understand "skript vkl" as switching the story transcript on.
